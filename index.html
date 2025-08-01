@@ -1,0 +1,508 @@
+<script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+          return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                // Convert sheet to JSON to filter blank rows
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                // Filter out blank rows (rows where all cells are empty, null, or undefined)
+                var filteredData = jsonData.filter(row => row.some(filledCell));
+
+                // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
+                var headerRowIndex = filteredData.findIndex((row, index) =>
+                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                );
+                // Fallback
+                if (headerRowIndex === -1 || headerRowIndex > 25) {
+                  headerRowIndex = 0;
+                }
+
+                // Convert filtered JSON back to CSV
+                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+        </script><!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="JoshTechApps - Bringing Simplicity & Purpose to Mobile Apps. Download our user-friendly apps from Google Play.">
+    <title>JoshTechApps - Mobile Apps</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        body { transition: background-color 0.3s, color 0.3s; }
+        .dark { background-color: #1a202c; color: #e2e8f0; }
+        .dark .bg-white { background-color: #2d3748; }
+        .dark .text-gray-800 { color: #e2e8f0; }
+        .dark .bg-gray-100 { background-color: #4a5568; }
+    </style>
+</head>
+<body class="font-sans antialiased">
+    <!-- Theme Toggle -->
+    <button id="theme-toggle" class="fixed top-4 right-4 p-2 rounded-full bg-gray-200 dark:bg-gray-700 z-50">
+        <i class="fas fa-moon text-gray-800 dark:text-yellow-300"></i>
+    </button>
+
+    <!-- Navigation -->
+    <nav class="bg-white dark:bg-gray-800 shadow-md fixed w-full z-40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="#home" class="text-2xl font-bold text-gray-800 dark:text-white">JoshTechApps</a>
+                </div>
+                <div class="hidden md:flex space-x-4">
+                    <a href="#home" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 px-3 py-2">Home</a>
+                    <a href="#apps" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 px-3 py-2">Apps</a>
+                    <a href="#about" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 px-3 py-2">About</a>
+                    <a href="#blog" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 px-3 py-2">Blog</a>
+                    <a href="#contact" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 px-3 py-2">Contact</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="menu-toggle" class="text-gray-600 dark:text-gray-300">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-800">
+            <a href="#home" class="block text-gray-600 dark:text-gray-300 hover:text-blue-600 px-4 py-2">Home</a>
+            <a href="#apps" class="block text-gray-600 dark:text-gray-300 hover:text-blue-600 px-4 py-2">Apps</a>
+            <a href="#about" class="block text-gray-600 dark:text-gray-300 hover:text-blue-600 px-4 py-2">About</a>
+            <a href="#blog" class="block text-gray-600 dark:text-gray-300 hover:text-blue-600 px-4 py-2">Blog</a>
+            <a href="#contact" class="block text-gray-600 dark:text-gray-300 hover:text-blue-600 px-4 py-2">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="min-h-screen bg-gray-100 dark:bg-gray-900 flex items-center justify-center pt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold text-gray-800 dark:text-white mb-4">Welcome to JoshTechApps 👋</h1>
+            <p class="text-xl text-gray-600 dark:text-gray-300 mb-6">Bringing Simplicity & Purpose to Mobile Apps</p>
+            <p class="text-lg text-gray-500 dark:text-gray-400 mb-8">We build powerful, user-friendly mobile apps for everyday use. Explore our latest apps and download directly from Google Play.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                    <img src="https://via.placeholder.com/64" alt="KJV Bible Offline Icon" class="mx-auto mb-4">
+                    <h3 class="text-xl font-semibold text-gray-800 dark:text-white">KJV Bible Offline</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">Read the Bible anytime with bookmarks, search, font control.</p>
+                    <a href="#app-kjv" class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Learn More</a>
+                    <a href="#" class="block mt-4"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-12 mx-auto"></a>
+                </div>
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                    <img src="https://via.placeholder.com/64" alt="Smart Music Player Icon" class="mx-auto mb-4">
+                    <h3 class="text-xl font-semibold text-gray-800 dark:text-white">Smart Music Player</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">Enjoy your favorite audio & video offline in one place.</p>
+                    <a href="#app-music" class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Learn More</a>
+                    <a href="#" class="block mt-4"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-12 mx-auto"></a>
+                </div>
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                    <img src="https://via.placeholder.com/64" alt="Love Messages Icon" class="mx-auto mb-4">
+                    <h3 class="text-xl font-semibold text-gray-800 dark:text-white">Love Messages</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">Express your feelings with love quotes and SMS.</p>
+                    <a href="#app-love" class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Learn More</a>
+                    <a href="#" class="block mt-4"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-12 mx-auto"></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Apps Section -->
+    <section id="apps" class="py-16 bg-white dark:bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-800 dark:text-white text-center mb-12">Our Apps</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gray-100 dark:bg-gray-700 p-6 rounded-lg shadow-md">
+                    <img src="https://via.placeholder.com/64" alt="KJV Bible Offline Icon" class="mx-auto mb-4">
+                    <h3 class="text-xl font-semibold text-gray-800 dark:text-white text-center">KJV Bible Offline</h3>
+                    <p class="text-gray-600 dark:text-gray-300 text-center mb-4">Read the Bible anytime with bookmarks, search, and font control.</p>
+                    <div class="flex justify-center mb-4">
+                        <img src="https://via.placeholder.com/300x600" alt="Screenshot" class="h-48 rounded">
+                    </div>
+                    <div class="flex justify-center space-x-4">
+                        <a href="#app-kjv" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">View Details</a>
+                        <a href="#"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-12"></a>
+                    </div>
+                </div>
+                <div class="bg-gray-100 dark:bg-gray-700 p-6 rounded-lg shadow-md">
+                    <img src="https://via.placeholder.com/64" alt="Smart Music Player Icon" class="mx-auto mb-4">
+                    <h3 class="text-xl font-semibold text-gray-800 dark:text-white text-center">Smart Music Player</h3>
+                    <p class="text-gray-600 dark:text-gray-300 text-center mb-4">Enjoy your favorite audio & video offline in one place.</p>
+                    <div class="flex justify-center mb-4">
+                        <img src="https://via.placeholder.com/300x600" alt="Screenshot" class="h-48 rounded">
+                    </div>
+                    <div class="flex justify-center space-x-4">
+                        <a href="#app-music" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">View Details</a>
+                        <a href="#"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-12"></a>
+                    </div>
+                </div>
+                <div class="bg-gray-100 dark:bg-gray-700 p-6 rounded-lg shadow-md">
+                    <img src="https://via.placeholder.com/64" alt="Love Messages Icon" class="mx-auto mb-4">
+                    <h3 class="text-xl font-semibold text-gray-800 dark:text-white text-center">Love Messages</h3>
+                    <p class="text-gray-600 dark:text-gray-300 text-center mb-4">Express your feelings with love quotes and SMS.</p>
+                    <div class="flex justify-center mb-4">
+                        <img src="https://via.placeholder.com/300x600" alt="Screenshot" class="h-48 rounded">
+                    </div>
+                    <div class="flex justify-center space-x-4">
+                        <a href="#app-love" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">View Details</a>
+                        <a href="#"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-12"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Individual App Page: KJV Bible Offline -->
+    <section id="app-kjv" class="py-16 bg-gray-100 dark:bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-800 dark:text-white mb-8">KJV Bible Offline</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <img src="https://via.placeholder.com/300x600" alt="KJV Bible Screenshot" class="rounded-lg mb-6">
+                    <a href="#" class="block"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-16 mx-auto"></a>
+                </div>
+                <div>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">KJV Bible Offline provides a seamless reading experience for the King James Version of the Bible, designed for use without an internet connection. With powerful features like bookmarking, search, and customizable settings, it’s perfect for daily devotionals or in-depth study. The app supports dark mode, font adjustments, and verse sharing for an enhanced user experience.</p>
+                    <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-2">Features</h3>
+                    <ul class="list-disc list-inside text-gray-600 dark:text-gray-300 mb-4">
+                        <li>Complete offline access to the King James Version Bible</li>
+                        <li>Bookmark and highlight favorite verses</li>
+                        <li>Advanced search by keyword, chapter, or verse</li>
+                        <li>Customizable font sizes, themes, and reading modes</li>
+                        <li>Share verses via SMS, email, or social media</li>
+                    </ul>
+                    <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-2">FAQ</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <p class="font-semibold text-gray-800 dark:text-white">Is the app completely offline?</p>
+                            <p class="text-gray-600 dark:text-gray-300">Yes, all Bible content is stored locally for offline access.</p>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-gray-800 dark:text-white">Are updates free?</p>
+                            <p class="text-gray-600 dark:text-gray-300">Yes, all app updates are free via Google Play.</p>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-gray-800 dark:text-white">Does it support dark mode?</p>
+                            <p class="text-gray-600 dark:text-gray-300">Yes, toggle between light and dark themes in settings.</p>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-2 mt-6">User Reviews</h3>
+                    <div class="space-y-4">
+                        <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow">
+                            <p class="text-gray-600 dark:text-gray-300">"Great app for daily Bible reading! The search feature is a lifesaver." - John D.</p>
+                        </div>
+                        <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow">
+                            <p class="text-gray-600 dark:text-gray-300">"Love the dark mode and font options. Highly recommend!" - Sarah M.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Individual App Page: Smart Music Player -->
+    <section id="app-music" class="py-16 bg-gray-100 dark:bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-800 dark:text-white mb-8">Smart Music Player</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <img src="https://via.placeholder.com/300x600" alt="Smart Music Player Screenshot" class="rounded-lg mb-6">
+                    <a href="#" class="block"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-16 mx-auto"></a>
+                </div>
+                <div>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">Smart Music Player is your go-to app for enjoying audio and video content offline. With a sleek interface, it supports a wide range of formats, playlist creation, and advanced playback controls. Whether you’re listening to music or watching videos, this app ensures a seamless, ad-free experience with customizable settings.</p>
+                    <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-2">Features</h3>
+                    <ul class="list-disc list-inside text-gray-600 dark:text-gray-300 mb-4">
+                        <li>Play audio and video files offline in multiple formats</li>
+                        <li>Create and manage personalized playlists</li>
+                        <li>Advanced playback controls like shuffle, repeat, and equalizer</li>
+                        <li>Support for background playback and lock screen controls</li>
+                        <li>Customizable themes, including dark mode</li>
+                    </ul>
+                    <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-2">FAQ</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <p class="font-semibold text-gray-800 dark:text-white">What file formats are supported?</p>
+                            <p class="text-gray-600 dark:text-gray-300">Supports MP3, WAV, MP4, AVI, and more.</p>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-gray-800 dark:text-white">Can I play videos in the background?</p>
+                            <p class="text-gray-600 dark:text-gray-300">Yes, background playback is supported for audio and video.</p>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-gray-800 dark:text-white">Are there ads in the app?</p>
+                            <p class="text-gray-600 dark:text-gray-300">No, the app is ad-free for a premium experience.</p>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-2 mt-6">User Reviews</h3>
+                    <div class="space-y-4">
+                        <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow">
+                            <p class="text-gray-600 dark:text-gray-300">"Best music player I’ve used! Love the playlist feature." - Mike R.</p>
+                        </div>
+                        <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow">
+                            <p class="text-gray-600 dark:text-gray-300">"The video playback is smooth and intuitive." - Emily K.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Individual App Page: Love Messages -->
+    <section id="app-love" class="py-16 bg-gray-100 dark:bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-800 dark:text-white mb-8">Love Messages</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <img src="https://via.placeholder.com/300x600" alt="Love Messages Screenshot" class="rounded-lg mb-6">
+                    <a href="#" class="block"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-16 mx-auto"></a>
+                </div>
+                <div>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">Love Messages helps you express your deepest emotions with a curated collection of romantic quotes, poems, and SMS messages. Perfect for special occasions or everyday gestures, the app allows you to save favorites, edit messages, and share them instantly. With a passionate and fiery tone, it’s designed to spark connection.</p>
+                    <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-2">Features</h3>
+                    <ul class="list-disc list-inside text-gray-600 dark:text-gray-300 mb-4">
+                        <li>Access thousands of romantic quotes and poems across 40 categories</li>
+                        <li>Save favorite messages for quick access</li>
+                        <li>Edit quotes to personalize your messages</li>
+                        <li>Share via SMS, WhatsApp, or email</li>
+                        <li>Dark mode and customizable font settings</li>
+                    </ul>
+                    <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-2">FAQ</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <p class="font-semibold text-gray-800 dark:text-white">Can I edit the messages?</p>
+                            <p class="text-gray-600 dark:text-gray-300">Yes, you can customize any quote before sharing.</p>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-gray-800 dark:text-white">Are new quotes added regularly?</p>
+                            <p class="text-gray-600 dark:text-gray-300">Yes, updates include new quotes and categories.</p>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-gray-800 dark:text-white">Does it require internet?</p>
+                            <p class="text-gray-600 dark:text-gray-300">No, all quotes are available offline.</p>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-2 mt-6">User Reviews</h3>
+                    <div class="space-y-4">
+                        <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow">
+                            <p class="text-gray-600 dark:text-gray-300">"Perfect for sending romantic messages to my partner!" - Anna L.</p>
+                        </div>
+                        <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow">
+                            <p class="text-gray-600 dark:text-gray-300">"The variety of quotes is amazing!" - David P.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white dark:bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-800 dark:text-white text-center mb-12">About JoshTechApps</h2>
+            <div class="text-center max-w-3xl mx-auto">
+                <p class="text-lg text-gray-600 dark:text-gray-300 mb-6">JoshTechApps is dedicated to building simple, clean, and helpful mobile apps to solve everyday problems. Our mission is to create tools that are intuitive and accessible to everyone.</p>
+                <p class="text-lg text-gray-600 dark:text-gray-300">Founded by a passionate developer, we focus on delivering high-quality apps that make a difference in users' lives, from spiritual growth to entertainment and communication.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="py-16 bg-gray-100 dark:bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-800 dark:text-white text-center mb-12">Blog & Announcements</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-2">KJV Bible Offline Update</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">New dark mode and improved search are now available!</p>
+                    <a href="#" class="text-blue-600 hover:underline">Read More</a>
+                </div>
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-2">Smart Music Player v2.0</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">Now supports video playback and playlists.</p>
+                    <a href="#" class="text-blue-600 hover:underline">Read More</a>
+                </div>
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-2">Love Messages Tips</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">How to craft the perfect message for your loved ones.</p>
+                    <a href="#" class="text-blue-600 hover:underline">Read More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white dark:bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-800 dark:text-white text-center mb-12">Contact Us</h2>
+            <div class="max-w-lg mx-auto">
+                <form action="https://formspree.io/f/your-form-id" method="POST" class="space-y-6">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Name</label>
+                        <input type="text" id="name" name="name" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-600 focus:ring-blue-600 dark:bg-gray-700 dark:text-white">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Email</label>
+                        <input type="email" id="email" name="email" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-600 focus:ring-blue-600 dark:bg-gray-700 dark:text-white">
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Message</label>
+                        <textarea id="message" name="message" rows="4" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-600 focus:ring-blue-600 dark:bg-gray-700 dark:text-white"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Send Message</button>
+                </form>
+                <p class="text-center text-gray-600 dark:text-gray-300 mt-6">Or email us at <a href="mailto:support@joshtechapps.com" class="text-blue-600 hover:underline">support@joshtechapps.com</a></p>
+                <div class="flex justify-center space-x-4 mt-6">
+                    <a href="#" class="text-gray-600 dark:text-gray-300 hover:text-blue-600"><i class="fab fa-youtube text-2xl"></i></a>
+                    <a href="#" class="text-gray-600 dark:text-gray-300 hover:text-blue-600"><i class="fab fa-facebook text-2xl"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Privacy Policy Section -->
+   <section id="privacy" class="py-16 bg-gray-100 dark:bg-gray-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold text-gray-800 dark:text-white mb-8">Privacy Policy</h2>
+        <div class="prose dark:prose-invert max-w-none text-gray-600 dark:text-gray-300">
+            <p><strong>Effective Date: July 31, 2025</strong></p>
+            
+            <p>At JoshTechAppsJoshTechApps ("we", "our", or "us")are committed to protecting your privacy. This Privacy Policy explains how we handle information in our mobile applications (KJV Bible Offline, Smart Music Player, and Love Messages) and on our website (www.joshtechapp.com). Our goal is to provide simple, clean, and helpful apps while ensuring transparency about data practices.</p>
+
+            <h3 class="text-xl font-semibold text-gray-800 dark:text-white mt-6 mb-2">1. Information We Collect</h3>
+            <p>Our apps are designed to minimize data collection. Unless explicitly stated in an app’s description on Google Play, we do not collect personal information such as your name, email address, or other identifiable data. Below are the types of information that may be involved:</p>
+            <ul class="list-disc list-inside mb-4">
+                <li><strong>Non-Personal Information:</strong> Our apps may collect anonymized, non-identifiable data to improve functionality and user experience. This includes usage statistics (e.g., app opens, feature usage) and crash reports, collected via third-party services like Firebase Analytics.</li>
+                <li><strong>Advertising Data:</strong> Some of our apps (where specified) use AdMob to display ads. AdMob may collect anonymized data, such as device identifiers (e.g., Advertising ID), to serve personalized or non-personalized ads. You can opt out of personalized ads in your device settings.</li>
+                <li><strong>User-Provided Information:</strong> If you contact us via the app or website (e.g., through the contact form at support@joshtechapps.com), we may receive information you provide, such as your name and email address. This is used solely to respond to your inquiries.</li>
+            </ul>
+
+            <h3 class="text-xl font-semibold text-gray-800 dark:text-white mt-6 mb-2">2. How We Use Information</h3>
+            <p>We use the limited data collected to:</p>
+            <ul class="list-disc list-inside mb-4">
+                <li>Improve our apps’ performance, features, and user experience.</li>
+                <li>Analyze usage trends to enhance functionality (via Firebase Analytics).</li>
+                <li>Display relevant advertisements (via AdMob, where applicable).</li>
+                <li>Respond to user inquiries or support requests.</li>
+            </ul>
+            <p>We do not sell, rent, or share your personal information with third parties for their marketing purposes.</p>
+
+            <h3 class="text-xl font-semibold text-gray-800 dark:text-white mt-6 mb-2">3. Third-Party Services</h3>
+            <p>Our apps may use the following third-party services, which have their own privacy policies:</p>
+            <ul class="list-disc list-inside mb-4">
+                <li><strong>Google AdMob:</strong> Used for displaying ads in some apps. AdMob may collect anonymized data like device identifiers for ad targeting. See <a href="https://policies.google.com/privacy" class="text-blue-600 hover:underline">Google’s Privacy Policy</a> for details.</li>
+                <li><strong>Firebase Analytics:</strong> Used to collect anonymized usage data to improve app performance. See <a href="https://firebase.google.com/policies/analytics" class="text-blue-600 hover:underline">Firebase Analytics Privacy</a> for details.</li>
+            </ul>
+            <p>We ensure these services comply with applicable data protection standards.</p>
+
+            <h3 class="text-xl font-semibold text-gray-800 dark:text-white mt-6 mb-2">4. Data Storage and Security</h3>
+            <p>Any data collected (e.g., via Firebase or AdMob) is stored securely by the respective third-party services using industry-standard encryption. User-provided data (e.g., contact form submissions) is stored only as long as necessary to address your inquiry and is not used for other purposes.</p>
+
+            <h3 class="text-xl font-semibold text-gray-800 dark:text-white mt-6 mb-2">5. Your Choices</h3>
+            <p>You have control over your data:</p>
+            <ul class="list-disc list-inside mb-4">
+                <li><strong>Opt-Out of Personalized Ads:</strong> Disable personalized ads in your device settings (e.g., Google Settings > Ads > Opt out of Ads Personalization).</li>
+                <li><strong>Limit Analytics:</strong> You can disable analytics in some apps via their settings or by adjusting your device’s data-sharing preferences.</li>
+                <li><strong>Contact Data:</strong> You may choose not to provide information via the contact form or email. If you do, you can request deletion of your data by contacting us.</li>
+            </ul>
+
+            <h3 class="text-xl font-semibold text-gray-800 dark:text-white mt-6 mb-2">6. Children’s Privacy</h3>
+            <p>Our apps and website are not intended for children under 13. We do not knowingly collect personal information from children under 13. If we learn such data has been collected, we will delete it promptly.</p>
+
+            <h3 class="text-xl font-semibold text-gray-800 dark:text-white mt-6 mb-2">7. Changes to This Privacy Policy</h3>
+            <p>We may update this Privacy Policy to reflect changes in our apps or legal requirements. Updates will be posted on this page, and the “Effective Date” will be revised. We encourage you to review this policy periodically.</p>
+
+            <h3 class="text-xl font-semibold text-gray-800 dark:text-white mt-6 mb-2">8. Contact Us</h3>
+            <p>For questions, concerns, or requests regarding your privacy, please contact us at:</p>
+            <p><a href="mailto:support@joshtechapps.com" class="text-blue-600 hover:underline">support@joshtechapps.com</a></p>
+            <p>We aim to respond within 7 business days.</p>
+        </div>
+    </div>
+</section>
+
+    <!-- Terms & Conditions Section -->
+    <section id="terms" class="py-16 bg-white dark:bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-800 dark:text-white mb-8">Terms & Conditions</h2>
+            <div class="prose dark:prose-invert max-w-none">
+                <p>By using JoshTechApps' applications, you agree to these terms. Our apps are provided for general use, and we are not liable for any misuse or damages caused by their use.</p>
+                <p>All content within our apps is owned by JoshTechApps or licensed appropriately. Unauthorized distribution or modification is prohibited.</p>
+                <p>We reserve the right to update these terms at any time. For questions, contact <a href="mailto:support@joshtechapps.com" class="text-blue-600 hover:underline">support@joshtechapps.com</a>.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 dark:bg-gray-900 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">JoshTechApps</h3>
+                    <p class="text-gray-400">Bringing Simplicity & Purpose to Mobile Apps.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#apps" class="text-gray-400 hover:text-blue-400">Apps</a></li>
+                        <li><a href="#privacy" class="text-gray-400 hover:text-blue-400">Privacy Policy</a></li>
+                        <li><a href="#terms" class="text-gray-400 hover:text-blue-400">Terms & Conditions</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-blue-400">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Follow Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-blue-400"><i class="fab fa-youtube text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-blue-400"><i class="fab fa-facebook text-xl"></i></a>
+                    </div>
+                </div>
+            </div>
+            <p class="text-center text-gray-400 mt-8">© 2025 JoshTechApps. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Theme Toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (prefersDark || localStorage.getItem('theme') === 'dark') {
+            document.body.classList.add('dark');
+        }
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark');
+            localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
+        });
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
