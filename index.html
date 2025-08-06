@@ -7,30 +7,14 @@
     <title>JoshTechApps - Mobile Apps</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=NEW_MEASUREMENT_ID"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'NEW_MEASUREMENT_ID');
-    </script>
-    <!-- Firebase SDK -->
-    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js"></script>
     <style>
         body { transition: background-color 0.3s, color: 0.3s; }
         .dropdown-menu { display: none; }
         .dropdown-menu.active { display: block; }
         .fa-bars { transition: color 0.3s; }
-        .view-count { position: absolute; top: 0; right: 0; background: rgba(0, 0, 0, 0.7); color: white; padding: 2px 8px; border-radius: 12px; font-size: 12px; }
-        #site-visitor-count { position: fixed; bottom: 10px; left: 10px; background: rgba(0, 0, 0, 0.7); color: white; padding: 5px 10px; border-radius: 12px; font-size: 14px; }
     </style>
 </head>
 <body class="font-sans antialiased">
-    <!-- Site Visitor Count -->
-    <div id="site-visitor-count">Visitors: 0</div>
-
     <!-- Menu Toggle -->
     <div class="fixed top-4 right-4 z-50">
         <button id="dropdown-toggle" class="p-2 rounded-full bg-gray-200">
@@ -82,53 +66,47 @@
             <p class="text-xl text-gray-600 mb-6">Bringing Simplicity & Purpose to Mobile Apps</p>
             <p class="text-lg text-gray-500 mb-8">We build powerful, user-friendly mobile apps for everyday use. Explore our latest apps and download directly from Google Play.</p>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="bg-white p-6 rounded-lg shadow-md relative">
-                    <span class="view-count" id="kjv-view-count">0 views</span>
+                <div class="bg-white p-6 rounded-lg shadow-md">
                     <img src="https://raw.githubusercontent.com/JoashTech/joshtechapps/main/kjv_bible_icon.png" alt="KJV Bible Offline Icon" class="mx-auto mb-4 max-w-[100px]">
                     <h3 class="text-xl font-semibold text-gray-800">KJV Bible Offline</h3>
                     <p class="text-gray-600 mb-4">Read the Bible anytime with bookmarks, search, font control.</p>
                     <a href="#app-kjv" class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Learn More</a>
-                    <a href="https://play.google.com/store/apps/details?id=com.joshtechapps.kjvoffline" class="block mt-4 app-link" data-app="kjv-bible"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-12 mx-auto"></a>
+                    <a href="#" class="block mt-4"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-12 mx-auto"></a>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-md relative">
-                    <span class="view-count" id="music-view-count">0 views</span>
+                <div class="bg-white p-6 rounded-lg shadow-md">
                     <img src="https://raw.githubusercontent.com/JoashTech/joshtechapps/main/ic_music_player.png" alt="Smart Music Player Icon" class="mx-auto mb-4 max-w-[100px]">
                     <h3 class="text-xl font-semibold text-gray-800">Smart Music Player</h3>
                     <p class="text-gray-600 mb-4">Enjoy your favorite audio & video offline in one place.</p>
                     <a href="#app-music" class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Learn More</a>
-                    <a href="#" class="block mt-4 app-link" data-app="music-player" onclick="alert('Coming Soon! This app will be available on Google Play soon.');"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-12 mx-auto"></a>
+                    <a href="#" class="block mt-4"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-12 mx-auto"></a>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-md relative">
-                    <span class="view-count" id="love-view-count">0 views</span>
+                <div class="bg-white p-6 rounded-lg shadow-md">
                     <img src="https://raw.githubusercontent.com/JoashTech/joshtechapps/main/ic_love_messages_icon.png" alt="Love Messages Icon" class="mx-auto mb-4 max-w-[100px]">
                     <h3 class="text-xl font-semibold text-gray-800">Love Messages</h3>
                     <p class="text-gray-600 mb-4">Express your feelings with love quotes and SMS.</p>
                     <a href="#app-love" class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Learn More</a>
-                    <a href="#" class="block mt-4 app-link" data-app="love-messages" onclick="alert('Coming Soon! This app will be available on Google Play soon.');"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-12 mx-auto"></a>
+                    <a href="#" class="block mt-4"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-12 mx-auto"></a>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-md relative">
-                    <span class="view-count" id="web-view-count">0 views</span>
+                <div class="bg-white p-6 rounded-lg shadow-md">
                     <img src="https://raw.githubusercontent.com/JoashTech/joshtechapps/main/holy_bible_icon.png" alt="Holy Bible World English Books Icon" class="mx-auto mb-4 max-w-[100px]">
                     <h3 class="text-xl font-semibold text-gray-800">Holy Bible WEB</h3>
                     <p class="text-gray-600 mb-4">Read the World English Bible offline with easy navigation.</p>
                     <a href="#app-web" class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Learn More</a>
-                    <a href="#" class="block mt-4 app-link" data-app="holy-bible-web" onclick="alert('Coming Soon! This app will be available on Google Play soon.');"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-12 mx-auto"></a>
+                    <a href="#" class="block mt-4"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-12 mx-auto"></a>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-md relative">
-                    <span class="view-count" id="notepad-view-count">0 views</span>
+                <div class="bg-white p-6 rounded-lg shadow-md">
                     <img src="https://raw.githubusercontent.com/JoashTech/joshtechapps/main/ic_notepad.png" alt="Notepad Icon" class="mx-auto mb-4 max-w-[100px]">
                     <h3 class="text-xl font-semibold text-gray-800">Notepad</h3>
                     <p class="text-gray-600 mb-4">Take notes easily with a simple, offline note-taking app.</p>
                     <a href="#app-notepad" class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Learn More</a>
-                    <a href="#" class="block mt-4 app-link" data-app="notepad" onclick="alert('Coming Soon! This app will be available on Google Play soon.');"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-12 mx-auto"></a>
+                    <a href="#" class="block mt-4"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-12 mx-auto"></a>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-md relative">
-                    <span class="view-count" id="trivia-view-count">0 views</span>
+                <div class="bg-white p-6 rounded-lg shadow-md">
                     <img src="https://raw.githubusercontent.com/JoashTech/joshtechapps/main/ic_bible_trivia.png" alt="Bible Trivia Icon" class="mx-auto mb-4 max-w-[100px]">
                     <h3 class="text-xl font-semibold text-gray-800">Bible Trivia</h3>
                     <p class="text-gray-600 mb-4">Test your Bible knowledge with fun quizzes.</p>
                     <a href="#app-trivia" class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Learn More</a>
-                    <a href="#" class="block mt-4 app-link" data-app="bible-trivia" onclick="alert('Coming Soon! This app will be available on Google Play soon.');"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-12 mx-auto"></a>
+                    <a href="#" class="block mt-4"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-12 mx-auto"></a>
                 </div>
             </div>
         </div>
@@ -139,8 +117,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl font-bold text-gray-800 text-center mb-12">Our Apps</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-gray-100 p-6 rounded-lg shadow-md relative">
-                    <span class="view-count" id="kjv-view-count-apps">0 views</span>
+                <div class="bg-gray-100 p-6 rounded-lg shadow-md">
                     <img src="https://raw.githubusercontent.com/JoashTech/joshtechapps/main/kjv_bible_icon.png" alt="KJV Bible Offline Icon" class="mx-auto mb-4 max-w-[100px]">
                     <h3 class="text-xl font-semibold text-gray-800 text-center">KJV Bible Offline</h3>
                     <p class="text-gray-600 text-center mb-4">Read the Bible anytime with bookmarks, search, and font control.</p>
@@ -149,11 +126,10 @@
                     </div>
                     <div class="flex justify-center space-x-4">
                         <a href="#app-kjv" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">View Details</a>
-                        <a href="https://play.google.com/store/apps/details?id=com.joshtechapps.kjvoffline" class="app-link" data-app="kjv-bible"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-12"></a>
+                        <a href="#"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-12"></a>
                     </div>
                 </div>
-                <div class="bg-gray-100 p-6 rounded-lg shadow-md relative">
-                    <span class="view-count" id="music-view-count-apps">0 views</span>
+                <div class="bg-gray-100 p-6 rounded-lg shadow-md">
                     <img src="https://raw.githubusercontent.com/JoashTech/joshtechapps/main/ic_music_player.png" alt="Smart Music Player Icon" class="mx-auto mb-4 max-w-[100px]">
                     <h3 class="text-xl font-semibold text-gray-800 text-center">Smart Music Player</h3>
                     <p class="text-gray-600 text-center mb-4">Enjoy your favorite audio & video offline in one place.</p>
@@ -162,11 +138,10 @@
                     </div>
                     <div class="flex justify-center space-x-4">
                         <a href="#app-music" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">View Details</a>
-                        <a href="#" class="app-link" data-app="music-player" onclick="alert('Coming Soon! This app will be available on Google Play soon.');"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-12"></a>
+                        <a href="#"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-12"></a>
                     </div>
                 </div>
-                <div class="bg-gray-100 p-6 rounded-lg shadow-md relative">
-                    <span class="view-count" id="love-view-count-apps">0 views</span>
+                <div class="bg-gray-100 p-6 rounded-lg shadow-md">
                     <img src="https://raw.githubusercontent.com/JoashTech/joshtechapps/main/ic_love_messages_icon.png" alt="Love Messages Icon" class="mx-auto mb-4 max-w-[100px]">
                     <h3 class="text-xl font-semibold text-gray-800 text-center">Love Messages</h3>
                     <p class="text-gray-600 text-center mb-4">Express your feelings with love quotes and SMS.</p>
@@ -175,11 +150,10 @@
                     </div>
                     <div class="flex justify-center space-x-4">
                         <a href="#app-love" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">View Details</a>
-                        <a href="#" class="app-link" data-app="love-messages" onclick="alert('Coming Soon! This app will be available on Google Play soon.');"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-12"></a>
+                        <a href="#"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-12"></a>
                     </div>
                 </div>
-                <div class="bg-gray-100 p-6 rounded-lg shadow-md relative">
-                    <span class="view-count" id="web-view-count-apps">0 views</span>
+                <div class="bg-gray-100 p-6 rounded-lg shadow-md">
                     <img src="https://raw.githubusercontent.com/JoashTech/joshtechapps/main/holy_bible_icon.png" alt="Holy Bible World English Books Icon" class="mx-auto mb-4 max-w-[100px]">
                     <h3 class="text-xl font-semibold text-gray-800 text-center">Holy Bible WEB</h3>
                     <p class="text-gray-600 text-center mb-4">Read the World English Bible offline with easy navigation.</p>
@@ -188,11 +162,10 @@
                     </div>
                     <div class="flex justify-center space-x-4">
                         <a href="#app-web" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">View Details</a>
-                        <a href="#" class="app-link" data-app="holy-bible-web" onclick="alert('Coming Soon! This app will be available on Google Play soon.');"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-12"></a>
+                        <a href="#"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-12"></a>
                     </div>
                 </div>
-                <div class="bg-gray-100 p-6 rounded-lg shadow-md relative">
-                    <span class="view-count" id="notepad-view-count-apps">0 views</span>
+                <div class="bg-gray-100 p-6 rounded-lg shadow-md">
                     <img src="https://raw.githubusercontent.com/JoashTech/joshtechapps/main/ic_notepad.png" alt="Notepad Icon" class="mx-auto mb-4 max-w-[100px]">
                     <h3 class="text-xl font-semibold text-gray-800 text-center">Notepad</h3>
                     <p class="text-gray-600 text-center mb-4">Take notes easily with a simple, offline note-taking app.</p>
@@ -201,11 +174,10 @@
                     </div>
                     <div class="flex justify-center space-x-4">
                         <a href="#app-notepad" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">View Details</a>
-                        <a href="#" class="app-link" data-app="notepad" onclick="alert('Coming Soon! This app will be available on Google Play soon.');"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-12"></a>
+                        <a href="#"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-12"></a>
                     </div>
                 </div>
-                <div class="bg-gray-100 p-6 rounded-lg shadow-md relative">
-                    <span class="view-count" id="trivia-view-count-apps">0 views</span>
+                <div class="bg-gray-100 p-6 rounded-lg shadow-md">
                     <img src="https://raw.githubusercontent.com/JoashTech/joshtechapps/main/ic_bible_trivia.png" alt="Bible Trivia Icon" class="mx-auto mb-4 max-w-[100px]">
                     <h3 class="text-xl font-semibold text-gray-800 text-center">Bible Trivia</h3>
                     <p class="text-gray-600 text-center mb-4">Test your Bible knowledge with fun quizzes.</p>
@@ -214,7 +186,7 @@
                     </div>
                     <div class="flex justify-center space-x-4">
                         <a href="#app-trivia" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">View Details</a>
-                        <a href="#" class="app-link" data-app="bible-trivia" onclick="alert('Coming Soon! This app will be available on Google Play soon.');"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-12"></a>
+                        <a href="#"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-12"></a>
                     </div>
                 </div>
             </div>
@@ -228,7 +200,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
                     <img src="https://via.placeholder.com/300x600" alt="KJV Bible Screenshot" class="rounded-lg mb-6">
-                    <a href="https://play.google.com/store/apps/details?id=com.joshtechapps.kjvoffline" class="block app-link" data-app="kjv-bible"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-16 mx-auto"></a>
+                    <a href="#" class="block"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-16 mx-auto"></a>
                 </div>
                 <div>
                     <p class="text-gray-600 mb-4">KJV Bible Offline provides a seamless reading experience for the King James Version of the Bible, designed for use without an internet connection. With powerful features like bookmarking, search, and customizable settings, it’s perfect for daily devotionals or in-depth study. The app supports dark mode, font adjustments, and verse sharing for an enhanced user experience.</p>
@@ -276,7 +248,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
                     <img src="https://via.placeholder.com/300x600" alt="Smart Music Player Screenshot" class="rounded-lg mb-6">
-                    <a href="#" class="block app-link" data-app="music-player" onclick="alert('Coming Soon! This app will be available on Google Play soon.');"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-16 mx-auto"></a>
+                    <a href="#" class="block"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-16 mx-auto"></a>
                 </div>
                 <div>
                     <p class="text-gray-600 mb-4">Smart Music Player is your go-to app for enjoying audio and video content offline. With a sleek interface, it supports a wide range of formats, playlist creation, and advanced playback controls. Whether you’re listening to music or watching videos, this app ensures a seamless, ad-free experience with customizable settings.</p>
@@ -324,7 +296,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
                     <img src="https://via.placeholder.com/300x600" alt="Love Messages Screenshot" class="rounded-lg mb-6">
-                    <a href="#" class="block app-link" data-app="love-messages" onclick="alert('Coming Soon! This app will be available on Google Play soon.');"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-16 mx-auto"></a>
+                    <a href="#" class="block"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-16 mx-auto"></a>
                 </div>
                 <div>
                     <p class="text-gray-600 mb-4">Love Messages helps you express your deepest emotions with a curated collection of romantic quotes, poems, and SMS messages. Perfect for special occasions or everyday gestures, the app allows you to save favorites, edit messages, and share them instantly. With a passionate and fiery tone, it’s designed to spark connection.</p>
@@ -372,7 +344,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
                     <img src="https://via.placeholder.com/300x600" alt="Holy Bible WEB Screenshot" class="rounded-lg mb-6">
-                    <a href="#" class="block app-link" data-app="holy-bible-web" onclick="alert('Coming Soon! This app will be available on Google Play soon.');"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-16 mx-auto"></a>
+                    <a href="#" class="block"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-16 mx-auto"></a>
                 </div>
                 <div>
                     <p class="text-gray-600 mb-4">Holy Bible WEB provides offline access to the World English Bible, with intuitive navigation and user-friendly features. Perfect for daily reading or study, it offers bookmarking, search, and customizable display options.</p>
@@ -420,7 +392,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
                     <img src="https://via.placeholder.com/300x600" alt="Notepad Screenshot" class="rounded-lg mb-6">
-                    <a href="#" class="block app-link" data-app="notepad" onclick="alert('Coming Soon! This app will be available on Google Play soon.');"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-16 mx-auto"></a>
+                    <a href="#" class="block"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-16 mx-auto"></a>
                 </div>
                 <div>
                     <p class="text-gray-600 mb-4">Notepad is a simple, offline note-taking app designed for quick and easy use. Jot down ideas, lists, or reminders with a clean interface and customizable settings.</p>
@@ -468,7 +440,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
                     <img src="https://via.placeholder.com/300x600" alt="Bible Trivia Screenshot" class="rounded-lg mb-6">
-                    <a href="#" class="block app-link" data-app="bible-trivia" onclick="alert('Coming Soon! This app will be available on Google Play soon.');"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-16 mx-auto"></a>
+                    <a href="#" class="block"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-16 mx-auto"></a>
                 </div>
                 <div>
                     <p class="text-gray-600 mb-4">Bible Trivia tests your knowledge with fun and engaging quizzes. Perfect for individuals or groups, it offers a variety of questions to deepen your understanding of the Bible.</p>
@@ -602,7 +574,6 @@
                 <ul class="list-disc list-inside mb-4 text-gray-600">
                     <li><strong>Google AdMob:</strong> Used for displaying ads in some apps. AdMob may collect anonymized data like device identifiers for ad targeting. See <a href="https://policies.google.com/privacy" class="text-blue-600 hover:underline">Google’s Privacy Policy</a> for details.</li>
                     <li><strong>Firebase Analytics:</strong> Used to collect anonymized usage data to improve app performance. See <a href="https://firebase.google.com/policies/analytics" class="text-blue-600 hover:underline">Firebase Analytics Privacy</a> for details.</li>
-                    <li><strong>Firebase Realtime Database:</strong> Used to track website visitor counts and app link clicks (e.g., clicks on Google Play links). Data is anonymized and used to display usage statistics on our website. See <a href="https://firebase.google.com/policies/analytics" class="text-blue-600 hover:underline">Firebase Privacy</a> for details.</li>
                 </ul>
                 <p class="text-gray-600">We ensure these services comply with applicable data protection standards.</p>
                 <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-2">4. Data Storage and Security</h3>
@@ -669,67 +640,6 @@
     </footer>
 
     <script>
-        // Load Firebase Config from Netlify Environment Variables
-        const firebaseConfig = {
-            apiKey: window.env.FIREBASE_API_KEY,
-            authDomain: window.env.FIREBASE_AUTH_DOMAIN,
-            databaseURL: window.env.FIREBASE_DATABASE_URL,
-            projectId: window.env.FIREBASE_PROJECT_ID,
-            storageBucket: window.env.FIREBASE_STORAGE_BUCKET,
-            messagingSenderId: window.env.FIREBASE_MESSAGING_SENDER_ID,
-            appId: window.env.FIREBASE_APP_ID,
-            measurementId: window.env.FIREBASE_MEASUREMENT_ID
-        };
-
-        // Initialize Firebase
-        try {
-            firebase.initializeApp(firebaseConfig);
-            const database = firebase.database();
-
-            // Track Site Visitors
-            const visitorRef = database.ref('siteVisitors');
-            visitorRef.transaction(count => (count || 0) + 1, (error, committed, snapshot) => {
-                if (error) {
-                    console.error('Error updating visitor count:', error);
-                } else if (committed) {
-                    document.getElementById('site-visitor-count').textContent = `Visitors: ${snapshot.val()}`;
-                }
-            });
-
-            // Track App Link Clicks
-            const appLinks = document.querySelectorAll('.app-link');
-            appLinks.forEach(link => {
-                link.addEventListener('click', (e) => {
-                    const appId = link.dataset.app;
-                    gtag('event', 'app_link_click', {
-                        'event_category': 'App Links',
-                        'event_label': appId
-                    });
-                    const appRef = database.ref(`appClicks/${appId}`);
-                    appRef.transaction(count => (count || 0) + 1, (error, committed, snapshot) => {
-                        if (error) {
-                            console.error(`Error updating ${appId} click count:`, error);
-                        } else if (committed) {
-                            document.getElementById(`${appId}-view-count`).textContent = `${snapshot.val()} views`;
-                            document.getElementById(`${appId}-view-count-apps`).textContent = `${snapshot.val()} views`;
-                        }
-                    });
-                });
-            });
-
-            // Initialize App Click Counts
-            const apps = ['kjv-bible', 'music-player', 'love-messages', 'holy-bible-web', 'notepad', 'bible-trivia'];
-            apps.forEach(appId => {
-                database.ref(`appClicks/${appId}`).on('value', snapshot => {
-                    const count = snapshot.val() || 0;
-                    document.getElementById(`${appId}-view-count`).textContent = `${count} views`;
-                    document.getElementById(`${appId}-view-count-apps`).textContent = `${count} views`;
-                });
-            });
-        } catch (error) {
-            console.error('Firebase initialization failed:', error);
-        }
-
         // Mobile Menu Toggle
         const menuToggle = document.getElementById('menu-toggle');
         const mobileMenu = document.getElementById('mobile-menu');
