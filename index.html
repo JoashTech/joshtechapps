@@ -8,12 +8,12 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DC2LW6K232"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=NEW_MEASUREMENT_ID"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-DC2LW6K232');
+      gtag('config', 'NEW_MEASUREMENT_ID');
     </script>
     <!-- Firebase SDK -->
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
@@ -669,60 +669,66 @@
     </footer>
 
     <script>
-        // Firebase Configuration
+        // Load Firebase Config from Netlify Environment Variables
         const firebaseConfig = {
-            apiKey: "AIzaSyCLtbwsTc66XZovpgK-Lxgy5pQV0abY2o4",
-            authDomain: "joshtechapps.firebaseapp.com",
-            databaseURL: "https://joshtechapps-default-rtdb.firebaseio.com",
-            projectId: "joshtechapps",
-            storageBucket: "joshtechapps.firebasestorage.app",
-            messagingSenderId: "703332824462",
-            appId: "1:703332824462:web:7728afc99ebd6b327da0df",
-            measurementId: "G-DC2LW6K232"
+            apiKey: window.env.FIREBASE_API_KEY,
+            authDomain: window.env.FIREBASE_AUTH_DOMAIN,
+            databaseURL: window.env.FIREBASE_DATABASE_URL,
+            projectId: window.env.FIREBASE_PROJECT_ID,
+            storageBucket: window.env.FIREBASE_STORAGE_BUCKET,
+            messagingSenderId: window.env.FIREBASE_MESSAGING_SENDER_ID,
+            appId: window.env.FIREBASE_APP_ID,
+            measurementId: window.env.FIREBASE_MEASUREMENT_ID
         };
-        firebase.initializeApp(firebaseConfig);
-        const database = firebase.database();
 
-        // Track Site Visitors
-        const visitorRef = database.ref('siteVisitors');
-        visitorRef.transaction(count => (count || 0) + 1, (error, committed, snapshot) => {
-            if (error) {
-                console.error('Error updating visitor count:', error);
-            } else if (committed) {
-                document.getElementById('site-visitor-count').textContent = `Visitors: ${snapshot.val()}`;
-            }
-        });
+        // Initialize Firebase
+        try {
+            firebase.initializeApp(firebaseConfig);
+            const database = firebase.database();
 
-        // Track App Link Clicks
-        const appLinks = document.querySelectorAll('.app-link');
-        appLinks.forEach(link => {
-            link.addEventListener('click', (e) => {
-                const appId = link.dataset.app;
-                gtag('event', 'app_link_click', {
-                    'event_category': 'App Links',
-                    'event_label': appId
-                });
-                const appRef = database.ref(`appClicks/${appId}`);
-                appRef.transaction(count => (count || 0) + 1, (error, committed, snapshot) => {
-                    if (error) {
-                        console.error(`Error updating ${appId} click count:`, error);
-                    } else if (committed) {
-                        document.getElementById(`${appId}-view-count`).textContent = `${snapshot.val()} views`;
-                        document.getElementById(`${appId}-view-count-apps`).textContent = `${snapshot.val()} views`;
-                    }
+            // Track Site Visitors
+            const visitorRef = database.ref('siteVisitors');
+            visitorRef.transaction(count => (count || 0) + 1, (error, committed, snapshot) => {
+                if (error) {
+                    console.error('Error updating visitor count:', error);
+                } else if (committed) {
+                    document.getElementById('site-visitor-count').textContent = `Visitors: ${snapshot.val()}`;
+                }
+            });
+
+            // Track App Link Clicks
+            const appLinks = document.querySelectorAll('.app-link');
+            appLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    const appId = link.dataset.app;
+                    gtag('event', 'app_link_click', {
+                        'event_category': 'App Links',
+                        'event_label': appId
+                    });
+                    const appRef = database.ref(`appClicks/${appId}`);
+                    appRef.transaction(count => (count || 0) + 1, (error, committed, snapshot) => {
+                        if (error) {
+                            console.error(`Error updating ${appId} click count:`, error);
+                        } else if (committed) {
+                            document.getElementById(`${appId}-view-count`).textContent = `${snapshot.val()} views`;
+                            document.getElementById(`${appId}-view-count-apps`).textContent = `${snapshot.val()} views`;
+                        }
+                    });
                 });
             });
-        });
 
-        // Initialize App Click Counts
-        const apps = ['kjv-bible', 'music-player', 'love-messages', 'holy-bible-web', 'notepad', 'bible-trivia'];
-        apps.forEach(appId => {
-            database.ref(`appClicks/${appId}`).on('value', snapshot => {
-                const count = snapshot.val() || 0;
-                document.getElementById(`${appId}-view-count`).textContent = `${count} views`;
-                document.getElementById(`${appId}-view-count-apps`).textContent = `${count} views`;
+            // Initialize App Click Counts
+            const apps = ['kjv-bible', 'music-player', 'love-messages', 'holy-bible-web', 'notepad', 'bible-trivia'];
+            apps.forEach(appId => {
+                database.ref(`appClicks/${appId}`).on('value', snapshot => {
+                    const count = snapshot.val() || 0;
+                    document.getElementById(`${appId}-view-count`).textContent = `${count} views`;
+                    document.getElementById(`${appId}-view-count-apps`).textContent = `${count} views`;
+                });
             });
-        });
+        } catch (error) {
+            console.error('Firebase initialization failed:', error);
+        }
 
         // Mobile Menu Toggle
         const menuToggle = document.getElementById('menu-toggle');
