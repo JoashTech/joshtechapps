@@ -12,9 +12,48 @@
         .dropdown-menu { display: none; }
         .dropdown-menu.active { display: block; }
         .fa-bars { transition: color 0.3s; }
+        .toast { 
+            visibility: hidden; 
+            min-width: 250px; 
+            margin-left: -125px; 
+            background-color: #333; 
+            color: #fff; 
+            text-align: center; 
+            border-radius: 2px; 
+            padding: 16px; 
+            position: fixed; 
+            z-index: 1; 
+            left: 50%; 
+            bottom: 30px; 
+            font-size: 17px;
+        }
+        .toast.show {
+            visibility: visible;
+            -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+            animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        }
+        @-webkit-keyframes fadein {
+            from {bottom: 0; opacity: 0;} 
+            to {bottom: 30px; opacity: 1;}
+        }
+        @keyframes fadein {
+            from {bottom: 0; opacity: 0;}
+            to {bottom: 30px; opacity: 1;}
+        }
+        @-webkit-keyframes fadeout {
+            from {bottom: 30px; opacity: 1;} 
+            to {bottom: 0; opacity: 0;}
+        }
+        @keyframes fadeout {
+            from {bottom: 30px; opacity: 1;}
+            to {bottom: 0; opacity: 0;}
+        }
     </style>
 </head>
 <body class="font-sans antialiased">
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">Coming Soon!</div>
+
     <!-- Menu Toggle -->
     <div class="fixed top-4 right-4 z-50">
         <button id="dropdown-toggle" class="p-2 rounded-full bg-gray-200">
@@ -67,46 +106,46 @@
             <p class="text-lg text-gray-500 mb-8">We build powerful, user-friendly mobile apps for everyday use. Explore our latest apps and download directly from Google Play.</p>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div class="bg-white p-6 rounded-lg shadow-md">
-                    <img src="https://raw.githubusercontent.com/JoashTech/joshtechapps/main/kjv_bible_icon.png" alt="KJV Bible Offline Icon" class="mx-auto mb-4 max-w-[100px]">
-                    <h3 class="text-xl font-semibold text-gray-800">KJV Bible Offline</h3>
+                    <img src="https://raw.githubusercontent.com/JoashTech/joshtechapps/main/kjv_bible_icon.png" alt="King James Bible (KJV) - Offline Icon" class="mx-auto mb-4 max-w-[100px]">
+                    <h3 class="text-xl font-semibold text-gray-800">King James Bible (KJV) - Offline</h3>
                     <p class="text-gray-600 mb-4">Read the Bible anytime with bookmarks, search, font control.</p>
                     <a href="#app-kjv" class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Learn More</a>
-                    <a href="#" class="block mt-4"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-12 mx-auto"></a>
+                    <a href="https://play.google.com/store/apps/details?id=com.joshtechapps.kjvoffline" class="block mt-4"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-12 mx-auto"></a>
                 </div>
                 <div class="bg-white p-6 rounded-lg shadow-md">
                     <img src="https://raw.githubusercontent.com/JoashTech/joshtechapps/main/ic_music_player.png" alt="Smart Music Player Icon" class="mx-auto mb-4 max-w-[100px]">
                     <h3 class="text-xl font-semibold text-gray-800">Smart Music Player</h3>
                     <p class="text-gray-600 mb-4">Enjoy your favorite audio & video offline in one place.</p>
                     <a href="#app-music" class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Learn More</a>
-                    <a href="#" class="block mt-4"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-12 mx-auto"></a>
+                    <a href="#" onclick="showToast()" class="block mt-4"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-12 mx-auto"></a>
                 </div>
                 <div class="bg-white p-6 rounded-lg shadow-md">
                     <img src="https://raw.githubusercontent.com/JoashTech/joshtechapps/main/ic_love_messages_icon.png" alt="Love Messages Icon" class="mx-auto mb-4 max-w-[100px]">
                     <h3 class="text-xl font-semibold text-gray-800">Love Messages</h3>
                     <p class="text-gray-600 mb-4">Express your feelings with love quotes and SMS.</p>
                     <a href="#app-love" class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Learn More</a>
-                    <a href="#" class="block mt-4"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-12 mx-auto"></a>
+                    <a href="#" onclick="showToast()" class="block mt-4"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-12 mx-auto"></a>
                 </div>
                 <div class="bg-white p-6 rounded-lg shadow-md">
                     <img src="https://raw.githubusercontent.com/JoashTech/joshtechapps/main/holy_bible_icon.png" alt="Holy Bible World English Books Icon" class="mx-auto mb-4 max-w-[100px]">
                     <h3 class="text-xl font-semibold text-gray-800">Holy Bible WEB</h3>
                     <p class="text-gray-600 mb-4">Read the World English Bible offline with easy navigation.</p>
                     <a href="#app-web" class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Learn More</a>
-                    <a href="#" class="block mt-4"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-12 mx-auto"></a>
+                    <a href="#" onclick="showToast()" class="block mt-4"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-12 mx-auto"></a>
                 </div>
                 <div class="bg-white p-6 rounded-lg shadow-md">
                     <img src="https://raw.githubusercontent.com/JoashTech/joshtechapps/main/ic_notepad.png" alt="Notepad Icon" class="mx-auto mb-4 max-w-[100px]">
                     <h3 class="text-xl font-semibold text-gray-800">Notepad</h3>
                     <p class="text-gray-600 mb-4">Take notes easily with a simple, offline note-taking app.</p>
                     <a href="#app-notepad" class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Learn More</a>
-                    <a href="#" class="block mt-4"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-12 mx-auto"></a>
+                    <a href="#" onclick="showToast()" class="block mt-4"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-12 mx-auto"></a>
                 </div>
                 <div class="bg-white p-6 rounded-lg shadow-md">
                     <img src="https://raw.githubusercontent.com/JoashTech/joshtechapps/main/ic_bible_trivia.png" alt="Bible Trivia Icon" class="mx-auto mb-4 max-w-[100px]">
                     <h3 class="text-xl font-semibold text-gray-800">Bible Trivia</h3>
                     <p class="text-gray-600 mb-4">Test your Bible knowledge with fun quizzes.</p>
                     <a href="#app-trivia" class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Learn More</a>
-                    <a href="#" class="block mt-4"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-12 mx-auto"></a>
+                    <a href="#" onclick="showToast()" class="block mt-4"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-12 mx-auto"></a>
                 </div>
             </div>
         </div>
@@ -118,15 +157,15 @@
             <h2 class="text-3xl font-bold text-gray-800 text-center mb-12">Our Apps</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div class="bg-gray-100 p-6 rounded-lg shadow-md">
-                    <img src="https://raw.githubusercontent.com/JoashTech/joshtechapps/main/kjv_bible_icon.png" alt="KJV Bible Offline Icon" class="mx-auto mb-4 max-w-[100px]">
-                    <h3 class="text-xl font-semibold text-gray-800 text-center">KJV Bible Offline</h3>
+                    <img src="https://raw.githubusercontent.com/JoashTech/joshtechapps/main/kjv_bible_icon.png" alt="King James Bible (KJV) - Offline Icon" class="mx-auto mb-4 max-w-[100px]">
+                    <h3 class="text-xl font-semibold text-gray-800 text-center">King James Bible (KJV) - Offline</h3>
                     <p class="text-gray-600 text-center mb-4">Read the Bible anytime with bookmarks, search, and font control.</p>
                     <div class="flex justify-center mb-4">
                         <img src="https://via.placeholder.com/300x600" alt="Screenshot" class="h-48 rounded">
                     </div>
                     <div class="flex justify-center space-x-4">
                         <a href="#app-kjv" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">View Details</a>
-                        <a href="#"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-12"></a>
+                        <a href="https://play.google.com/store/apps/details?id=com.joshtechapps.kjvoffline"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-12"></a>
                     </div>
                 </div>
                 <div class="bg-gray-100 p-6 rounded-lg shadow-md">
@@ -138,7 +177,7 @@
                     </div>
                     <div class="flex justify-center space-x-4">
                         <a href="#app-music" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">View Details</a>
-                        <a href="#"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-12"></a>
+                        <a href="#" onclick="showToast()"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-12"></a>
                     </div>
                 </div>
                 <div class="bg-gray-100 p-6 rounded-lg shadow-md">
@@ -150,7 +189,7 @@
                     </div>
                     <div class="flex justify-center space-x-4">
                         <a href="#app-love" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">View Details</a>
-                        <a href="#"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-12"></a>
+                        <a href="#" onclick="showToast()"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-12"></a>
                     </div>
                 </div>
                 <div class="bg-gray-100 p-6 rounded-lg shadow-md">
@@ -162,7 +201,7 @@
                     </div>
                     <div class="flex justify-center space-x-4">
                         <a href="#app-web" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">View Details</a>
-                        <a href="#"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-12"></a>
+                        <a href="#" onclick="showToast()"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-12"></a>
                     </div>
                 </div>
                 <div class="bg-gray-100 p-6 rounded-lg shadow-md">
@@ -174,7 +213,7 @@
                     </div>
                     <div class="flex justify-center space-x-4">
                         <a href="#app-notepad" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">View Details</a>
-                        <a href="#"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-12"></a>
+                        <a href="#" onclick="showToast()"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-12"></a>
                     </div>
                 </div>
                 <div class="bg-gray-100 p-6 rounded-lg shadow-md">
@@ -186,27 +225,27 @@
                     </div>
                     <div class="flex justify-center space-x-4">
                         <a href="#app-trivia" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">View Details</a>
-                        <a href="#"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-12"></a>
+                        <a href="#" onclick="showToast()"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-12"></a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Individual App Page: KJV Bible Offline -->
+    <!-- Individual App Page: King James Bible (KJV) - Offline -->
     <section id="app-kjv" class="py-16 bg-gray-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-gray-800 mb-8">KJV Bible Offline</h2>
+            <h2 class="text-3xl font-bold text-gray-800 mb-8">King James Bible (KJV) - Offline</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
-                    <img src="https://via.placeholder.com/300x600" alt="KJV Bible Screenshot" class="rounded-lg mb-6">
-                    <a href="#" class="block"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-16 mx-auto"></a>
+                    <img src="https://via.placeholder.com/300x600" alt="King James Bible (KJV) - Offline Screenshot" class="rounded-lg mb-6">
+                    <a href="https://play.google.com/store/apps/details?id=com.joshtechapps.kjvoffline" class="block"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-16 mx-auto"></a>
                 </div>
                 <div>
-                    <p class="text-gray-600 mb-4">KJV Bible Offline provides a seamless reading experience for the King James Version of the Bible, designed for use without an internet connection. With powerful features like bookmarking, search, and customizable settings, it’s perfect for daily devotionals or in-depth study. The app supports dark mode, font adjustments, and verse sharing for an enhanced user experience.</p>
+                    <p class="text-gray-600 mb-4">King James Bible (KJV) - Offline provides a seamless reading experience for the King James Version of the Bible, designed for use without an internet connection. With powerful features like bookmarking, search, and customizable settings, it’s perfect for daily devotionals or in-depth study. The app supports dark mode, font adjustments, and verse sharing for an enhanced user experience.</p>
                     <h3 class="text-xl font-semibold text-gray-800 mb-2">Features</h3>
                     <ul class="list-disc list-inside text-gray-600 mb-4">
-                        <li>Complete offline access to the King James Version Bible</li>
+                        <li judge: 1>Complete offline access to the King James Version Bible</li>
                         <li>Bookmark and highlight favorite verses</li>
                         <li>Advanced search by keyword, chapter, or verse</li>
                         <li>Customizable font sizes, themes, and reading modes</li>
@@ -248,7 +287,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
                     <img src="https://via.placeholder.com/300x600" alt="Smart Music Player Screenshot" class="rounded-lg mb-6">
-                    <a href="#" class="block"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-16 mx-auto"></a>
+                    <a href="#" onclick="showToast()" class="block"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-16 mx-auto"></a>
                 </div>
                 <div>
                     <p class="text-gray-600 mb-4">Smart Music Player is your go-to app for enjoying audio and video content offline. With a sleek interface, it supports a wide range of formats, playlist creation, and advanced playback controls. Whether you’re listening to music or watching videos, this app ensures a seamless, ad-free experience with customizable settings.</p>
@@ -296,7 +335,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
                     <img src="https://via.placeholder.com/300x600" alt="Love Messages Screenshot" class="rounded-lg mb-6">
-                    <a href="#" class="block"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-16 mx-auto"></a>
+                    <a href="#" onclick="showToast()" class="block"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-16 mx-auto"></a>
                 </div>
                 <div>
                     <p class="text-gray-600 mb-4">Love Messages helps you express your deepest emotions with a curated collection of romantic quotes, poems, and SMS messages. Perfect for special occasions or everyday gestures, the app allows you to save favorites, edit messages, and share them instantly. With a passionate and fiery tone, it’s designed to spark connection.</p>
@@ -344,7 +383,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
                     <img src="https://via.placeholder.com/300x600" alt="Holy Bible WEB Screenshot" class="rounded-lg mb-6">
-                    <a href="#" class="block"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-16 mx-auto"></a>
+                    <a href="#" onclick="showToast()" class="block"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-16 mx-auto"></a>
                 </div>
                 <div>
                     <p class="text-gray-600 mb-4">Holy Bible WEB provides offline access to the World English Bible, with intuitive navigation and user-friendly features. Perfect for daily reading or study, it offers bookmarking, search, and customizable display options.</p>
@@ -392,7 +431,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
                     <img src="https://via.placeholder.com/300x600" alt="Notepad Screenshot" class="rounded-lg mb-6">
-                    <a href="#" class="block"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-16 mx-auto"></a>
+                    <a href="#" onclick="showToast()" class="block"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-16 mx-auto"></a>
                 </div>
                 <div>
                     <p class="text-gray-600 mb-4">Notepad is a simple, offline note-taking app designed for quick and easy use. Jot down ideas, lists, or reminders with a clean interface and customizable settings.</p>
@@ -440,7 +479,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
                     <img src="https://via.placeholder.com/300x600" alt="Bible Trivia Screenshot" class="rounded-lg mb-6">
-                    <a href="#" class="block"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-16 mx-auto"></a>
+                    <a href="#" onclick="showToast()" class="block"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-16 mx-auto"></a>
                 </div>
                 <div>
                     <p class="text-gray-600 mb-4">Bible Trivia tests your knowledge with fun and engaging quizzes. Perfect for individuals or groups, it offers a variety of questions to deepen your understanding of the Bible.</p>
@@ -498,7 +537,7 @@
             <h2 class="text-3xl font-bold text-gray-800 text-center mb-12">Blog & Announcements</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div class="bg-white p-6 rounded-lg shadow-md">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">KJV Bible Offline Update</h3>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">King James Bible (KJV) - Offline Update</h3>
                     <p class="text-gray-600 mb-4">New dark mode and improved search are now available!</p>
                     <a href="#" class="text-blue-600 hover:underline">Read More</a>
                 </div>
@@ -552,7 +591,7 @@
             <h2 class="text-3xl font-bold text-gray-800 mb-8">Privacy Policy</h2>
             <div class="max-w-none">
                 <p class="text-gray-600"><strong>Effective Date: July 31, 2025</strong></p>
-                <p class="text-gray-600">At JoshTechApps, we are committed to protecting your privacy. This Privacy Policy explains how we handle information in our mobile applications (KJV Bible Offline, Smart Music Player, Love Messages, Holy Bible WEB, Notepad, Bible Trivia) and on our website (https://JoashTech.github.io/joshtechapps/). Our goal is to provide simple, clean, and helpful apps while ensuring transparency about data practices.</p>
+                <p class="text-gray-600">At JoshTechApps, we are committed to protecting your privacy. This Privacy Policy explains how we handle information in our mobile applications (King James Bible (KJV) - Offline, Smart Music Player, Love Messages, Holy Bible WEB, Notepad, Bible Trivia) and on our website (https://JoashTech.github.io/joshtechapps/). Our goal is to provide simple, clean, and helpful apps while ensuring transparency about data practices.</p>
                 <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-2">1. Information We Collect</h3>
                 <p class="text-gray-600">Our apps are designed to minimize data collection. Unless explicitly stated in an app’s description on Google Play, we do not collect personal information such as your name, email address, or other identifiable data. Below are the types of information that may be involved:</p>
                 <ul class="list-disc list-inside mb-4 text-gray-600">
@@ -657,14 +696,23 @@
         // Smooth Scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-                mobileMenu.classList.add('hidden');
-                dropdownMenu.classList.remove('active');
+                if (!this.getAttribute('href').startsWith('#app-') && this.getAttribute('href') !== '#') {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    mobileMenu.classList.add('hidden');
+                    dropdownMenu.classList.remove('active');
+                }
             });
         });
+
+        // Toast Notification Function
+        function showToast() {
+            var toast = document.getElementById("toast");
+            toast.className = "toast show";
+            setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
+        }
     </script>
 </body>
 </html>
