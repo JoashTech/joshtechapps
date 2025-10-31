@@ -48,6 +48,8 @@
             from {bottom: 30px; opacity: 1;}
             to {bottom: 0; opacity: 0;}
         }
+        .app-detail-page { display: none; }
+        .app-detail-page.active { display: block; }
     </style>
 </head>
 <body class="font-sans antialiased">
@@ -61,11 +63,26 @@
         </button>
     </div>
     <div id="dropdown-menu" class="dropdown-menu fixed top-14 right-4 bg-white shadow-md rounded-lg z-50">
-        <a href="#home" class="block text-gray-600 hover:text-blue-600 px-4 py-2">Home</a>
-        <a href="#apps" class="block text-gray-600 hover:text-blue-600 px-4 py-2">Apps</a>
-        <a href="#about" class="block text-gray-600 hover:text-blue-600 px-4 py-2">About</a>
-        <a href="#blog" class="block text-gray-600 hover:text-blue-600 px-4 py-2">Blog</a>
-        <a href="#contact" class="block text-gray-600 hover:text-blue-600 px-4 py-2">Contact</a>
+        <a href="#home" class="block text-gray-600 hover:text-blue-600 px-4 py-2" onclick="showSection('home')">Home</a>
+        <a href="#apps" class="block text-gray-600 hover:text-blue-600 px-4 py-2" onclick="showSection('apps')">Apps</a>
+        <a href="#about" class="block text-gray-600 hover:text-blue-600 px-4 py-2" onclick="showSection('about')">About</a>
+        <a href="#blog" class="block text-gray-600 hover:text-blue-600 px-4 py-2" onclick="showSection('blog')">Blog</a>
+        <a href="#contact" class="block text-gray-600 hover:text-blue-600 px-4 py-2" onclick="showSection('contact')">Contact</a>
+        <!-- Add this inside the dropdown-menu div, after the contact link -->
+<div class="flex space-x-4 px-4 py-2 border-t mt-2 pt-2">
+    <a href="https://x.com/Twinamatsi21777" target="_blank" class="text-gray-600 hover:text-black">
+        <i class="fab fa-twitter"></i>
+    </a>
+    <a href="https://www.instagram.com/joshtechapps" target="_blank" class="text-gray-600 hover:text-pink-600">
+        <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://www.facebook.com/share/1A9wasyjnK/" target="_blank" class="text-gray-600 hover:text-blue-600">
+        <i class="fab fa-facebook"></i>
+    </a>
+    <a href="https://www.tiktok.com/@joashtechapps" target="_blank" class="text-gray-600 hover:text-black">
+        <i class="fab fa-tiktok"></i>
+    </a>
+</div>
     </div>
 
     <!-- Navigation -->
@@ -73,14 +90,14 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <div class="flex items-center">
-                    <a href="#home" class="text-2xl font-bold text-gray-800">JoshTechApps</a>
+                    <a href="#home" class="text-2xl font-bold text-gray-800" onclick="showSection('home')">JoshTechApps</a>
                 </div>
                 <div class="hidden md:flex space-x-4">
-                    <a href="#home" class="text-gray-600 hover:text-blue-600 px-3 py-2">Home</a>
-                    <a href="#apps" class="text-gray-600 hover:text-blue-600 px-3 py-2">Apps</a>
-                    <a href="#about" class="text-gray-600 hover:text-blue-600 px-3 py-2">About</a>
-                    <a href="#blog" class="text-gray-600 hover:text-blue-600 px-3 py-2">Blog</a>
-                    <a href="#contact" class="text-gray-600 hover:text-blue-600 px-3 py-2">Contact</a>
+                    <a href="#home" class="text-gray-600 hover:text-blue-600 px-3 py-2" onclick="showSection('home')">Home</a>
+                    <a href="#apps" class="text-gray-600 hover:text-blue-600 px-3 py-2" onclick="showSection('apps')">Apps</a>
+                    <a href="#about" class="text-gray-600 hover:text-blue-600 px-3 py-2" onclick="showSection('about')">About</a>
+                    <a href="#blog" class="text-gray-600 hover:text-blue-600 px-3 py-2" onclick="showSection('blog')">Blog</a>
+                    <a href="#contact" class="text-gray-600 hover:text-blue-600 px-3 py-2" onclick="showSection('contact')">Contact</a>
                 </div>
                 <div class="md:hidden">
                     <button id="menu-toggle" class="text-gray-800">
@@ -90,973 +107,840 @@
             </div>
         </div>
         <div id="mobile-menu" class="hidden md:hidden bg-white">
-            <a href="#home" class="block text-gray-600 hover:text-blue-600 px-4 py-2">Home</a>
-            <a href="#apps" class="block text-gray-600 hover:text-blue-600 px-4 py-2">Apps</a>
-            <a href="#about" class="block text-gray-600 hover:text-blue-600 px-4 py-2">About</a>
-            <a href="#blog" class="block text-gray-600 hover:text-blue-600 px-4 py-2">Blog</a>
-            <a href="#contact" class="block text-gray-600 hover:text-blue-600 px-4 py-2">Contact</a>
+            <a href="#home" class="block text-gray-600 hover:text-blue-600 px-4 py-2" onclick="showSection('home')">Home</a>
+            <a href="#apps" class="block text-gray-600 hover:text-blue-600 px-4 py-2" onclick="showSection('apps')">Apps</a>
+            <a href="#about" class="block text-gray-600 hover:text-blue-600 px-4 py-2" onclick="showSection('about')">About</a>
+            <a href="#blog" class="block text-gray-600 hover:text-blue-600 px-4 py-2" onclick="showSection('blog')">Blog</a>
+            <a href="#contact" class="block text-gray-600 hover:text-blue-600 px-4 py-2" onclick="showSection('contact')">Contact</a>
         </div>
     </nav>
 
-    <!-- Home Section -->
-    <section id="home" class="min-h-screen bg-gray-100 flex items-center justify-center pt-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 class="text-4xl md:text-6xl font-bold text-gray-800 mb-4">Welcome to JoshTechApps 👋</h1>
-            <p class="text-xl text-gray-600 mb-6">Bringing Simplicity & Purpose to Mobile Apps</p>
-            <p class="text-lg text-gray-500 mb-8">Discover our collection of intuitive apps designed to enrich your daily life, from spiritual growth to heartfelt connections and organized note-taking. Download now from Google Play!</p>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <img src="https://raw.githubusercontent.com/JoashTech/joshtechapps/main/ic_asv_icon.png" alt="American Standard Bible (ASB) Icon" class="mx-auto mb-4 max-w-[100px]">
-                    <h3 class="text-xl font-semibold text-gray-800">American Standard Bible (ASB)</h3>
-                    <p class="text-gray-600 mb-4">Explore the American Standard Bible offline with daily verses and personalized study tools.</p>
-                    <a href="#app-asb" class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Learn More</a>
-                    <a href="https://play.google.com/store/apps/details?id=com.joshtechapps.bible.asv" class="block mt-4"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-12 mx-auto"></a>
+    <!-- Main Content Area -->
+    <div id="main-content">
+        <!-- Home Section -->
+        <section id="home" class="min-h-screen bg-gray-100 flex items-center justify-center pt-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h1 class="text-4xl md:text-6xl font-bold text-gray-800 mb-4">Welcome to JoshTechApps 👋</h1>
+                <p class="text-xl text-gray-600 mb-6">Bringing Simplicity & Purpose to Mobile Apps</p>
+                <p class="text-lg text-gray-500 mb-8">Discover our collection of intuitive apps designed to enrich your daily life, from spiritual growth to heartfelt connections and organized note-taking. Download now from Google Play!</p>
+                <div id="home-apps-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Apps will be dynamically loaded here -->
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <img src="https://raw.githubusercontent.com/JoashTech/joshtechapps/main/ic_darby_icon.png" alt="Darby Bible Icon" class="mx-auto mb-4 max-w-[100px]">
-                    <h3 class="text-xl font-semibold text-gray-800">Darby Bible</h3>
-                    <p class="text-gray-600 mb-4">Dive into the Darby Bible with offline access, daily verses, and study tools.</p>
-                    <a href="#app-darby" class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Learn More</a>
-                    <a href="https://play.google.com/store/apps/details?id=com.joshtechapps.darbybible" class="block mt-4"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-12 mx-auto"></a>
+            </div>
+        </section>
+
+        <!-- Apps Section -->
+        <section id="apps" class="py-16 bg-white" style="display: none;">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-gray-800 text-center mb-12">Our Apps</h2>
+                <div id="apps-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Apps will be dynamically loaded here -->
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <img src="https://raw.githubusercontent.com/JoashTech/joshtechapps/main/ic_beb_icon.png" alt="Basic English Bible (BEB) Icon" class="mx-auto mb-4 max-w-[100px]">
-                    <h3 class="text-xl font-semibold text-gray-800">Basic English Bible (BEB)</h3>
-                    <p class="text-gray-600 mb-4">Engage with the Basic English Bible offline with daily verses and intuitive tools.</p>
-                    <a href="#app-beb" class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Learn More</a>
-                    <a href="https://play.google.com/store/apps/details?id=com.joshtechapps.basicengbible" class="block mt-4"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-12 mx-auto"></a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-16 bg-white" style="display: none;">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-gray-800 text-center mb-12">About JoshTechApps</h2>
+                <div class="text-center">
+                    <p class="text-gray-600 mb-4">At JoshTechApps, we are passionate about creating mobile applications that bring simplicity, purpose, and joy to your daily life. Our apps are designed to inspire, organize, and connect users through intuitive and meaningful experiences.</p>
+                    <p class="text-gray-600 mb-4">From Bible study tools to note-taking apps and heartfelt love messages, our mission is to provide user-friendly solutions that enrich your spiritual, personal, and creative journey. All our apps are crafted with care, offering offline functionality and customizable features to suit your needs.</p>
+                    <p class="text-gray-600">Join our community of users and explore our collection on Google Play today!</p>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <img src="https://raw.githubusercontent.com/JoashTech/joshtechapps/main/ic_kjva_icon.png" alt="King James Bible with Apocrypha Icon" class="mx-auto mb-4 max-w-[100px]">
-                    <h3 class="text-xl font-semibold text-gray-800">King James Bible with Apocrypha</h3>
-                    <p class="text-gray-600 mb-4">Study the King James Bible with Apocrypha offline, with daily verses and notes.</p>
-                    <a href="#app-kjva" class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Learn More</a>
-                    <a href="https://play.google.com/store/apps/details?id=com.joshtechapps.kjv.with.apocrypha" class="block mt-4"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-12 mx-auto"></a>
+            </div>
+        </section>
+
+        <!-- Blog Section -->
+        <section id="blog" class="py-16 bg-gray-100" style="display: none;">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-gray-800 text-center mb-12">Blog</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Tips for Effective Bible Study</h3>
+                        <p class="text-gray-600 mb-4">Discover how to make the most of your Bible study with our offline apps, including tips for note-taking and daily verse reflections.</p>
+                        <a href="#" onclick="showToast()" class="text-blue-600 hover:underline">Read More</a>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Creating Meaningful Love Messages</h3>
+                        <p class="text-gray-600 mb-4">Learn how to craft heartfelt messages using our Love Messages app with customizable backgrounds and themes.</p>
+                        <a href="#" onclick="showToast()" class="text-blue-600 hover:underline">Read More</a>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Organizing Your Life with Notepad</h3>
+                        <p class="text-gray-600 mb-4">Explore tips for staying productive with our Notepad app's reminder and organization features.</p>
+                        <a href="#" onclick="showToast()" class="text-blue-600 hover:underline">Read More</a>
+                    </div>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <img src="https://raw.githubusercontent.com/JoashTech/joshtechapps/main/ic_akjv_icon.png" alt="American King James Bible Icon" class="mx-auto mb-4 max-w-[100px]">
-                    <h3 class="text-xl font-semibold text-gray-800">American King James Bible</h3>
-                    <p class="text-gray-600 mb-4">Explore the American King James Bible offline with daily verses and study tools.</p>
-                    <a href="#app-akjv" class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Learn More</a>
-                    <a href="https://play.google.com/store/apps/details?id=com.joshtechapps.american.kjv" class="block mt-4"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-12 mx-auto"></a>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <img src="https://raw.githubusercontent.com/JoashTech/joshtechapps/main/kjv_bible_icon.png" alt="King James Bible (KJV) - Offline Icon" class="mx-auto mb-4 max-w-[100px]">
-                    <h3 class="text-xl font-semibold text-gray-800">King James Bible (KJV) - Offline</h3>
-                    <p class="text-gray-600 mb-4">Dive into the King James Bible with offline access, daily verses, and personalized notes.</p>
-                    <a href="#app-kjv" class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Learn More</a>
-                    <a href="https://play.google.com/store/apps/details?id=com.joshtechapps.kjvoffline" class="block mt-4"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-12 mx-auto"></a>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <img src="https://raw.githubusercontent.com/JoashTech/joshtechapps/main/ic_music_player.png" alt="Smart Music Player Icon" class="mx-auto mb-4 max-w-[100px]">
-                    <h3 class="text-xl font-semibold text-gray-800">Smart Music Player</h3>
-                    <p class="text-gray-600 mb-4">Enjoy your favorite audio & video offline in one place.</p>
-                    <a href="#app-music" class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Learn More</a>
-                    <a href="#" onclick="showToast()" class="block mt-4"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-12 mx-auto"></a>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <img src="https://raw.githubusercontent.com/JoashTech/joshtechapps/main/ic_love_messages_icon.png" alt="Love Messages - Love Book Icon" class="mx-auto mb-4 max-w-[100px]">
-                    <h3 class="text-xl font-semibold text-gray-800">Love Messages - Love Book</h3>
-                    <p class="text-gray-600 mb-4">Craft and share heartfelt quotes with customizable backgrounds and daily inspiration.</p>
-                    <a href="#app-love" class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Learn More</a>
-                    <a href="https://play.google.com/store/apps/details?id=com.joshtechapps.lovemessages" class="block mt-4"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-12 mx-auto"></a>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <img src="https://raw.githubusercontent.com/JoashTech/joshtechapps/main/holy_bible_icon.png" alt="World English Bible Icon" class="mx-auto mb-4 max-w-[100px]">
-                    <h3 class="text-xl font-semibold text-gray-800">World English Bible</h3>
-                    <p class="text-gray-600 mb-4">Explore the World English Bible offline with daily verses and personalized study tools.</p>
-                    <a href="#app-web" class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Learn More</a>
-                    <a href="https://play.google.com/store/apps/details?id=com.joshtechapps.holybible" class="block mt-4"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-12 mx-auto"></a>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <img src="https://raw.githubusercontent.com/JoashTech/joshtechapps/main/notepad_icon.png" alt="Notepad - Notes, Notebook Icon" class="mx-auto mb-4 max-w-[100px]">
-                    <h3 class="text-xl font-semibold text-gray-800">Notepad - Notes, Notebook</h3>
-                    <p class="text-gray-600 mb-4">Capture ideas effortlessly with secure, customizable notes and reminders.</p>
-                    <a href="#app-notepad" class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Learn More</a>
-                    <a href="https://play.google.com/store/apps/details?id=com.joshtechapps.notepad" class="block mt-4"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-12 mx-auto"></a>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <img src="https://raw.githubusercontent.com/JoashTech/joshtechapps/main/ic_bible_trivia.png" alt="Bible Trivia Icon" class="mx-auto mb-4 max-w-[100px]">
-                    <h3 class="text-xl font-semibold text-gray-800">Bible Trivia</h3>
-                    <p class="text-gray-600 mb-4">Test your Bible knowledge with fun quizzes.</p>
-                    <a href="#app-trivia" class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Learn More</a>
-                    <a href="#" onclick="showToast()" class="block mt-4"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-12 mx-auto"></a>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+     <!-- Contact Section -->
+<section id="contact" class="py-16 bg-white" style="display: none;">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold text-gray-800 text-center mb-12">Contact Us</h2>
+        <div class="text-center">
+            <p class="text-gray-600 mb-4">Have questions or feedback? We'd love to hear from you! Reach out to us via email or follow us on social media for updates.</p>
+            <p class="text-gray-600 mb-4">Email: <a href="mailto:support@joshtechapps.com" class="text-blue-600 hover:underline">support@joshtechapps.com</a></p>
+            <div class="flex justify-center space-x-6">
+                <a href="https://x.com/Twinamatsi21777" target="_blank" class="text-gray-600 hover:text-black">
+                    <i class="fab fa-twitter text-2xl"></i>
+                </a>
+                <a href="https://www.instagram.com/joshtechapps" target="_blank" class="text-gray-600 hover:text-pink-600">
+                    <i class="fab fa-instagram text-2xl"></i>
+                </a>
+                <a href="https://www.facebook.com/share/1A9wasyjnK/" target="_blank" class="text-gray-600 hover:text-blue-600">
+                    <i class="fab fa-facebook text-2xl"></i>
+                </a>
+                <a href="https://www.tiktok.com/@joashtechapps" target="_blank" class="text-gray-600 hover:text-black">
+                    <i class="fab fa-tiktok text-2xl"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+    <!-- Individual App Detail Pages Container -->
+    <div id="app-detail-pages">
+        <!-- App detail pages will be dynamically loaded here -->
+    </div>
+
+ <!-- Footer -->
+<footer class="bg-gray-800 text-white py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+                <h3 class="text-xl font-semibold mb-4">JoshTechApps</h3>
+                <p class="text-gray-400">Bringing simplicity and purpose to your mobile experience with apps designed for inspiration and productivity.</p>
+            </div>
+            <div>
+                <h3 class="text-xl font-semibold mb-4">Quick Links</h3>
+                <ul class="space-y-2">
+                    <li><a href="#home" class="text-gray-400 hover:text-white" onclick="showSection('home')">Home</a></li>
+                    <li><a href="#apps" class="text-gray-400 hover:text-white" onclick="showSection('apps')">Apps</a></li>
+                    <li><a href="#about" class="text-gray-400 hover:text-white" onclick="showSection('about')">About</a></li>
+                    <li><a href="#blog" class="text-gray-400 hover:text-white" onclick="showSection('blog')">Blog</a></li>
+                    <li><a href="#contact" class="text-gray-400 hover:text-white" onclick="showSection('contact')">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-xl font-semibold mb-4">Follow Us</h3>
+                <div class="flex space-x-4">
+                    <a href="https://x.com/Twinamatsi21777" target="_blank" class="text-gray-400 hover:text-white">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://www.instagram.com/joshtechapps" target="_blank" class="text-gray-400 hover:text-white">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.facebook.com/share/1A9wasyjnK/" target="_blank" class="text-gray-400 hover:text-white">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="https://www.tiktok.com/@joashtechapps" target="_blank" class="text-gray-400 hover:text-white">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Apps Section -->
-    <section id="apps" class="py-16 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-gray-800 text-center mb-12">Our Apps</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-gray-100 p-6 rounded-lg shadow-md">
-                    <img src="https://raw.githubusercontent.com/JoashTech/joshtechapps/main/ic_asv_icon.png" alt="American Standard Bible (ASB) Icon" class="mx-auto mb-4 max-w-[100px]">
-                    <h3 class="text-xl font-semibold text-gray-800 text-center">American Standard Bible (ASB)</h3>
-                    <p class="text-gray-600 text-center mb-4">Explore the American Standard Bible offline with daily verses and personalized study tools.</p>
-                    <div class="flex justify-center mb-4">
-                        <img src="https://via.placeholder.com/300x600" alt="ASB Screenshot" class="h-48 rounded">
-                    </div>
-                    <div class="flex justify-center space-x-4">
-                        <a href="#app-asb" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">View Details</a>
-                        <a href="https://play.google.com/store/apps/details?id=com.joshtechapps.bible.asv"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-12"></a>
-                    </div>
-                </div>
-                <div class="bg-gray-100 p-6 rounded-lg shadow-md">
-                    <img src="https://raw.githubusercontent.com/JoashTech/joshtechapps/main/ic_darby_icon.png" alt="Darby Bible Icon" class="mx-auto mb-4 max-w-[100px]">
-                    <h3 class="text-xl font-semibold text-gray-800 text-center">Darby Bible</h3>
-                    <p class="text-gray-600 text-center mb-4">Dive into the Darby Bible with offline access, daily verses, and study tools.</p>
-                    <div class="flex justify-center mb-4">
-                        <img src="https://via.placeholder.com/300x600" alt="Darby Screenshot" class="h-48 rounded">
-                    </div>
-                    <div class="flex justify-center space-x-4">
-                        <a href="#app-darby" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">View Details</a>
-                        <a href="https://play.google.com/store/apps/details?id=com.joshtechapps.darbybible"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-12"></a>
-                    </div>
-                </div>
-                <div class="bg-gray-100 p-6 rounded-lg shadow-md">
-                    <img src="https://raw.githubusercontent.com/JoashTech/joshtechapps/main/ic_beb_icon.png" alt="Basic English Bible (BEB) Icon" class="mx-auto mb-4 max-w-[100px]">
-                    <h3 class="text-xl font-semibold text-gray-800 text-center">Basic English Bible (BEB)</h3>
-                    <p class="text-gray-600 text-center mb-4">Engage with the Basic English Bible offline with daily verses and intuitive tools.</p>
-                    <div class="flex justify-center mb-4">
-                        <img src="https://via.placeholder.com/300x600" alt="BEB Screenshot" class="h-48 rounded">
-                    </div>
-                    <div class="flex justify-center space-x-4">
-                        <a href="#app-beb" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">View Details</a>
-                        <a href="https://play.google.com/store/apps/details?id=com.joshtechapps.basicengbible"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-12"></a>
-                    </div>
-                </div>
-                <div class="bg-gray-100 p-6 rounded-lg shadow-md">
-                    <img src="https://raw.githubusercontent.com/JoashTech/joshtechapps/main/ic_kjva_icon.png" alt="King James Bible with Apocrypha Icon" class="mx-auto mb-4 max-w-[100px]">
-                    <h3 class="text-xl font-semibold text-gray-800 text-center">King James Bible with Apocrypha</h3>
-                    <p class="text-gray-600 text-center mb-4">Study the King James Bible with Apocrypha offline, with daily verses and notes.</p>
-                    <div class="flex justify-center mb-4">
-                        <img src="https://via.placeholder.com/300x600" alt="KJVA Screenshot" class="h-48 rounded">
-                    </div>
-                    <div class="flex justify-center space-x-4">
-                        <a href="#app-kjva" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">View Details</a>
-                        <a href="https://play.google.com/store/apps/details?id=com.joshtechapps.kjv.with.apocrypha"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-12"></a>
-                    </div>
-                </div>
-                <div class="bg-gray-100 p-6 rounded-lg shadow-md">
-                    <img src="https://raw.githubusercontent.com/JoashTech/joshtechapps/main/ic_akjv_icon.png" alt="American King James Bible Icon" class="mx-auto mb-4 max-w-[100px]">
-                    <h3 class="text-xl font-semibold text-gray-800 text-center">American King James Bible</h3>
-                    <p class="text-gray-600 text-center mb-4">Explore the American King James Bible offline with daily verses and study tools.</p>
-                    <div class="flex justify-center mb-4">
-                        <img src="https://via.placeholder.com/300x600" alt="AKJV Screenshot" class="h-48 rounded">
-                    </div>
-                    <div class="flex justify-center space-x-4">
-                        <a href="#app-akjv" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">View Details</a>
-                        <a href="https://play.google.com/store/apps/details?id=com.joshtechapps.american.kjv"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-12"></a>
-                    </div>
-                </div>
-                <div class="bg-gray-100 p-6 rounded-lg shadow-md">
-                    <img src="https://raw.githubusercontent.com/JoashTech/joshtechapps/main/kjv_bible_icon.png" alt="King James Bible (KJV) - Offline Icon" class="mx-auto mb-4 max-w-[100px]">
-                    <h3 class="text-xl font-semibold text-gray-800 text-center">King James Bible (KJV) - Offline</h3>
-                    <p class="text-gray-600 text-center mb-4">Dive into the King James Bible with offline access, daily verses, and personalized notes.</p>
-                    <div class="flex justify-center mb-4">
-                        <img src="https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/kjv/screenshot1.jpg" alt="KJV Screenshot" class="h-48 rounded">
-                    </div>
-                    <div class="flex justify-center space-x-4">
-                        <a href="#app-kjv" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">View Details</a>
-                        <a href="https://play.google.com/store/apps/details?id=com.joshtechapps.kjvoffline"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-12"></a>
-                    </div>
-                </div>
-                <div class="bg-gray-100 p-6 rounded-lg shadow-md">
-                    <img src="https://raw.githubusercontent.com/JoashTech/joshtechapps/main/ic_music_player.png" alt="Smart Music Player Icon" class="mx-auto mb-4 max-w-[100px]">
-                    <h3 class="text-xl font-semibold text-gray-800 text-center">Smart Music Player</h3>
-                    <p class="text-gray-600 text-center mb-4">Enjoy your favorite audio & video offline in one place.</p>
-                    <div class="flex justify-center mb-4">
-                        <img src="https://via.placeholder.com/300x600" alt="Smart Music Player Screenshot" class="h-48 rounded">
-                    </div>
-                    <div class="flex justify-center space-x-4">
-                        <a href="#app-music" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">View Details</a>
-                        <a href="#" onclick="showToast()"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-12"></a>
-                    </div>
-                </div>
-                <div class="bg-gray-100 p-6 rounded-lg shadow-md">
-                    <img src="https://raw.githubusercontent.com/JoashTech/joshtechapps/main/ic_love_messages_icon.png" alt="Love Messages - Love Book Icon" class="mx-auto mb-4 max-w-[100px]">
-                    <h3 class="text-xl font-semibold text-gray-800 text-center">Love Messages - Love Book</h3>
-                    <p class="text-gray-600 text-center mb-4">Craft and share heartfelt quotes with customizable backgrounds and daily inspiration.</p>
-                    <div class="flex justify-center mb-4">
-                        <img src="https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/lovemessages/screenshot1.jpg" alt="Love Messages Screenshot" class="h-48 rounded">
-                    </div>
-                    <div class="flex justify-center space-x-4">
-                        <a href="#app-love" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">View Details</a>
-                        <a href="https://play.google.com/store/apps/details?id=com.joshtechapps.lovemessages"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-12"></a>
-                    </div>
-                </div>
-                <div class="bg-gray-100 p-6 rounded-lg shadow-md">
-                    <img src="https://raw.githubusercontent.com/JoashTech/joshtechapps/main/holy_bible_icon.png" alt="World English Bible Icon" class="mx-auto mb-4 max-w-[100px]">
-                    <h3 class="text-xl font-semibold text-gray-800 text-center">World English Bible</h3>
-                    <p class="text-gray-600 text-center mb-4">Explore the World English Bible offline with daily verses and personalized study tools.</p>
-                    <div class="flex justify-center mb-4">
-                        <img src="https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/web/screenshot1.jpg" alt="World English Bible Screenshot" class="h-48 rounded">
-                    </div>
-                    <div class="flex justify-center space-x-4">
-                        <a href="#app-web" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">View Details</a>
-                        <a href="https://play.google.com/store/apps/details?id=com.joshtechapps.holybible"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-12"></a>
-                    </div>
-                </div>
-                <div class="bg-gray-100 p-6 rounded-lg shadow-md">
-                    <img src="https://raw.githubusercontent.com/JoashTech/joshtechapps/main/notepad_icon.png" alt="Notepad - Notes, Notebook Icon" class="mx-auto mb-4 max-w-[100px]">
-                    <h3 class="text-xl font-semibold text-gray-800 text-center">Notepad - Notes, Notebook</h3>
-                    <p class="text-gray-600 text-center mb-4">Capture ideas effortlessly with secure, customizable notes and reminders.</p>
-                    <div class="flex justify-center mb-4">
-                        <img src="https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/notepad/screenshot1.jpg" alt="Notepad Screenshot" class="h-48 rounded">
-                    </div>
-                    <div class="flex justify-center space-x-4">
-                        <a href="#app-notepad" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">View Details</a>
-                        <a href="https://play.google.com/store/apps/details?id=com.joshtechapps.notepad"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-12"></a>
-                    </div>
-                </div>
-                <div class="bg-gray-100 p-6 rounded-lg shadow-md">
-                    <img src="https://raw.githubusercontent.com/JoashTech/joshtechapps/main/ic_bible_trivia.png" alt="Bible Trivia Icon" class="mx-auto mb-4 max-w-[100px]">
-                    <h3 class="text-xl font-semibold text-gray-800 text-center">Bible Trivia</h3>
-                    <p class="text-gray-600 text-center mb-4">Test your Bible knowledge with fun quizzes.</p>
-                    <div class="flex justify-center mb-4">
-                        <img src="https://via.placeholder.com/300x600" alt="Bible Trivia Screenshot" class="h-48 rounded">
-                    </div>
-                    <div class="flex justify-center space-x-4">
-                        <a href="#app-trivia" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">View Details</a>
-                        <a href="#" onclick="showToast()"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-12"></a>
-                    </div>
-                </div>
-            </div>
+        <div class="mt-8 text-center text-gray-400">
+            <p>&copy; 2025 JoshTechApps. All rights reserved.</p>
         </div>
-    </section>
-
-    <!-- Individual App Page: American Standard Bible (ASB) -->
-    <section id="app-asb" class="py-16 bg-gray-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-gray-800 mb-8">American Standard Bible (ASB)</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Screenshots</h3>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                        <img src="https://via.placeholder.com/300x600" alt="ASB Screenshot 1" class="rounded-lg">
-                        <img src="https://via.placeholder.com/300x600" alt="ASB Screenshot 2" class="rounded-lg">
-                        <img src="https://via.placeholder.com/300x600" alt="ASB Screenshot 3" class="rounded-lg">
-                        <img src="https://via.placeholder.com/300x600" alt="ASB Screenshot 4" class="rounded-lg">
-                        <img src="https://via.placeholder.com/300x600" alt="ASB Screenshot 5" class="rounded-lg">
-                        <img src="https://via.placeholder.com/300x600" alt="ASB Screenshot 6" class="rounded-lg">
-                        <img src="https://via.placeholder.com/300x600" alt="ASB Screenshot 7" class="rounded-lg">
-                        <img src="https://via.placeholder.com/300x600" alt="ASB Screenshot 8" class="rounded-lg">
-                    </div>
-                    <a href="https://play.google.com/store/apps/details?id=com.joshtechapps.bible.asv" class="block mt-6"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-16 mx-auto"></a>
-                </div>
-                <div>
-                    <p class="text-gray-600 mb-4">Immerse yourself in the American Standard Bible, available offline for seamless reading and study. Enjoy daily verses, save favorite scriptures, and take notes to enhance your spiritual growth. Customize your experience with themes and track quiz progress for engaging learning. Get it now on Google Play!</p>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Features</h3>
-                    <ul class="list-disc list-inside text-gray-600 mb-4">
-                        <li>Full offline access to the American Standard Bible</li>
-                        <li>Daily verses delivered at 8 AM and 8 PM</li>
-                        <li>Save and manage favorite verses and notes</li>
-                        <li>Verses for guidance in various life situations</li>
-                        <li>Add notes or highlight verses with multiple colors</li>
-                        <li>Customizable themes, including light and dark modes</li>
-                        <li>Engaging quizzes to test your Bible knowledge</li>
-                    </ul>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">FAQ</h3>
-                    <div class="space-y-4">
-                        <div>
-                            <p class="font-semibold text-gray-800">Is the app fully offline?</p>
-                            <p class="text-gray-600">Yes, all Bible content is stored locally.</p>
-                        </div>
-                        <div>
-                            <p class="font-semibold text-gray-800">Can I save notes?</p>
-                            <p class="text-gray-600">Yes, create and organize personal notes with highlights in various colors, all stored locally.</p>
-                        </div>
-                        <div>
-                            <p class="font-semibold text-gray-800">Are notifications customizable?</p>
-                            <p class="text-gray-600">Yes, enable or disable daily verse reminders based on your preference.</p>
-                        </div>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2 mt-6">User Reviews</h3>
-                    <div class="space-y-4">
-                        <div class="bg-white p-4 rounded-lg shadow">
-                            <p class="text-gray-600">"Perfect for studying the ASB offline!" - Emily R.</p>
-                        </div>
-                        <div class="bg-white p-4 rounded-lg shadow">
-                            <p class="text-gray-600">"The quizzes and daily verses are fantastic!" - Michael T.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Individual App Page: Darby Bible -->
-    <section id="app-darby" class="py-16 bg-gray-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-gray-800 mb-8">Darby Bible</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Screenshots</h3>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                        <img src="https://via.placeholder.com/300x600" alt="Darby Screenshot 1" class="rounded-lg">
-                        <img src="https://via.placeholder.com/300x600" alt="Darby Screenshot 2" class="rounded-lg">
-                        <img src="https://via.placeholder.com/300x600" alt="Darby Screenshot 3" class="rounded-lg">
-                        <img src="https://via.placeholder.com/300x600" alt="Darby Screenshot 4" class="rounded-lg">
-                        <img src="https://via.placeholder.com/300x600" alt="Darby Screenshot 5" class="rounded-lg">
-                        <img src="https://via.placeholder.com/300x600" alt="Darby Screenshot 6" class="rounded-lg">
-                        <img src="https://via.placeholder.com/300x600" alt="Darby Screenshot 7" class="rounded-lg">
-                        <img src="https://via.placeholder.com/300x600" alt="Darby Screenshot 8" class="rounded-lg">
-                    </div>
-                    <a href="https://play.google.com/store/apps/details?id=com.joshtechapps.darbybible" class="block mt-6"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-16 mx-auto"></a>
-                </div>
-                <div>
-                    <p class="text-gray-600 mb-4">Dive into the Darby Bible, available offline for precise and seamless study. Enjoy daily verses, save favorite scriptures, and take notes to deepen your spiritual journey. Customize your experience with themes and track quiz progress for engaging learning. Get it now on Google Play!</p>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Features</h3>
-                    <ul class="list-disc list-inside text-gray-600 mb-4">
-                        <li>Full offline access to the Darby Bible</li>
-                        <li>Daily verses delivered at 8 AM and 8 PM</li>
-                        <li>Save and manage favorite verses and notes</li>
-                        <li>Verses for guidance in various life situations</li>
-                        <li>Add notes or highlight verses with multiple colors</li>
-                        <li>Customizable themes, including light and dark modes</li>
-                        <li>Engaging quizzes to test your Bible knowledge</li>
-                    </ul>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">FAQ</h3>
-                    <div class="space-y-4">
-                        <div>
-                            <p class="font-semibold text-gray-800">Is the app fully offline?</p>
-                            <p class="text-gray-600">Yes, all Bible content is stored locally.</p>
-                        </div>
-                        <div>
-                            <p class="font-semibold text-gray-800">Can I save notes?</p>
-                            <p class="text-gray-600">Yes, create and organize personal notes with highlights in various colors, all stored locally.</p>
-                        </div>
-                        <div>
-                            <p class="font-semibold text-gray-800">Are notifications customizable?</p>
-                            <p class="text-gray-600">Yes, enable or disable daily verse reminders based on your preference.</p>
-                        </div>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2 mt-6">User Reviews</h3>
-                    <div class="space-y-4">
-                        <div class="bg-white p-4 rounded-lg shadow">
-                            <p class="text-gray-600">"Great for studying the Darby translation!" - Sarah L.</p>
-                        </div>
-                        <div class="bg-white p-4 rounded-lg shadow">
-                            <p class="text-gray-600">"Love the daily verses and quiz feature." - James P.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Individual App Page: Basic English Bible (BEB) -->
-    <section id="app-beb" class="py-16 bg-gray-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-gray-800 mb-8">Basic English Bible (BEB)</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Screenshots</h3>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                        <img src="https://via.placeholder.com/300x600" alt="BEB Screenshot 1" class="rounded-lg">
-                        <img src="https://via.placeholder.com/300x600" alt="BEB Screenshot 2" class="rounded-lg">
-                        <img src="https://via.placeholder.com/300x600" alt="BEB Screenshot 3" class="rounded-lg">
-                        <img src="https://via.placeholder.com/300x600" alt="BEB Screenshot 4" class="rounded-lg">
-                        <img src="https://via.placeholder.com/300x600" alt="BEB Screenshot 5" class="rounded-lg">
-                        <img src="https://via.placeholder.com/300x600" alt="BEB Screenshot 6" class="rounded-lg">
-                        <img src="https://via.placeholder.com/300x600" alt="BEB Screenshot 7" class="rounded-lg">
-                        <img src="https://via.placeholder.com/300x600" alt="BEB Screenshot 8" class="rounded-lg">
-                    </div>
-                    <a href="https://play.google.com/store/apps/details?id=com.joshtechapps.basicengbible" class="block mt-6"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-16 mx-auto"></a>
-                </div>
-                <div>
-                    <p class="text-gray-600 mb-4">Engage with the Basic English Bible, available offline for seamless reading and study. Enjoy daily verses, save favorite scriptures, and take notes to enhance your spiritual growth. Customize your experience with themes and track quiz progress for engaging learning. Get it now on Google Play!</p>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Features</h3>
-                    <ul class="list-disc list-inside text-gray-600 mb-4">
-                        <li>Full offline access to the Basic English Bible</li>
-                        <li>Daily verses delivered at 8 AM and 8 PM</li>
-                        <li>Save and manage favorite verses and notes</li>
-                        <li>Verses for guidance in various life situations</li>
-                        <li>Add notes or highlight verses with multiple colors</li>
-                        <li>Customizable themes, including light and dark modes</li>
-                        <li>Engaging quizzes to test your Bible knowledge</li>
-                    </ul>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">FAQ</h3>
-                    <div class="space-y-4">
-                        <div>
-                            <p class="font-semibold text-gray-800">Is the app fully offline?</p>
-                            <p class="text-gray-600">Yes, all Bible content is stored locally.</p>
-                        </div>
-                        <div>
-                            <p class="font-semibold text-gray-800">Can I save notes?</p>
-                            <p class="text-gray-600">Yes, create and organize personal notes with highlights in various colors, all stored locally.</p>
-                        </div>
-                        <div>
-                            <p class="font-semibold text-gray-800">Are notifications customizable?</p>
-                            <p class="text-gray-600">Yes, enable or disable daily verse reminders based on your preference.</p>
-                        </div>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2 mt-6">User Reviews</h3>
-                    <div class="space-y-4">
-                        <div class="bg-white p-4 rounded-lg shadow">
-                            <p class="text-gray-600">"Simple and effective for Bible study!" - Anna M.</p>
-                        </div>
-                        <div class="bg-white p-4 rounded-lg shadow">
-                            <p class="text-gray-600">"The daily verses keep me inspired." - David R.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Individual App Page: King James Bible with Apocrypha -->
-    <section id="app-kjva" class="py-16 bg-gray-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-gray-800 mb-8">King James Bible with Apocrypha</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Screenshots</h3>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                        <img src="https://via.placeholder.com/300x600" alt="KJVA Screenshot 1" class="rounded-lg">
-                        <img src="https://via.placeholder.com/300x600" alt="KJVA Screenshot 2" class="rounded-lg">
-                        <img src="https://via.placeholder.com/300x600" alt="KJVA Screenshot 3" class="rounded-lg">
-                        <img src="https://via.placeholder.com/300x600" alt="KJVA Screenshot 4" class="rounded-lg">
-                        <img src="https://via.placeholder.com/300x600" alt="KJVA Screenshot 5" class="rounded-lg">
-                        <img src="https://via.placeholder.com/300x600" alt="KJVA Screenshot 6" class="rounded-lg">
-                        <img src="https://via.placeholder.com/300x600" alt="KJVA Screenshot 7" class="rounded-lg">
-                        <img src="https://via.placeholder.com/300x600" alt="KJVA Screenshot 8" class="rounded-lg">
-                    </div>
-                    <a href="https://play.google.com/store/apps/details?id=com.joshtechapps.kjv.with.apocrypha" class="block mt-6"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-16 mx-auto"></a>
-                </div>
-                <div>
-                    <p class="text-gray-600 mb-4">Study the King James Bible with Apocrypha, available offline for uninterrupted reading. Access daily verses, save favorite scriptures, and take notes to deepen your spiritual journey. Includes Apocrypha books like 1 Esdras, Tobit, and 1 Maccabees. Customize with themes and track quiz progress. Get it now on Google Play!</p>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Features</h3>
-                    <ul class="list-disc list-inside text-gray-600 mb-4">
-                        <li>Full offline access to the King James Bible and Apocrypha</li>
-                        <li>Daily verses delivered at 8 AM and 8 PM</li>
-                        <li>Save and manage favorite verses and notes</li>
-                        <li>Access Apocrypha books like 1 Esdras, Tobit, and 1 Maccabees</li>
-                        <li>Verses for guidance in various life situations</li>
-                        <li>Add notes or highlight verses with multiple colors</li>
-                        <li>Customizable themes, including light and dark modes</li>
-                        <li>Engaging quizzes to test your Bible knowledge</li>
-                    </ul>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">FAQ</h3>
-                    <div class="space-y-4">
-                        <div>
-                            <p class="font-semibold text-gray-800">Is the app fully offline?</p>
-                            <p class="text-gray-600">Yes, all Bible and Apocrypha content is stored locally.</p>
-                        </div>
-                        <div>
-                            <p class="font-semibold text-gray-800">Can I save notes?</p>
-                            <p class="text-gray-600">Yes, create and organize personal notes with highlights in various colors, all stored locally.</p>
-                        </div>
-                        <div>
-                            <p class="font-semibold text-gray-800">Are notifications customizable?</p>
-                            <p class="text-gray-600">Yes, enable or disable daily verse reminders based on your preference.</p>
-                        </div>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2 mt-6">User Reviews</h3>
-                    <div class="space-y-4">
-                        <div class="bg-white p-4 rounded-lg shadow">
-                            <p class="text-gray-600">"Love the Apocrypha inclusion and offline access!" - Thomas K.</p>
-                        </div>
-                        <div class="bg-white p-4 rounded-lg shadow">
-                            <p class="text-gray-600">"The daily verses and quizzes are amazing!" - Rachel S.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Individual App Page: American King James Bible -->
-    <section id="app-akjv" class="py-16 bg-gray-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-gray-800 mb-8">American King James Bible</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Screenshots</h3>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                        <img src="https://via.placeholder.com/300x600" alt="AKJV Screenshot 1" class="rounded-lg">
-                        <img src="https://via.placeholder.com/300x600" alt="AKJV Screenshot 2" class="rounded-lg">
-                        <img src="https://via.placeholder.com/300x600" alt="AKJV Screenshot 3" class="rounded-lg">
-                        <img src="https://via.placeholder.com/300x600" alt="AKJV Screenshot 4" class="rounded-lg">
-                        <img src="https://via.placeholder.com/300x600" alt="AKJV Screenshot 5" class="rounded-lg">
-                        <img src="https://via.placeholder.com/300x600" alt="AKJV Screenshot 6" class="rounded-lg">
-                        <img src="https://via.placeholder.com/300x600" alt="AKJV Screenshot 7" class="rounded-lg">
-                        <img src="https://via.placeholder.com/300x600" alt="AKJV Screenshot 8" class="rounded-lg">
-                    </div>
-                    <a href="https://play.google.com/store/apps/details?id=com.joshtechapps.american.kjv" class="block mt-6"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-16 mx-auto"></a>
-                </div>
-                <div>
-                    <p class="text-gray-600 mb-4">Explore the American King James Bible, available offline for seamless reading and study. Enjoy daily verses, save favorite scriptures, and take notes to enhance your spiritual growth. Customize your experience with themes and track quiz progress for engaging learning. Get it now on Google Play!</p>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Features</h3>
-                    <ul class="list-disc list-inside text-gray-600 mb-4">
-                        <li>Full offline access to the American King James Bible</li>
-                        <li>Daily verses delivered at 8 AM and 8 PM</li>
-                        <li>Save and manage favorite verses and notes</li>
-                        <li>Verses for guidance in various life situations</li>
-                        <li>Add notes or highlight verses with multiple colors</li>
-                        <li>Customizable themes, including light and dark modes</li>
-                        <li>Engaging quizzes to test your Bible knowledge</li>
-                    </ul>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">FAQ</h3>
-                    <div class="space-y-4">
-                        <div>
-                            <p class="font-semibold text-gray-800">Is the app fully offline?</p>
-                            <p class="text-gray-600">Yes, all Bible content is stored locally.</p>
-                        </div>
-                        <div>
-                            <p class="font-semibold text-gray-800">Can I save notes?</p>
-                            <p class="text-gray-600">Yes, create and organize personal notes with highlights in various colors, all stored locally.</p>
-                        </div>
-                        <div>
-                            <p class="font-semibold text-gray-800">Are notifications customizable?</p>
-                            <p class="text-gray-600">Yes, enable or disable daily verse reminders based on your preference.</p>
-                        </div>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2 mt-6">User Reviews</h3>
-                    <div class="space-y-4">
-                        <div class="bg-white p-4 rounded-lg shadow">
-                            <p class="text-gray-600">"The AKJV is clear and easy to read offline!" - Grace M.</p>
-                        </div>
-                        <div class="bg-white p-4 rounded-lg shadow">
-                            <p class="text-gray-600">"Great study tools and daily inspiration!" - Paul T.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Individual App Page: King James Bible (KJV) - Offline -->
-    <section id="app-kjv" class="py-16 bg-gray-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-gray-800 mb-8">King James Bible (KJV) - Offline</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Screenshots</h3>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                        <img src="https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/kjv/screenshot1.jpg" alt="KJV Screenshot 1" class="rounded-lg">
-                        <img src="https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/kjv/screenshot2.jpg" alt="KJV Screenshot 2" class="rounded-lg">
-                        <img src="https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/kjv/screenshot3.jpg" alt="KJV Screenshot 3" class="rounded-lg">
-                        <img src="https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/kjv/screenshot4.jpg" alt="KJV Screenshot 4" class="rounded-lg">
-                        <img src="https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/kjv/screenshot5.jpg" alt="KJV Screenshot 5" class="rounded-lg">
-                        <img src="https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/kjv/screenshot6.jpg" alt="KJV Screenshot 6" class="rounded-lg">
-                        <img src="https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/kjv/screenshot7.jpg" alt="KJV Screenshot 7" class="rounded-lg">
-                        <img src="https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/kjv/screenshot8.jpg" alt="KJV Screenshot 8" class="rounded-lg">
-                    </div>
-                    <a href="https://play.google.com/store/apps/details?id=com.joshtechapps.kjvoffline" class="block mt-6"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-16 mx-auto"></a>
-                </div>
-                <div>
-                    <p class="text-gray-600 mb-4">Experience the timeless King James Bible, fully offline for uninterrupted study and reflection. Access daily verses, save favorite scriptures, and take notes to deepen your spiritual journey. With customizable themes and intuitive navigation, this app makes Bible reading seamless and personal. Discover more on Google Play!</p>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Features</h3>
-                    <ul class="list-disc list-inside text-gray-600 mb-4">
-                        <li>Complete offline access to the King James Bible</li>
-                        <li>Daily verses for inspiration at 8 AM and 9 PM</li>
-                        <li>Save and organize favorite verses and personal notes</li>
-                        <li>Customizable themes, including light and dark modes</li>
-                        <li>Track quiz progress to test your Bible knowledge</li>
-                    </ul>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">FAQ</h3>
-                    <div class="space-y-4">
-                        <div>
-                            <p class="font-semibold text-gray-800">Is the app fully offline?</p>
-                            <p class="text-gray-600">Yes, all Bible content is stored locally for offline use.</p>
-                        </div>
-                        <div>
-                            <p class="font-semibold text-gray-800">Can I save my favorite verses?</p>
-                            <p class="text-gray-600">Yes, mark and organize verses for quick access.</p>
-                        </div>
-                        <div>
-                            <p class="font-semibold text-gray-800">Are notifications customizable?</p>
-                            <p class="text-gray-600">Yes, enable or disable daily verse reminders in settings.</p>
-                        </div>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2 mt-6">User Reviews</h3>
-                    <div class="space-y-4">
-                        <div class="bg-white p-4 rounded-lg shadow">
-                            <p class="text-gray-600">"Perfect for daily Bible study, even offline!" - John D.</p>
-                        </div>
-                        <div class="bg-white p-4 rounded-lg shadow">
-                            <p class="text-gray-600">"Love the daily verses and note-taking feature." - Sarah M.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Individual App Page: Smart Music Player -->
-    <section id="app-music" class="py-16 bg-gray-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-gray-800 mb-8">Smart Music Player</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Screenshots</h3>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                        <img src="https://via.placeholder.com/300x600" alt="Smart Music Player Screenshot" class="rounded-lg">
-                    </div>
-                    <a href="#" onclick="showToast()" class="block mt-6"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-16 mx-auto"></a>
-                </div>
-                <div>
-                    <p class="text-gray-600 mb-4">Smart Music Player is your go-to app for enjoying audio and video content offline. With a sleek interface, it supports a wide range of formats, playlist creation, and advanced playback controls. Whether you’re listening to music or watching videos, this app ensures a seamless, ad-free experience with customizable settings.</p>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Features</h3>
-                    <ul class="list-disc list-inside text-gray-600 mb-4">
-                        <li>Play audio and video files offline in multiple formats</li>
-                        <li>Create and manage personalized playlists</li>
-                        <li>Advanced playback controls like shuffle, repeat, and equalizer</li>
-                        <li>Support for background playback and lock screen controls</li>
-                        <li>Customizable themes, including dark mode</li>
-                    </ul>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">FAQ</h3>
-                    <div class="space-y-4">
-                        <div>
-                            <p class="font-semibold text-gray-800">What file formats are supported?</p>
-                            <p class="text-gray-600">Supports MP3, WAV, MP4, AVI, and more.</p>
-                        </div>
-                        <div>
-                            <p class="font-semibold text-gray-800">Can I play videos in the background?</p>
-                            <p class="text-gray-600">Yes, background playback is supported for audio and video.</p>
-                        </div>
-                        <div>
-                            <p class="font-semibold text-gray-800">Are there ads in the app?</p>
-                            <p class="text-gray-600">No, the app is ad-free for a premium experience.</p>
-                        </div>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2 mt-6">User Reviews</h3>
-                    <div class="space-y-4">
-                        <div class="bg-white p-4 rounded-lg shadow">
-                            <p class="text-gray-600">"Best music player I’ve used! Love the playlist feature." - Mike R.</p>
-                        </div>
-                        <div class="bg-white p-4 rounded-lg shadow">
-                            <p class="text-gray-600">"The video playback is smooth and intuitive." - Emily K.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Individual App Page: Love Messages - Love Book -->
-    <section id="app-love" class="py-16 bg-gray-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-gray-800 mb-8">Love Messages - Love Book</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Screenshots</h3>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                        <img src="https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/lovemessages/screenshot1.png" alt="Love Messages Screenshot 1" class="rounded-lg">
-                        <img src="https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/lovemessages/screenshot2.png" alt="Love Messages Screenshot 2" class="rounded-lg">
-                        <img src="https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/lovemessages/screenshot3.png" alt="Love Messages Screenshot 3" class="rounded-lg">
-                        <img src="https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/lovemessages/screenshot4.png" alt="Love Messages Screenshot 4" class="rounded-lg">
-                        <img src="https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/lovemessages/screenshot5.png" alt="Love Messages Screenshot 5" class="rounded-lg">
-                        <img src="https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/lovemessages/screenshot6.png" alt="Love Messages Screenshot 6" class="rounded-lg">
-                        <img src="https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/lovemessages/screenshot7.png" alt="Love Messages Screenshot 7" class="rounded-lg">
-                        <img src="https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/lovemessages/screenshot8.png" alt="Love Messages Screenshot 8" class="rounded-lg">
-                    </div>
-                    <a href="https://play.google.com/store/apps/details?id=com.joshtechapps.lovemessages" class="block mt-6"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-16 mx-auto"></a>
-                </div>
-                <div>
-                    <p class="text-gray-600 mb-4">Spark romance with Love Messages - Love Book, your go-to app for creating and sharing heartfelt quotes. Personalize messages with custom backgrounds, enjoy daily love quotes at 8 AM and 6 PM, and express your feelings effortlessly. Explore a vast collection of romantic messages and make every moment special. Download now on Google Play!</p>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Features</h3>
-                    <ul class="list-disc list-inside text-gray-600 mb-4">
-                        <li>Browse thousands of romantic quotes across 40 categories</li>
-                        <li>Create custom messages with photos or gallery images</li>
-                        <li>Discover over 500 beautiful themes for every message or quote, all free</li>
-                        <li>Receive daily love quotes via notifications</li>
-                        <li>Animated roses and heart icons to enhance the love experience</li>
-                        <li>Edit photos or take new ones directly, customize text with colors and fonts</li>
-                        <li>Customize fonts, colors, and themes for a personal touch</li>
-                        <li>Share quotes via email, social media, or messaging apps</li>
-                    </ul>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">FAQ</h3>
-                    <div class="space-y-4">
-                        <div>
-                            <p class="font-semibold text-gray-800">Can I create my own quotes?</p>
-                            <p class="text-gray-600">Yes, craft and personalize messages with custom backgrounds.</p>
-                        </div>
-                        <div>
-                            <p class="font-semibold text-gray-800">Are notifications optional?</p>
-                            <p class="text-gray-600">Yes, enable or disable daily quotes in settings.</p>
-                        </div>
-                        <div>
-                            <p class="font-semibold text-gray-800">Is the app offline?</p>
-                            <p class="text-gray-600">Yes, all quotes are stored locally for offline access.</p>
-                        </div>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2 mt-6">User Reviews</h3>
-                    <div class="space-y-4">
-                        <div class="bg-white p-4 rounded-lg shadow">
-                            <p class="text-gray-600">"Perfect for sending sweet messages to my partner!" - Anna L.</p>
-                        </div>
-                        <div class="bg-white p-4 rounded-lg shadow">
-                            <p class="text-gray-600">"The custom backgrounds make every quote special." - David P.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Individual App Page: World English Bible -->
-    <section id="app-web" class="py-16 bg-gray-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-gray-800 mb-8">World English Bible</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Screenshots</h3>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                        <img src="https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/web/screenshot1.jpg" alt="World English Bible Screenshot 1" class="rounded-lg">
-                        <img src="https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/web/screenshot2.jpg" alt="World English Bible Screenshot 2" class="rounded-lg">
-                        <img src="https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/web/screenshot3.jpg" alt="World English Bible Screenshot 3" class="rounded-lg">
-                        <img src="https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/web/screenshot4.jpg" alt="World English Bible Screenshot 4" class="rounded-lg">
-                        <img src="https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/web/screenshot5.jpg" alt="World English Bible Screenshot 5" class="rounded-lg">
-                        <img src="https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/web/screenshot6.jpg" alt="World English Bible Screenshot 6" class="rounded-lg">
-                        <img src="https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/web/screenshot7.jpg" alt="World English Bible Screenshot 7" class="rounded-lg">
-                        <img src="https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/web/screenshot8.jpg" alt="World English Bible Screenshot 8" class="rounded-lg">
-                    </div>
-                    <a href="https://play.google.com/store/apps/details?id=com.joshtechapps.holybible" class="block mt-6"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-16 mx-auto"></a>
-                </div>
-                <div>
-                    <p class="text-gray-600 mb-4">Immerse yourself in the World English Bible, available offline for seamless reading and study. Enjoy daily verses, save favorite scriptures, and take notes to enhance your spiritual growth. Customize your experience with themes and track quiz progress for engaging learning. Get it now on Google Play!</p>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Features</h3>
-                    <ul class="list-disc list-inside text-gray-600 mb-4">
-                        <li>Full offline access to the World English Bible</li>
-                        <li>Daily verses delivered at 8 AM and 8 PM</li>
-                        <li>Save and manage favorite verses and notes</li>
-                        <li>Verses for guidance in various life situations</li>
-                        <li>Add notes or highlight verses with multiple colors</li>
-                        <li>Customizable themes, including light and dark modes</li>
-                        <li>Engaging quizzes to test your Bible knowledge</li>
-                    </ul>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">FAQ</h3>
-                    <div class="space-y-4">
-                        <div>
-                            <p class="font-semibold text-gray-800">Is the app fully offline?</p>
-                            <p class="text-gray-600">Yes, all Bible content is stored locally
-                                </div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2 mt-6">User Reviews</h3>
-                    <div class="space-y-4">
-                        <div class="bg-white p-4 rounded-lg shadow">
-                            <p class="text-gray-600">"Wonderful app for daily Bible reading!" - Lisa K.</p>
-                        </div>
-                        <div class="bg-white p-4 rounded-lg shadow">
-                            <p class="text-gray-600">"The quizzes are fun and help me learn more." - Mark T.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Individual App Page: Notepad - Notes, Notebook -->
-    <section id="app-notepad" class="py-16 bg-gray-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-gray-800 mb-8">Notepad - Notes, Notebook</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Screenshots</h3>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                        <img src="https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/notepad/screenshot1.jpg" alt="Notepad Screenshot 1" class="rounded-lg">
-                        <img src="https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/notepad/screenshot2.jpg" alt="Notepad Screenshot 2" class="rounded-lg">
-                        <img src="https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/notepad/screenshot3.jpg" alt="Notepad Screenshot 3" class="rounded-lg">
-                        <img src="https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/notepad/screenshot4.jpg" alt="Notepad Screenshot 4" class="rounded-lg">
-                        <img src="https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/notepad/screenshot5.jpg" alt="Notepad Screenshot 5" class="rounded-lg">
-                        <img src="https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/notepad/screenshot6.jpg" alt="Notepad Screenshot 6" class="rounded-lg">
-                        <img src="https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/notepad/screenshot7.jpg" alt="Notepad Screenshot 7" class="rounded-lg">
-                        <img src="https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/notepad/screenshot8.jpg" alt="Notepad Screenshot 8" class="rounded-lg">
-                    </div>
-                    <a href="https://play.google.com/store/apps/details?id=com.joshtechapps.notepad" class="block mt-6"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-16 mx-auto"></a>
-                </div>
-                <div>
-                    <p class="text-gray-600 mb-4">Capture your thoughts effortlessly with Notepad - Notes, Notebook. This app offers secure, customizable note-taking with reminders and organization tools. Whether for work, personal ideas, or daily tasks, enjoy a seamless experience with offline access and intuitive design. Download now on Google Play!</p>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Features</h3>
-                    <ul class="list-disc list-inside text-gray-600 mb-4">
-                        <li>Secure and offline note-taking</li>
-                        <li>Create, edit, and organize notes with ease</li>
-                        <li>Customizable themes, including light and dark modes</li>
-                        <li>Set reminders for important tasks</li>
-                        <li>Search and categorize notes for quick access</li>
-                        <li>Backup and restore notes securely</li>
-                        <li>Export notes to share or save externally</li>
-                    </ul>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">FAQ</h3>
-                    <div class="space-y-4">
-                        <div>
-                            <p class="font-semibold text-gray-800">Is my data secure?</p>
-                            <p class="text-gray-600">Yes, notes are stored locally with optional secure backups.</p>
-                        </div>
-                        <div>
-                            <p class="font-semibold text-gray-800">Can I set reminders?</p>
-                            <p class="text-gray-600">Yes, schedule reminders for tasks or notes.</p>
-                        </div>
-                        <div>
-                            <p class="font-semibold text-gray-800">Does it work offline?</p>
-                            <p class="text-gray-600">Yes, all features are available offline.</p>
-                        </div>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2 mt-6">User Reviews</h3>
-                    <div class="space-y-4">
-                        <div class="bg-white p-4 rounded-lg shadow">
-                            <p class="text-gray-600">"Great for organizing my daily tasks!" - Emma W.</p>
-                        </div>
-                        <div class="bg-white p-4 rounded-lg shadow">
-                            <p class="text-gray-600">"The reminder feature is a lifesaver." - Lucas H.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Individual App Page: Bible Trivia -->
-    <section id="app-trivia" class="py-16 bg-gray-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-gray-800 mb-8">Bible Trivia</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Screenshots</h3>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                        <img src="https://via.placeholder.com/300x600" alt="Bible Trivia Screenshot 1" class="rounded-lg">
-                        <
-
-System: <xaiArtifact artifact_id="8108820e-0734-4aae-93c4-97a41617f496" artifact_version_id="b287eec0-f2b9-4b55-84f7-a81f7881081f" title="index.html" contentType="text/html">
-                        <img src="https://via.placeholder.com/300x600" alt="Bible Trivia Screenshot 2" class="rounded-lg">
-                        <img src="https://via.placeholder.com/300x600" alt="Bible Trivia Screenshot 3" class="rounded-lg">
-                        <img src="https://via.placeholder.com/300x600" alt="Bible Trivia Screenshot 4" class="rounded-lg">
-                        <img src="https://via.placeholder.com/300x600" alt="Bible Trivia Screenshot 5" class="rounded-lg">
-                        <img src="https://via.placeholder.com/300x600" alt="Bible Trivia Screenshot 6" class="rounded-lg">
-                        <img src="https://via.placeholder.com/300x600" alt="Bible Trivia Screenshot 7" class="rounded-lg">
-                        <img src="https://via.placeholder.com/300x600" alt="Bible Trivia Screenshot 8" class="rounded-lg">
-                    </div>
-                    <a href="#" onclick="showToast()" class="block mt-6"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-16 mx-auto"></a>
-                </div>
-                <div>
-                    <p class="text-gray-600 mb-4">Test your Bible knowledge with Bible Trivia, a fun and engaging app designed to challenge and educate. Enjoy a variety of quizzes covering different books and themes of the Bible, track your progress, and compete with friends. Perfect for all ages to deepen their understanding in an interactive way. Coming soon to Google Play!</p>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Features</h3>
-                    <ul class="list-disc list-inside text-gray-600 mb-4">
-                        <li>Thousands of trivia questions across multiple Bible categories</li>
-                        <li>Track progress and unlock new quiz levels</li>
-                        <li>Play offline with no internet required</li>
-                        <li>Compete with friends through leaderboards</li>
-                        <li>Customizable themes for a personalized experience</li>
-                        <li>Daily trivia challenges to keep you engaged</li>
-                    </ul>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">FAQ</h3>
-                    <div class="space-y-4">
-                        <div>
-                            <p class="font-semibold text-gray-800">Is the app suitable for all ages?</p>
-                            <p class="text-gray-600">Yes, questions are designed for beginners to advanced users.</p>
-                        </div>
-                        <div>
-                            <p class="font-semibold text-gray-800">Can I play offline?</p>
-                            <p class="text-gray-600">Yes, all quizzes are available offline.</p>
-                        </div>
-                        <div>
-                            <p class="font-semibold text-gray-800">Are leaderboards available?</p>
-                            <p class="text-gray-600">Yes, compete with friends and track scores (coming soon).</p>
-                        </div>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2 mt-6">User Reviews</h3>
-                    <div class="space-y-4">
-                        <div class="bg-white p-4 rounded-lg shadow">
-                            <p class="text-gray-600">"Can’t wait for this to launch! The quizzes are so fun!" - Rachel B.</p>
-                        </div>
-                        <div class="bg-white p-4 rounded-lg shadow">
-                            <p class="text-gray-600">"Great way to learn more about the Bible." - Samuel K.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="py-16 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-gray-800 text-center mb-12">About JoshTechApps</h2>
-            <div class="text-center">
-                <p class="text-gray-600 mb-4">At JoshTechApps, we are passionate about creating mobile applications that bring simplicity, purpose, and joy to your daily life. Our apps are designed to inspire, organize, and connect users through intuitive and meaningful experiences.</p>
-                <p class="text-gray-600 mb-4">From Bible study tools to note-taking apps and heartfelt love messages, our mission is to provide user-friendly solutions that enrich your spiritual, personal, and creative journey. All our apps are crafted with care, offering offline functionality and customizable features to suit your needs.</p>
-                <p class="text-gray-600">Join our community of users and explore our collection on Google Play today!</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Blog Section -->
-    <section id="blog" class="py-16 bg-gray-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-gray-800 text-center mb-12">Blog</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Tips for Effective Bible Study</h3>
-                    <p class="text-gray-600 mb-4">Discover how to make the most of your Bible study with our offline apps, including tips for note-taking and daily verse reflections.</p>
-                    <a href="#" onclick="showToast()" class="text-blue-600 hover:underline">Read More</a>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Creating Meaningful Love Messages</h3>
-                    <p class="text-gray-600 mb-4">Learn how to craft heartfelt messages using our Love Messages app with customizable backgrounds and themes.</p>
-                    <a href="#" onclick="showToast()" class="text-blue-600 hover:underline">Read More</a>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Organizing Your Life with Notepad</h3>
-                    <p class="text-gray-600 mb-4">Explore tips for staying productive with our Notepad app’s reminder and organization features.</p>
-                    <a href="#" onclick="showToast()" class="text-blue-600 hover:underline">Read More</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-16 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-gray-800 text-center mb-12">Contact Us</h2>
-            <div class="text-center">
-                <p class="text-gray-600 mb-4">Have questions or feedback? We’d love to hear from you! Reach out to us via email or follow us on social media for updates.</p>
-                <p class="text-gray-600 mb-4">Email: <a href="mailto:support@joshtechapps.com" class="text-blue-600 hover:underline">support@joshtechapps.com</a></p>
-                <div class="flex justify-center space-x-4">
-                    <a href="#" onclick="showToast()" class="text-gray-600 hover:text-blue-600"><i class="fab fa-facebook-f text-2xl"></i></a>
-                    <a href="#" onclick="showToast()" class="text-gray-600 hover:text-blue-600"><i class="fab fa-twitter text-2xl"></i></a>
-                    <a href="#" onclick="showToast()" class="text-gray-600 hover:text-blue-600"><i class="fab fa-instagram text-2xl"></i></a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div>
-                    <h3 class="text-xl font-semibold mb-4">JoshTechApps</h3>
-                    <p class="text-gray-400">Bringing simplicity and purpose to your mobile experience with apps designed for inspiration and productivity.</p>
-                </div>
-                <div>
-                    <h3 class="text-xl font-semibold mb-4">Quick Links</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#home" class="text-gray-400 hover:text-white">Home</a></li>
-                        <li><a href="#apps" class="text-gray-400 hover:text-white">Apps</a></li>
-                        <li><a href="#about" class="text-gray-400 hover:text-white">About</a></li>
-                        <li><a href="#blog" class="text-gray-400 hover:text-white">Blog</a></li>
-                        <li><a href="#contact" class="text-gray-400 hover:text-white">Contact</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-xl font-semibold mb-4">Follow Us</h3>
-                    <div class="flex space-x-4">
-                        <a href="#" onclick="showToast()" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" onclick="showToast()" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
-                        <a href="#" onclick="showToast()" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="mt-8 text-center text-gray-400">
-                <p>&copy; 2025 JoshTechApps. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-
+    </div>
+</footer>
     <script>
+        // ================= BACKEND DATA =================
+        const appsData = {
+            "asb": {
+                id: "asb",
+                name: "American Standard Bible (ASB)",
+                icon: "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/ic_asv_icon.png",
+                description: "Explore the American Standard Bible offline with daily verses and personalized study tools.",
+                shortDescription: "Explore the American Standard Bible offline with daily verses and personalized study tools.",
+                playStoreUrl: "https://play.google.com/store/apps/details?id=com.joshtechapps.bible.asv",
+                status: "available",
+                screenshots: [
+                    "https://via.placeholder.com/300x600",
+                    "https://via.placeholder.com/300x600",
+                    "https://via.placeholder.com/300x600",
+                    "https://via.placeholder.com/300x600",
+                    "https://via.placeholder.com/300x600",
+                    "https://via.placeholder.com/300x600",
+                    "https://via.placeholder.com/300x600",
+                    "https://via.placeholder.com/300x600"
+                ],
+                features: [
+                    "Full offline access to the American Standard Bible",
+                    "Daily verses delivered at 8 AM and 8 PM",
+                    "Save and manage favorite verses and notes",
+                    "Verses for guidance in various life situations",
+                    "Add notes or highlight verses with multiple colors",
+                    "Customizable themes, including light and dark modes",
+                    "Engaging quizzes to test your Bible knowledge"
+                ],
+                faq: [
+                    {
+                        question: "Is the app fully offline?",
+                        answer: "Yes, all Bible content is stored locally."
+                    },
+                    {
+                        question: "Can I save notes?",
+                        answer: "Yes, create and organize personal notes with highlights in various colors, all stored locally."
+                    },
+                    {
+                        question: "Are notifications customizable?",
+                        answer: "Yes, enable or disable daily verse reminders based on your preference."
+                    }
+                ],
+                reviews: [
+                    "Perfect for studying the ASB offline! - Emily R.",
+                    "The quizzes and daily verses are fantastic! - Michael T."
+                ]
+            },
+            "darby": {
+                id: "darby",
+                name: "Darby Bible",
+                icon: "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/ic_darby_icon.png",
+                description: "Dive into the Darby Bible with offline access, daily verses, and study tools.",
+                shortDescription: "Dive into the Darby Bible with offline access, daily verses, and study tools.",
+                playStoreUrl: "https://play.google.com/store/apps/details?id=com.joshtechapps.darbybible",
+                status: "available",
+                screenshots: [
+                    "https://via.placeholder.com/300x600",
+                    "https://via.placeholder.com/300x600",
+                    "https://via.placeholder.com/300x600",
+                    "https://via.placeholder.com/300x600",
+                    "https://via.placeholder.com/300x600",
+                    "https://via.placeholder.com/300x600",
+                    "https://via.placeholder.com/300x600",
+                    "https://via.placeholder.com/300x600"
+                ],
+                features: [
+                    "Full offline access to the Darby Bible",
+                    "Daily verses delivered at 8 AM and 8 PM",
+                    "Save and manage favorite verses and notes",
+                    "Verses for guidance in various life situations",
+                    "Add notes or highlight verses with multiple colors",
+                    "Customizable themes, including light and dark modes",
+                    "Engaging quizzes to test your Bible knowledge"
+                ],
+                faq: [
+                    {
+                        question: "Is the app fully offline?",
+                        answer: "Yes, all Bible content is stored locally."
+                    },
+                    {
+                        question: "Can I save notes?",
+                        answer: "Yes, create and organize personal notes with highlights in various colors, all stored locally."
+                    },
+                    {
+                        question: "Are notifications customizable?",
+                        answer: "Yes, enable or disable daily verse reminders based on your preference."
+                    }
+                ],
+                reviews: [
+                    "Great for studying the Darby translation! - Sarah L.",
+                    "Love the daily verses and quiz feature. - James P."
+                ]
+            },
+            "beb": {
+                id: "beb",
+                name: "Basic English Bible (BEB)",
+                icon: "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/ic_beb_icon.png",
+                description: "Engage with the Basic English Bible offline with daily verses and intuitive tools.",
+                shortDescription: "Engage with the Basic English Bible offline with daily verses and intuitive tools.",
+                playStoreUrl: "https://play.google.com/store/apps/details?id=com.joshtechapps.basicengbible",
+                status: "available",
+                screenshots: [
+                    "https://via.placeholder.com/300x600",
+                    "https://via.placeholder.com/300x600",
+                    "https://via.placeholder.com/300x600",
+                    "https://via.placeholder.com/300x600",
+                    "https://via.placeholder.com/300x600",
+                    "https://via.placeholder.com/300x600",
+                    "https://via.placeholder.com/300x600",
+                    "https://via.placeholder.com/300x600"
+                ],
+                features: [
+                    "Full offline access to the Basic English Bible",
+                    "Daily verses delivered at 8 AM and 8 PM",
+                    "Save and manage favorite verses and notes",
+                    "Verses for guidance in various life situations",
+                    "Add notes or highlight verses with multiple colors",
+                    "Customizable themes, including light and dark modes",
+                    "Engaging quizzes to test your Bible knowledge"
+                ],
+                faq: [
+                    {
+                        question: "Is the app fully offline?",
+                        answer: "Yes, all Bible content is stored locally."
+                    },
+                    {
+                        question: "Can I save notes?",
+                        answer: "Yes, create and organize personal notes with highlights in various colors, all stored locally."
+                    },
+                    {
+                        question: "Are notifications customizable?",
+                        answer: "Yes, enable or disable daily verse reminders based on your preference."
+                    }
+                ],
+                reviews: [
+                    "Simple and effective for Bible study! - Anna M.",
+                    "The daily verses keep me inspired. - David R."
+                ]
+            },
+            "kjva": {
+                id: "kjva",
+                name: "King James Bible with Apocrypha",
+                icon: "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/ic_kjva_icon.png",
+                description: "Study the King James Bible with Apocrypha offline, with daily verses and notes.",
+                shortDescription: "Study the King James Bible with Apocrypha offline, with daily verses and notes.",
+                playStoreUrl: "https://play.google.com/store/apps/details?id=com.joshtechapps.kjv.with.apocrypha",
+                status: "available",
+                screenshots: [
+                    "https://via.placeholder.com/300x600",
+                    "https://via.placeholder.com/300x600",
+                    "https://via.placeholder.com/300x600",
+                    "https://via.placeholder.com/300x600",
+                    "https://via.placeholder.com/300x600",
+                    "https://via.placeholder.com/300x600",
+                    "https://via.placeholder.com/300x600",
+                    "https://via.placeholder.com/300x600"
+                ],
+                features: [
+                    "Full offline access to the King James Bible and Apocrypha",
+                    "Daily verses delivered at 8 AM and 8 PM",
+                    "Save and manage favorite verses and notes",
+                    "Access Apocrypha books like 1 Esdras, Tobit, and 1 Maccabees",
+                    "Verses for guidance in various life situations",
+                    "Add notes or highlight verses with multiple colors",
+                    "Customizable themes, including light and dark modes",
+                    "Engaging quizzes to test your Bible knowledge"
+                ],
+                faq: [
+                    {
+                        question: "Is the app fully offline?",
+                        answer: "Yes, all Bible and Apocrypha content is stored locally."
+                    },
+                    {
+                        question: "Can I save notes?",
+                        answer: "Yes, create and organize personal notes with highlights in various colors, all stored locally."
+                    },
+                    {
+                        question: "Are notifications customizable?",
+                        answer: "Yes, enable or disable daily verse reminders based on your preference."
+                    }
+                ],
+                reviews: [
+                    "Love the Apocrypha inclusion and offline access! - Thomas K.",
+                    "The daily verses and quizzes are amazing! - Rachel S."
+                ]
+            },
+            "akjv": {
+                id: "akjv",
+                name: "American King James Bible",
+                icon: "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/ic_akjv_icon.png",
+                description: "Explore the American King James Bible offline with daily verses and study tools.",
+                shortDescription: "Explore the American King James Bible offline with daily verses and study tools.",
+                playStoreUrl: "https://play.google.com/store/apps/details?id=com.joshtechapps.american.kjv",
+                status: "available",
+                screenshots: [
+                    "https://via.placeholder.com/300x600",
+                    "https://via.placeholder.com/300x600",
+                    "https://via.placeholder.com/300x600",
+                    "https://via.placeholder.com/300x600",
+                    "https://via.placeholder.com/300x600",
+                    "https://via.placeholder.com/300x600",
+                    "https://via.placeholder.com/300x600",
+                    "https://via.placeholder.com/300x600"
+                ],
+                features: [
+                    "Full offline access to the American King James Bible",
+                    "Daily verses delivered at 8 AM and 8 PM",
+                    "Save and manage favorite verses and notes",
+                    "Verses for guidance in various life situations",
+                    "Add notes or highlight verses with multiple colors",
+                    "Customizable themes, including light and dark modes",
+                    "Engaging quizzes to test your Bible knowledge"
+                ],
+                faq: [
+                    {
+                        question: "Is the app fully offline?",
+                        answer: "Yes, all Bible content is stored locally."
+                    },
+                    {
+                        question: "Can I save notes?",
+                        answer: "Yes, create and organize personal notes with highlights in various colors, all stored locally."
+                    },
+                    {
+                        question: "Are notifications customizable?",
+                        answer: "Yes, enable or disable daily verse reminders based on your preference."
+                    }
+                ],
+                reviews: [
+                    "The AKJV is clear and easy to read offline! - Grace M.",
+                    "Great study tools and daily inspiration! - Paul T."
+                ]
+            },
+            "kjv": {
+                id: "kjv",
+                name: "King James Bible (KJV) - Offline",
+                icon: "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/kjv_bible_icon.png",
+                description: "Dive into the King James Bible with offline access, daily verses, and personalized notes.",
+                shortDescription: "Dive into the King James Bible with offline access, daily verses, and personalized notes.",
+                playStoreUrl: "https://play.google.com/store/apps/details?id=com.joshtechapps.kjvoffline",
+                status: "available",
+                screenshots: [
+                    "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/kjv/screenshot1.jpg",
+                    "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/kjv/screenshot2.jpg",
+                    "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/kjv/screenshot3.jpg",
+                    "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/kjv/screenshot4.jpg",
+                    "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/kjv/screenshot5.jpg",
+                    "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/kjv/screenshot6.jpg",
+                    "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/kjv/screenshot7.jpg",
+                    "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/kjv/screenshot8.jpg"
+                ],
+                features: [
+                    "Complete offline access to the King James Bible",
+                    "Daily verses for inspiration at 8 AM and 9 PM",
+                    "Save and organize favorite verses and personal notes",
+                    "Customizable themes, including light and dark modes",
+                    "Track quiz progress to test your Bible knowledge"
+                ],
+                faq: [
+                    {
+                        question: "Is the app fully offline?",
+                        answer: "Yes, all Bible content is stored locally for offline use."
+                    },
+                    {
+                        question: "Can I save my favorite verses?",
+                        answer: "Yes, mark and organize verses for quick access."
+                    },
+                    {
+                        question: "Are notifications customizable?",
+                        answer: "Yes, enable or disable daily verse reminders in settings."
+                    }
+                ],
+                reviews: [
+                    "Perfect for daily Bible study, even offline! - John D.",
+                    "Love the daily verses and note-taking feature. - Sarah M."
+                ]
+            },
+            "music": {
+                id: "music",
+                name: "Smart Music Player",
+                icon: "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/ic_music_player.png",
+                description: "Enjoy your favorite audio & video offline in one place.",
+                shortDescription: "Enjoy your favorite audio & video offline in one place.",
+                playStoreUrl: "#",
+                status: "coming-soon",
+                screenshots: [
+                    "https://via.placeholder.com/300x600"
+                ],
+                features: [
+                    "Play audio and video files offline in multiple formats",
+                    "Create and manage personalized playlists",
+                    "Advanced playback controls like shuffle, repeat, and equalizer",
+                    "Support for background playback and lock screen controls",
+                    "Customizable themes, including dark mode"
+                ],
+                faq: [
+                    {
+                        question: "What file formats are supported?",
+                        answer: "Supports MP3, WAV, MP4, AVI, and more."
+                    },
+                    {
+                        question: "Can I play videos in the background?",
+                        answer: "Yes, background playback is supported for audio and video."
+                    },
+                    {
+                        question: "Are there ads in the app?",
+                        answer: "No, the app is ad-free for a premium experience."
+                    }
+                ],
+                reviews: [
+                    "Best music player I've used! Love the playlist feature. - Mike R.",
+                    "The video playback is smooth and intuitive. - Emily K."
+                ]
+            },
+            "love": {
+                id: "love",
+                name: "Love Messages - Love Book",
+                icon: "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/ic_love_messages_icon.png",
+                description: "Craft and share heartfelt quotes with customizable backgrounds and daily inspiration.",
+                shortDescription: "Craft and share heartfelt quotes with customizable backgrounds and daily inspiration.",
+                playStoreUrl: "https://play.google.com/store/apps/details?id=com.joshtechapps.lovemessages",
+                status: "available",
+                screenshots: [
+                    "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/lovemessages/screenshot1.png",
+                    "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/lovemessages/screenshot2.png",
+                    "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/lovemessages/screenshot3.png",
+                    "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/lovemessages/screenshot4.png",
+                    "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/lovemessages/screenshot5.png",
+                    "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/lovemessages/screenshot6.png",
+                    "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/lovemessages/screenshot7.png",
+                    "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/lovemessages/screenshot8.png"
+                ],
+                features: [
+                    "Browse thousands of romantic quotes across 40 categories",
+                    "Create custom messages with photos or gallery images",
+                    "Discover over 500 beautiful themes for every message or quote, all free",
+                    "Receive daily love quotes via notifications",
+                    "Animated roses and heart icons to enhance the love experience",
+                    "Edit photos or take new ones directly, customize text with colors and fonts",
+                    "Customize fonts, colors, and themes for a personal touch",
+                    "Share quotes via email, social media, or messaging apps"
+                ],
+                faq: [
+                    {
+                        question: "Can I create my own quotes?",
+                        answer: "Yes, craft and personalize messages with custom backgrounds."
+                    },
+                    {
+                        question: "Are notifications optional?",
+                        answer: "Yes, enable or disable daily quotes in settings."
+                    },
+                    {
+                        question: "Is the app offline?",
+                        answer: "Yes, all quotes are stored locally for offline access."
+                    }
+                ],
+                reviews: [
+                    "Perfect for sending sweet messages to my partner! - Anna L.",
+                    "The custom backgrounds make every quote special. - David P."
+                ]
+            },
+            "web": {
+                id: "web",
+                name: "World English Bible",
+                icon: "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/holy_bible_icon.png",
+                description: "Explore the World English Bible offline with daily verses and personalized study tools.",
+                shortDescription: "Explore the World English Bible offline with daily verses and personalized study tools.",
+                playStoreUrl: "https://play.google.com/store/apps/details?id=com.joshtechapps.holybible",
+                status: "available",
+                screenshots: [
+                    "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/web/screenshot1.jpg",
+                    "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/web/screenshot2.jpg",
+                    "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/web/screenshot3.jpg",
+                    "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/web/screenshot4.jpg",
+                    "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/web/screenshot5.jpg",
+                    "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/web/screenshot6.jpg",
+                    "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/web/screenshot7.jpg",
+                    "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/web/screenshot8.jpg"
+                ],
+                features: [
+                    "Full offline access to the World English Bible",
+                    "Daily verses delivered at 8 AM and 8 PM",
+                    "Save and manage favorite verses and notes",
+                    "Verses for guidance in various life situations",
+                    "Add notes or highlight verses with multiple colors",
+                    "Customizable themes, including light and dark modes",
+                    "Engaging quizzes to test your Bible knowledge"
+                ],
+                faq: [
+                    {
+                        question: "Is the app fully offline?",
+                        answer: "Yes, all Bible content is stored locally."
+                    }
+                ],
+                reviews: [
+                    "Wonderful app for daily Bible reading! - Lisa K.",
+                    "The quizzes are fun and help me learn more. - Mark T."
+                ]
+            },
+            "notepad": {
+                id: "notepad",
+                name: "Notepad - Notes, Notebook",
+                icon: "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/notepad_icon.png",
+                description: "Capture ideas effortlessly with secure, customizable notes and reminders.",
+                shortDescription: "Capture ideas effortlessly with secure, customizable notes and reminders.",
+                playStoreUrl: "https://play.google.com/store/apps/details?id=com.joshtechapps.notepad",
+                status: "available",
+                screenshots: [
+                    "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/notepad/screenshot1.jpg",
+                    "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/notepad/screenshot2.jpg",
+                    "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/notepad/screenshot3.jpg",
+                    "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/notepad/screenshot4.jpg",
+                    "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/notepad/screenshot5.jpg",
+                    "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/notepad/screenshot6.jpg",
+                    "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/notepad/screenshot7.jpg",
+                    "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/notepad/screenshot8.jpg"
+                ],
+                features: [
+                    "Secure and offline note-taking",
+                    "Create, edit, and organize notes with ease",
+                    "Customizable themes, including light and dark modes",
+                    "Set reminders for important tasks",
+                    "Search and categorize notes for quick access",
+                    "Backup and restore notes securely",
+                    "Export notes to share or save externally"
+                ],
+                faq: [
+                    {
+                        question: "Is my data secure?",
+                        answer: "Yes, notes are stored locally with optional secure backups."
+                    },
+                    {
+                        question: "Can I set reminders?",
+                        answer: "Yes, schedule reminders for tasks or notes."
+                    },
+                    {
+                        question: "Does it work offline?",
+                        answer: "Yes, all features are available offline."
+                    }
+                ],
+                reviews: [
+                    "Great for organizing my daily tasks! - Emma W.",
+                    "The reminder feature is a lifesaver. - Lucas H."
+                ]
+            },
+            "trivia": {
+                id: "trivia",
+                name: "Bible Trivia",
+                icon: "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/ic_bible_trivia.png",
+                description: "Test your Bible knowledge with fun quizzes.",
+                shortDescription: "Test your Bible knowledge with fun quizzes.",
+                playStoreUrl: "#",
+                status: "coming-soon",
+                screenshots: [
+                    "https://via.placeholder.com/300x600",
+                    "https://via.placeholder.com/300x600",
+                    "https://via.placeholder.com/300x600",
+                    "https://via.placeholder.com/300x600",
+                    "https://via.placeholder.com/300x600",
+                    "https://via.placeholder.com/300x600",
+                    "https://via.placeholder.com/300x600",
+                    "https://via.placeholder.com/300x600"
+                ],
+                features: [
+                    "Thousands of trivia questions across multiple Bible categories",
+                    "Track progress and unlock new quiz levels",
+                    "Play offline with no internet required",
+                    "Compete with friends through leaderboards",
+                    "Customizable themes for a personalized experience",
+                    "Daily trivia challenges to keep you engaged"
+                ],
+                faq: [
+                    {
+                        question: "Is the app suitable for all ages?",
+                        answer: "Yes, questions are designed for beginners to advanced users."
+                    },
+                    {
+                        question: "Can I play offline?",
+                        answer: "Yes, all quizzes are available offline."
+                    },
+                    {
+                        question: "Are leaderboards available?",
+                        answer: "Yes, compete with friends and track scores (coming soon)."
+                    }
+                ],
+                reviews: [
+                    "Can't wait for this to launch! The quizzes are so fun! - Rachel B.",
+                    "Great way to learn more about the Bible. - Samuel K."
+                ]
+            }
+        };
+
+        // ================= FRONTEND FUNCTIONS =================
+        
+        // Initialize the website
+        document.addEventListener('DOMContentLoaded', function() {
+            loadHomeApps();
+            loadAppsGrid();
+            generateAppDetailPages();
+            showSection('home');
+        });
+
+        // Load apps on home page
+        function loadHomeApps() {
+            const homeGrid = document.getElementById('home-apps-grid');
+            homeGrid.innerHTML = '';
+            
+            Object.values(appsData).forEach(app => {
+                const appCard = createAppCard(app, true);
+                homeGrid.appendChild(appCard);
+            });
+        }
+
+        // Load apps in apps section
+        function loadAppsGrid() {
+            const appsGrid = document.getElementById('apps-grid');
+            appsGrid.innerHTML = '';
+            
+            Object.values(appsData).forEach(app => {
+                const appCard = createAppCard(app, false);
+                appsGrid.appendChild(appCard);
+            });
+        }
+
+        // Create app card component
+        function createAppCard(app, isHome) {
+            const card = document.createElement('div');
+            card.className = 'bg-white p-6 rounded-lg shadow-md';
+            
+            const playStoreButton = app.status === 'available' 
+                ? `<a href="${app.playStoreUrl}" class="block mt-4">
+                     <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-12 mx-auto">
+                   </a>`
+                : `<a href="#" onclick="showToast()" class="block mt-4">
+                     <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-12 mx-auto">
+                   </a>`;
+            
+            if (isHome) {
+                card.innerHTML = `
+                    <img src="${app.icon}" alt="${app.name} Icon" class="mx-auto mb-4 max-w-[100px]">
+                    <h3 class="text-xl font-semibold text-gray-800">${app.name}</h3>
+                    <p class="text-gray-600 mb-4">${app.shortDescription}</p>
+                    <button onclick="showAppDetail('${app.id}')" class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Learn More</button>
+                    ${playStoreButton}
+                `;
+            } else {
+                card.innerHTML = `
+                    <img src="${app.icon}" alt="${app.name} Icon" class="mx-auto mb-4 max-w-[100px]">
+                    <h3 class="text-xl font-semibold text-gray-800 text-center">${app.name}</h3>
+                    <p class="text-gray-600 text-center mb-4">${app.shortDescription}</p>
+                    <div class="flex justify-center mb-4">
+                        <img src="${app.screenshots[0]}" alt="${app.name} Screenshot" class="h-48 rounded">
+                    </div>
+                    <div class="flex justify-center space-x-4">
+                        <button onclick="showAppDetail('${app.id}')" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">View Details</button>
+                        ${app.status === 'available' 
+                            ? `<a href="${app.playStoreUrl}"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-12"></a>`
+                            : `<a href="#" onclick="showToast()"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-12"></a>`
+                        }
+                    </div>
+                `;
+            }
+            
+            return card;
+        }
+
+        // Generate all app detail pages
+        function generateAppDetailPages() {
+            const container = document.getElementById('app-detail-pages');
+            container.innerHTML = '';
+            
+            Object.values(appsData).forEach(app => {
+                const detailPage = createAppDetailPage(app);
+                container.appendChild(detailPage);
+            });
+        }
+
+        // Create individual app detail page
+        function createAppDetailPage(app) {
+            const page = document.createElement('section');
+            page.id = `app-${app.id}-detail`;
+            page.className = 'app-detail-page py-16 bg-gray-100';
+            
+            const screenshotsHtml = app.screenshots.map(screenshot => 
+                `<img src="${screenshot}" alt="${app.name} Screenshot" class="rounded-lg">`
+            ).join('');
+            
+            const featuresHtml = app.features.map(feature => 
+                `<li>${feature}</li>`
+            ).join('');
+            
+            const faqHtml = app.faq.map(item => 
+                `<div>
+                    <p class="font-semibold text-gray-800">${item.question}</p>
+                    <p class="text-gray-600">${item.answer}</p>
+                </div>`
+            ).join('');
+            
+            const reviewsHtml = app.reviews.map(review => 
+                `<div class="bg-white p-4 rounded-lg shadow">
+                    <p class="text-gray-600">"${review}"</p>
+                </div>`
+            ).join('');
+            
+            const playStoreButton = app.status === 'available'
+                ? `<a href="${app.playStoreUrl}" class="block mt-6">
+                     <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-16 mx-auto">
+                   </a>`
+                : `<a href="#" onclick="showToast()" class="block mt-6">
+                     <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-16 mx-auto">
+                   </a>`;
+            
+            page.innerHTML = `
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <button onclick="showSection('apps')" class="mb-4 text-blue-600 hover:text-blue-800 flex items-center">
+                        <i class="fas fa-arrow-left mr-2"></i> Back to Apps
+                    </button>
+                    <h2 class="text-3xl font-bold text-gray-800 mb-8">${app.name}</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-800 mb-4">Screenshots</h3>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                                ${screenshotsHtml}
+                            </div>
+                            ${playStoreButton}
+                        </div>
+                        <div>
+                            <p class="text-gray-600 mb-4">${app.description}</p>
+                            <h3 class="text-xl font-semibold text-gray-800 mb-2">Features</h3>
+                            <ul class="list-disc list-inside text-gray-600 mb-4">
+                                ${featuresHtml}
+                            </ul>
+                            <h3 class="text-xl font-semibold text-gray-800 mb-2">FAQ</h3>
+                            <div class="space-y-4">
+                                ${faqHtml}
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-800 mb-2 mt-6">User Reviews</h3>
+                            <div class="space-y-4">
+                                ${reviewsHtml}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            return page;
+        }
+
+        // Show specific section
+        function showSection(sectionId) {
+            // Hide all main sections
+            document.querySelectorAll('#main-content > section').forEach(section => {
+                section.style.display = 'none';
+            });
+            
+            // Hide all app detail pages
+            document.querySelectorAll('.app-detail-page').forEach(page => {
+                page.classList.remove('active');
+            });
+            
+            // Show selected section
+            document.getElementById(sectionId).style.display = 'block';
+            
+            // Close mobile menu if open
+            document.getElementById('mobile-menu').classList.add('hidden');
+            document.getElementById('dropdown-menu').classList.remove('active');
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+
+        // Show app detail page
+        function showAppDetail(appId) {
+            // Hide all main sections
+            document.querySelectorAll('#main-content > section').forEach(section => {
+                section.style.display = 'none';
+            });
+            
+            // Hide all app detail pages
+            document.querySelectorAll('.app-detail-page').forEach(page => {
+                page.classList.remove('active');
+            });
+            
+            // Show selected app detail page
+            document.getElementById(`app-${appId}-detail`).classList.add('active');
+            
+            // Close mobile menu if open
+            document.getElementById('mobile-menu').classList.add('hidden');
+            document.getElementById('dropdown-menu').classList.remove('active');
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+
         // Toggle mobile menu
         document.getElementById('menu-toggle').addEventListener('click', function () {
             const mobileMenu = document.getElementById('mobile-menu');
