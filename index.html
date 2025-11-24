@@ -7,50 +7,52 @@
     <title>JoshTechApps - Mobile Apps</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <style>
-        body { transition: background-color 0.3s, color: 0.3s; }
-        .dropdown-menu { display: none; }
-        .dropdown-menu.active { display: block; }
-        .fa-bars { transition: color 0.3s; }
-        .toast { 
-            visibility: hidden; 
-            min-width: 250px; 
-            margin-left: -125px; 
-            background-color: #333; 
-            color: #fff; 
-            text-align: center; 
-            border-radius: 2px; 
-            padding: 16px; 
-            position: fixed; 
-            z-index: 1; 
-            left: 50%; 
-            bottom: 30px; 
-            font-size: 17px;
-        }
-        .toast.show {
-            visibility: visible;
-            -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
-            animation: fadein 0.5s, fadeout 0.5s 2.5s;
-        }
-        @-webkit-keyframes fadein {
-            from {bottom: 0; opacity: 0;} 
-            to {bottom: 30px; opacity: 1;}
-        }
-        @keyframes fadein {
-            from {bottom: 0; opacity: 0;}
-            to {bottom: 30px; opacity: 1;}
-        }
-        @-webkit-keyframes fadeout {
-            from {bottom: 30px; opacity: 1;} 
-            to {bottom: 0; opacity: 0;}
-        }
-        @keyframes fadeout {
-            from {bottom: 30px; opacity: 1;}
-            to {bottom: 0; opacity: 0;}
-        }
-        .app-detail-page { display: none; }
-        .app-detail-page.active { display: block; }
-    </style>
+  <style>
+    body { transition: background-color 0.3s, color: 0.3s; }
+    .dropdown-menu { display: none; }
+    .dropdown-menu.active { display: block; }
+    .fa-bars { transition: color 0.3s; }
+    .toast { 
+        visibility: hidden; 
+        min-width: 250px; 
+        margin-left: -125px; 
+        background-color: #333; 
+        color: #fff; 
+        text-align: center; 
+        border-radius: 2px; 
+        padding: 16px; 
+        position: fixed; 
+        z-index: 1; 
+        left: 50%; 
+        bottom: 30px; 
+        font-size: 17px;
+    }
+    .toast.show {
+        visibility: visible;
+        -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    }
+    @-webkit-keyframes fadein {
+        from {bottom: 0; opacity: 0;} 
+        to {bottom: 30px; opacity: 1;}
+    }
+    @keyframes fadein {
+        from {bottom: 0; opacity: 0;}
+        to {bottom: 30px; opacity: 1;}
+    }
+    @-webkit-keyframes fadeout {
+        from {bottom: 30px; opacity: 1;} 
+        to {bottom: 0; opacity: 0;}
+    }
+    @keyframes fadeout {
+        from {bottom: 30px; opacity: 1;}
+        to {bottom: 0; opacity: 0;}
+    }
+    .app-detail-page { display: none; }
+    .app-detail-page.active { display: block; }
+    .blog-post { display: none; }
+    .blog-post.active { display: block; }
+</style>
 </head>
 <body class="font-sans antialiased">
     <!-- Toast Notification -->
@@ -152,6 +154,10 @@
         </section>
 
         <!-- Blog Section -->
+         <!-- Blog Posts Container -->
+    <div id="blog-posts">
+        <!-- Bible Study Tips -->
+               <!-- Blog Section -->
         <section id="blog" class="py-16 bg-gray-100" style="display: none;">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-3xl font-bold text-gray-800 text-center mb-12">Blog</h2>
@@ -159,21 +165,220 @@
                     <div class="bg-white p-6 rounded-lg shadow-md">
                         <h3 class="text-xl font-semibold text-gray-800 mb-2">Tips for Effective Bible Study</h3>
                         <p class="text-gray-600 mb-4">Discover how to make the most of your Bible study with our offline apps, including tips for note-taking and daily verse reflections.</p>
-                        <a href="#" onclick="showToast()" class="text-blue-600 hover:underline">Read More</a>
+                        <a href="#" onclick="showBlogPost('bible-study-tips')" class="text-blue-600 hover:underline">Read More</a>
                     </div>
                     <div class="bg-white p-6 rounded-lg shadow-md">
                         <h3 class="text-xl font-semibold text-gray-800 mb-2">Creating Meaningful Love Messages</h3>
                         <p class="text-gray-600 mb-4">Learn how to craft heartfelt messages using our Love Messages app with customizable backgrounds and themes.</p>
-                        <a href="#" onclick="showToast()" class="text-blue-600 hover:underline">Read More</a>
+                        <a href="#" onclick="showBlogPost('love-messages')" class="text-blue-600 hover:underline">Read More</a>
                     </div>
                     <div class="bg-white p-6 rounded-lg shadow-md">
                         <h3 class="text-xl font-semibold text-gray-800 mb-2">Organizing Your Life with Notepad</h3>
                         <p class="text-gray-600 mb-4">Explore tips for staying productive with our Notepad app's reminder and organization features.</p>
-                        <a href="#" onclick="showToast()" class="text-blue-600 hover:underline">Read More</a>
+                        <a href="#" onclick="showBlogPost('notepad-organization')" class="text-blue-600 hover:underline">Read More</a>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Daily Motivation for Success</h3>
+                        <p class="text-gray-600 mb-4">How to use motivational quotes to build a success mindset and achieve your goals.</p>
+                        <a href="#" onclick="showBlogPost('daily-motivation')" class="text-blue-600 hover:underline">Read More</a>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Making Bible Learning Fun</h3>
+                        <p class="text-gray-600 mb-4">Discover how Bible Trivia can help you and your family learn scripture in an engaging way.</p>
+                        <a href="#" onclick="showBlogPost('bible-trivia')" class="text-blue-600 hover:underline">Read More</a>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Choosing the Right Bible Translation</h3>
+                        <p class="text-gray-600 mb-4">A guide to understanding different Bible translations and which one might be best for your study needs.</p>
+                        <a href="#" onclick="showBlogPost('bible-translations')" class="text-blue-600 hover:underline">Read More</a>
                     </div>
                 </div>
             </div>
         </section>
+
+        <!-- Love Messages -->
+        <section id="love-messages" class="blog-post py-16 bg-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <button onclick="showSection('blog')" class="mb-6 text-blue-600 hover:text-blue-800 flex items-center">
+                    <i class="fas fa-arrow-left mr-2"></i> Back to Blog
+                </button>
+                <h2 class="text-3xl font-bold text-gray-800 mb-6">Creating Meaningful Love Messages</h2>
+                <div class="prose max-w-none">
+                    <p class="text-gray-600 mb-4">Expressing love and affection is essential for healthy relationships, but sometimes finding the right words can be challenging. Our Love Messages app is designed to help you create beautiful, personalized messages that truly convey your feelings.</p>
+                    
+                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">1. Start with Pre-Written Quotes</h3>
+                    <p class="text-gray-600 mb-4">Our app includes thousands of romantic quotes across 40+ categories. Whether you're celebrating an anniversary, apologizing, or simply saying "I love you," you'll find the perfect starting point for your message.</p>
+                    
+                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">2. Personalize with Custom Backgrounds</h3>
+                    <p class="text-gray-600 mb-4">Choose from over 500 beautiful background themes or use your own photos from your gallery. The right background can set the mood and make your message more personal and memorable.</p>
+                    
+                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">3. Customize Text and Layout</h3>
+                    <p class="text-gray-600 mb-4">Adjust text size, font styles, colors, and alignment to create the perfect visual presentation for your message. You can even add animated elements like hearts and roses for special occasions.</p>
+                    
+                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">4. Write Your Own Messages</h3>
+                    <p class="text-gray-600 mb-4">While pre-written quotes are helpful, nothing beats a message written from the heart. Use the app's customization features to create completely original messages that reflect your unique relationship.</p>
+                    
+                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">5. Use Categories for Different Occasions</h3>
+                    <p class="text-gray-600 mb-4">The app organizes quotes by categories like Romantic Love, Sweet Goodnight, Missing You, Thank You, and I'm Sorry. This makes it easy to find appropriate messages for any situation.</p>
+                    
+                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">6. Set Daily Reminders</h3>
+                    <p class="text-gray-600 mb-4">Enable daily notifications to receive curated love quotes that can inspire you to send spontaneous messages to your loved ones, keeping the romance alive every day.</p>
+                    
+                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">7. Share Easily</h3>
+                    <p class="text-gray-600 mb-4">Once you've created your perfect message, share it via WhatsApp, Instagram, Facebook, SMS, email, or any messaging app with just one tap.</p>
+                    
+                    <p class="text-gray-600 mt-6">Remember, the most meaningful messages often combine thoughtful words with personal touches. Our Love Messages app gives you all the tools you need to create expressions of love that will be cherished.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Notepad Organization -->
+        <section id="notepad-organization" class="blog-post py-16 bg-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <button onclick="showSection('blog')" class="mb-6 text-blue-600 hover:text-blue-800 flex items-center">
+                    <i class="fas fa-arrow-left mr-2"></i> Back to Blog
+                </button>
+                <h2 class="text-3xl font-bold text-gray-800 mb-6">Organizing Your Life with Notepad</h2>
+                <div class="prose max-w-none">
+                    <p class="text-gray-600 mb-4">In our busy lives, staying organized is crucial for productivity and peace of mind. Our Notepad app offers powerful features to help you capture ideas, manage tasks, and keep your life in order.</p>
+                    
+                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">1. Create Different Types of Notes</h3>
+                    <p class="text-gray-600 mb-4">Use the app to create simple text notes, detailed checklists, to-do lists with priorities, and organized notebooks. Different types of information require different formats, and our app supports them all.</p>
+                    
+                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">2. Set Smart Reminders</h3>
+                    <p class="text-gray-600 mb-4">Never miss an important deadline or appointment again. Set one-time or recurring reminders with custom alerts. The calendar integration lets you view all your upcoming tasks in one place.</p>
+                    
+                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">3. Organize with Folders and Categories</h3>
+                    <p class="text-gray-600 mb-4">Create folders for different projects, categories for different types of notes, and use tags for efficient organization. This makes it easy to find what you need when you need it.</p>
+                    
+                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">4. Use the Powerful Search Feature</h3>
+                    <p class="text-gray-600 mb-4">With instant search across all your notes and keyword highlighting, you can quickly locate specific information without scrolling through countless notes.</p>
+                    
+                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">5. Secure Your Private Notes</h3>
+                    <p class="text-gray-600 mb-4">Protect sensitive information with password protection and biometric authentication (fingerprint/face ID). Your private thoughts and information remain secure.</p>
+                    
+                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">6. Backup to Google Drive</h3>
+                    <p class="text-gray-600 mb-4">Automatically backup your notes to Google Drive to ensure you never lose important information. Your notes are synced across devices and can be restored anytime.</p>
+                    
+                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">7. Customize Your Experience</h3>
+                    <p class="text-gray-600 mb-4">Choose from multiple themes (light, dark, blue, green), adjust font sizes, and customize the layout to create a note-taking environment that works best for you.</p>
+                    
+                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">8. Use Home Screen Widgets</h3>
+                    <p class="text-gray-600 mb-4">Quickly create notes from your home screen without even opening the app. This is perfect for capturing ideas as they come to you.</p>
+                    
+                    <p class="text-gray-600 mt-6">By implementing these organization strategies with our Notepad app, you can reduce stress, increase productivity, and ensure that important information is always at your fingertips.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Daily Motivation -->
+        <section id="daily-motivation" class="blog-post py-16 bg-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <button onclick="showSection('blog')" class="mb-6 text-blue-600 hover:text-blue-800 flex items-center">
+                    <i class="fas fa-arrow-left mr-2"></i> Back to Blog
+                </button>
+                <h2 class="text-3xl font-bold text-gray-800 mb-6">Daily Motivation for Success</h2>
+                <div class="prose max-w-none">
+                    <p class="text-gray-600 mb-4">Maintaining motivation is key to achieving your goals and living a fulfilling life. Our Motivational Quotes app provides daily inspiration from history's greatest minds to help you build a success mindset.</p>
+                    
+                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">1. Start Your Day with Purpose</h3>
+                    <p class="text-gray-600 mb-4">Set your daily notifications for 6 AM on Monday to receive a week-starter quote that sets a positive tone for the days ahead. Beginning your day with inspirational wisdom can dramatically impact your productivity and outlook.</p>
+                    
+                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">2. Learn from History's Greatest Minds</h3>
+                    <p class="text-gray-600 mb-4">Our app features wisdom from influential figures like Steve Jobs (innovation), Nelson Mandela (resilience), Oprah Winfrey (purpose), and Albert Einstein (curiosity). Reading about their journeys and philosophies can provide valuable perspectives for your own challenges.</p>
+                    
+                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">3. Use Themed Categories for Specific Needs</h3>
+                    <p class="text-gray-600 mb-4">The app organizes quotes into categories like Success & Achievement, Overcoming Challenges, Mindset & Growth, and Career & Business. When facing specific situations, browse the relevant category for targeted inspiration.</p>
+                    
+                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">4. Create a Visual Motivation Board</h3>
+                    <p class="text-gray-600 mb-4">With 100+ HD background themes, you can create beautiful quote images that resonate with you. Download these as wallpapers for your phone to keep motivation visible throughout your day.</p>
+                    
+                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">5. Read the Educational Articles</h3>
+                    <p class="text-gray-600 mb-4">Beyond quotes, the app includes actionable articles like "Build Resilience Like Mandela," "Steve Jobs' 5 AM Routine," and "Stoic Philosophy for Stress." These provide practical strategies for implementing wisdom in your daily life.</p>
+                    
+                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">6. Explore Detailed Personality Profiles</h3>
+                    <p class="text-gray-600 mb-4">Understanding the complete life stories, major achievements, and challenges overcome by great minds makes their quotes more meaningful and applicable to your own journey.</p>
+                    
+                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">7. Use Scientifically-Timed Notifications</h3>
+                    <p class="text-gray-600 mb-4">The app's smart notification system delivers inspiration at optimal times throughout your week: morning boosts, mid-week energy, afternoon inspiration, and weekend mindset preparation.</p>
+                    
+                    <p class="text-gray-600 mt-6">By consistently engaging with motivational content through our app, you can develop the mindset needed to overcome obstacles, pursue your ambitions, and create the life you envision.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bible Trivia -->
+        <section id="bible-trivia" class="blog-post py-16 bg-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <button onclick="showSection('blog')" class="mb-6 text-blue-600 hover:text-blue-800 flex items-center">
+                    <i class="fas fa-arrow-left mr-2"></i> Back to Blog
+                </button>
+                <h2 class="text-3xl font-bold text-gray-800 mb-6">Making Bible Learning Fun with Trivia</h2>
+                <div class="prose max-w-none">
+                    <p class="text-gray-600 mb-4">Learning Scripture doesn't have to be a solemn, serious endeavor. Our Bible Trivia app makes biblical education engaging, interactive, and enjoyable for individuals, families, and study groups.</p>
+                    
+                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">1. Multiple Game Modes for Varied Learning</h3>
+                    <p class="text-gray-600 mb-4">The app offers different game modes including General Quiz, True or False, and Level Progression with 100+ levels. This variety keeps the learning experience fresh and appeals to different learning styles.</p>
+                    
+                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">2. Progress Through Ranking System</h3>
+                    <p class="text-gray-600 mb-4">The competitive ranking system (from Bronze to Legend) provides motivation to continue learning and improving your biblical knowledge. Tracking your progress visually can be highly encouraging.</p>
+                    
+                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">3. Earn Rewards Through Engagement</h3>
+                    <p class="text-gray-600 mb-4">The virtual coin system rewards daily logins, perfect scores, and engagement. These coins can be used for hints, Bible references, or level retries, creating a gamified learning experience.</p>
+                    
+                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">4. Perfect for Family Game Nights</h3>
+                    <p class="text-gray-600 mb-4">The app transforms Bible study into a fun family activity. Children and adults can learn together in a relaxed, game-based environment that makes Scripture memorable and accessible to all ages.</p>
+                    
+                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">5. Use as a Teaching Tool</h3>
+                    <p class="text-gray-600 mb-4">Sunday school teachers and Bible study leaders can use the app to create interactive lessons. The quiz format helps reinforce learning and provides immediate feedback on comprehension.</p>
+                    
+                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">6. Full Offline Access</h3>
+                    <p class="text-gray-600 mb-4">Like all our apps, Bible Trivia works completely offline. This means you can play during commutes, travels, or in areas without internet connectivity, making biblical learning possible anywhere.</p>
+                    
+                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">7. Track Spiritual Growth</h3>
+                    <p class="text-gray-600 mb-4">The detailed progress analytics allow you to monitor your improvement in biblical knowledge over time, providing tangible evidence of your spiritual growth through learning.</p>
+                    
+                    <p class="text-gray-600 mt-6">By incorporating game elements into Bible learning, our Trivia app makes Scripture study an enjoyable habit rather than a chore, helping users of all ages develop deeper biblical knowledge in a fun, engaging way.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bible Translations -->
+        <section id="bible-translations" class="blog-post py-16 bg-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <button onclick="showSection('blog')" class="mb-6 text-blue-600 hover:text-blue-800 flex items-center">
+                    <i class="fas fa-arrow-left mr-2"></i> Back to Blog
+                </button>
+                <h2 class="text-3xl font-bold text-gray-800 mb-6">Choosing the Right Bible Translation</h2>
+                <div class="prose max-w-none">
+                    <p class="text-gray-600 mb-4">With so many Bible translations available, it can be challenging to know which one is right for your study needs. At JoshTechApps, we offer multiple translations, each with its own strengths and characteristics.</p>
+                    
+                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">King James Version (KJV)</h3>
+                    <p class="text-gray-600 mb-4">The KJV is a classic, formal-equivalence translation known for its beautiful, poetic language. It's ideal for those who appreciate traditional English and want to connect with centuries of Christian tradition.</p>
+                    
+                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">American Standard Version (ASV)</h3>
+                    <p class="text-gray-600 mb-4">The ASV is a literal translation that prioritizes word-for-word accuracy from the original languages. It's excellent for serious Bible study and for those who want to understand the precise meaning of the original texts.</p>
+                    
+                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">Darby Bible</h3>
+                    <p class="text-gray-600 mb-4">The Darby Bible is known for its scholarly approach and attention to detail. It's particularly valued for its consistency in translating key terms and its usefulness for comparative study.</p>
+                    
+                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">World English Bible (WEB)</h3>
+                    <p class="text-gray-600 mb-4">The WEB is a modern English translation that balances accuracy with readability. It's a great choice for those who want a contemporary translation that remains faithful to the original texts.</p>
+                    
+                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">Basic English Bible (BEB)</h3>
+                    <p class="text-gray-600 mb-4">The BEB uses a limited vocabulary of about 1,000 words, making it accessible to English learners and those who prefer simple, straightforward language.</p>
+                    
+                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">King James Version with Apocrypha (KJVA)</h3>
+                    <p class="text-gray-600 mb-4">This version includes the Apocrypha, which are books included in some Christian traditions but not in others. It's valuable for those interested in historical Christian literature beyond the standard Protestant canon.</p>
+                    
+                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">How to Choose</h3>
+                    <p class="text-gray-600 mb-4">Consider your purpose: For devotional reading, you might prefer a more readable translation like WEB. For in-depth study, a literal translation like ASV might be better. Many people benefit from comparing multiple translations to gain different perspectives on difficult passages.</p>
+                    
+                    <p class="text-gray-600 mt-6">The great advantage of our Bible apps is that you can easily access multiple translations, allowing you to find the one that best suits your needs and preferences for different types of reading and study.</p>
+                </div>
+            </div>
+        </section>
+    </div>
 
         <!-- Contact Section -->
      <!-- Contact Section -->
@@ -560,7 +765,7 @@
             "kjv": {
                 id: "kjv",
                 name: "King James Bible (KJV) - Offline",
-                icon: "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/kjv_bible_icon.png",
+                icon: "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/ic_new_kjv_icon.png",
                 description: "Dive into the King James Bible with offline access, daily verses, and personalized notes.",
                 shortDescription: "Dive into the King James Bible with offline access, daily verses, and personalized notes.",
                 playStoreUrl: "https://play.google.com/store/apps/details?id=com.joshtechapps.kjvoffline",
@@ -1049,6 +1254,7 @@
         }
 
         // Show specific section
+              // Show specific section
         function showSection(sectionId) {
             // Hide all main sections
             document.querySelectorAll('#main-content > section').forEach(section => {
@@ -1060,8 +1266,40 @@
                 page.classList.remove('active');
             });
             
+            // Hide all blog posts
+            document.querySelectorAll('.blog-post').forEach(post => {
+                post.classList.remove('active');
+            });
+            
             // Show selected section
             document.getElementById(sectionId).style.display = 'block';
+            
+            // Close mobile menu if open
+            document.getElementById('mobile-menu').classList.add('hidden');
+            document.getElementById('dropdown-menu').classList.remove('active');
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+                // Show blog post
+        function showBlogPost(postId) {
+            // Hide all main sections
+            document.querySelectorAll('#main-content > section').forEach(section => {
+                section.style.display = 'none';
+            });
+            
+            // Hide all app detail pages
+            document.querySelectorAll('.app-detail-page').forEach(page => {
+                page.classList.remove('active');
+            });
+            
+            // Hide all blog posts
+            document.querySelectorAll('.blog-post').forEach(post => {
+                post.classList.remove('active');
+            });
+            
+            // Show selected blog post
+            document.getElementById(postId).classList.add('active');
             
             // Close mobile menu if open
             document.getElementById('mobile-menu').classList.add('hidden');
