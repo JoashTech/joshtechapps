@@ -7,5 +7,8 @@ google.com, pub-7140996174722153, DIRECT, f08c47fec0942fa0
 # King James Bible (KJV) - Offline
 facebook.com, 1148343337364852, DIRECT, c3e47fec0942fa0
 
+# Love Messages - Love Book
+facebook.com, 1148343337364852, DIRECT, c3e20eee3f780d68
+
 # World English Bible
 facebook.com, 1148343337364852, DIRECT, c3e20eee3f780d68
