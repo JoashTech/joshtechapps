@@ -6,7 +6,7 @@
     <meta name="description" content="JoshTechApps - Bringing Simplicity & Purpose to Mobile Apps For Android Phones. Download our user-friendly apps from Google Play Directly From This Site.">
     <title>JoshTechApps - Mobile Apps</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts for better typography -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap&family=Playfair+Display:wght@700;800&display=swap&family=Poppins:wght@500;600&display=swap" rel="stylesheet">
@@ -36,45 +36,26 @@
             -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
             animation: fadein 0.5s, fadeout 0.5s 2.5s;
         }
-        @-webkit-keyframes fadein {
-            from {bottom: 0; opacity: 0;}
-            to {bottom: 30px; opacity: 1;}
-        }
-        @keyframes fadein {
-            from {bottom: 0; opacity: 0;}
-            to {bottom: 30px; opacity: 1;}
-        }
-        @-webkit-keyframes fadeout {
-            from {bottom: 30px; opacity: 1;}
-            to {bottom: 0; opacity: 0;}
-        }
-        @keyframes fadeout {
-            from {bottom: 30px; opacity: 1;}
-            to {bottom: 0; opacity: 0;}
-        }
-        .app-detail-page { display: none; }
-        .app-detail-page.active { display: block; }
-        .blog-post { display: none; }
-        .blog-post.active { display: block; }
+        @keyframes fadein { from {bottom: 0; opacity: 0;} to {bottom: 30px; opacity: 1;} }
+        @keyframes fadeout { from {bottom: 30px; opacity: 1;} to {bottom: 0; opacity: 0;} }
+        .app-detail-page, .blog-post { display: none; }
+        .app-detail-page.active, .blog-post.active { display: block; }
 
-        /* New Typography Styles */
+        /* Typography */
         .font-heading { font-family: 'Playfair Display', serif; font-weight: 800; }
         .font-subheading { font-family: 'Poppins', sans-serif; font-weight: 600; }
         .hero-title { font-size: 3.5rem; line-height: 1.1; }
         h1, h2, h3 { font-family: 'Playfair Display', serif; }
         p, li { font-family: 'Inter', sans-serif; line-height: 1.6; }
-        /* In your <style> tag - add or update these */
-p {
-    margin-bottom: 1.5rem; /* or mb-6 in Tailwind */
-}
-.leading-relaxed { line-height: 1.625; }
-.leading-loose { line-height: 2; }
+        p { margin-bottom: 1.5rem; }
     </style>
 </head>
 <body class="font-inter antialiased text-gray-800 bg-gray-50">
-    <!-- Toast Notification -->
+
+    <!-- Toast -->
     <div id="toast" class="toast">Coming Soon!</div>
-    <!-- Menu Toggle -->
+
+    <!-- Dropdown Menu (mobile) -->
     <div class="fixed top-4 right-4 z-50">
         <button id="dropdown-toggle" class="p-2 rounded-full bg-gray-200">
             <i class="fas fa-bars text-lg sm:text-xl text-gray-800"></i>
@@ -87,27 +68,18 @@ p {
         <a href="#blog" class="block text-gray-600 hover:text-blue-600 px-4 py-2" onclick="showSection('blog')">Blog</a>
         <a href="#contact" class="block text-gray-600 hover:text-blue-600 px-4 py-2" onclick="showSection('contact')">Contact</a>
         <div class="flex space-x-4 px-4 py-2 border-t mt-2 pt-2">
-            <a href="https://x.com/Twinamatsi21777" target="_blank" class="text-gray-600 hover:text-black">
-                <i class="fab fa-twitter"></i>
-            </a>
-            <a href="https://www.instagram.com/joshtechapps" target="_blank" class="text-gray-600 hover:text-pink-600">
-                <i class="fab fa-instagram"></i>
-            </a>
-            <a href="https://www.facebook.com/share/1A9wasyjnK/" target="_blank" class="text-gray-600 hover:text-blue-600">
-                <i class="fab fa-facebook"></i>
-            </a>
-            <a href="https://www.tiktok.com/@joashtechapps" target="_blank" class="text-gray-600 hover:text-black">
-                <i class="fab fa-tiktok"></i>
-            </a>
+            <a href="https://x.com/Twinamatsi21777" target="_blank" class="text-gray-600 hover:text-black"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/joshtechapps" target="_blank" class="text-gray-600 hover:text-pink-600"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/share/1A9wasyjnK/" target="_blank" class="text-gray-600 hover:text-blue-600"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.tiktok.com/@joashtechapps" target="_blank" class="text-gray-600 hover:text-black"><i class="fab fa-tiktok"></i></a>
         </div>
     </div>
-    <!-- Navigation -->
+
+    <!-- Main Navigation -->
     <nav class="bg-white shadow-md fixed w-full z-40">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
-                <div class="flex items-center">
-                    <a href="#home" class="text-2xl font-heading text-gray-800" onclick="showSection('home')">JoshTechApps</a>
-                </div>
+                <a href="#home" class="text-2xl font-heading text-gray-800" onclick="showSection('home')">JoshTechApps</a>
                 <div class="hidden md:flex space-x-4">
                     <a href="#home" class="text-gray-600 hover:text-blue-600 px-3 py-2" onclick="showSection('home')">Home</a>
                     <a href="#apps" class="text-gray-600 hover:text-blue-600 px-3 py-2" onclick="showSection('apps')">Apps</a>
@@ -130,34 +102,30 @@ p {
             <a href="#contact" class="block text-gray-600 hover:text-blue-600 px-4 py-2" onclick="showSection('contact')">Contact</a>
         </div>
     </nav>
-    <!-- Main Content Area -->
-    <div id="main-content">
-        <!-- Home Section -->
-      <section id="home" class="min-h-screen bg-gray-100 flex items-center justify-center pt-16">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h1 class="hero-title font-heading text-gray-800 mb-6">Welcome to JoshTechApps 👋</h1>
-        <p class="text-xl font-subheading text-gray-700 mb-8">Bringing Simplicity & Purpose to Mobile Apps</p>
-        
-        <!-- Improved paragraph: better line-height + more breathing room -->
-        <p class="text-lg leading-relaxed md:leading-loose text-gray-600 mb-12 max-w-4xl mx-auto px-4 sm:px-0">
-            At JoshTechApps, based in Ishaka town - Bushenyi district in the western part of Uganda, we're dedicated to creating mobile apps that inspire, organize, and connect. 
-            
-            Our collection includes offline Bible study tools in multiple translations (like KJV, ASV, and Darby among others) with daily verses, quizzes, and note-taking for spiritual growth; 
-            heartfelt Love Messages with customizable themes and animations for strengthening relationships; 
-            Motivational Quotes from global icons like Mandela, Einstein among others to fuel your success mindset; 
-            a powerful Notepad for secure, cloud-backed organization with reminders and checklists; 
-            and engaging Bible Trivia games for fun, faith-based learning.
-            
-            All apps are designed for Android, work fully offline, and focus on user-friendly features like dark mode, notifications, and personalization. 
-            
-            Whether you're seeking daily inspiration, productivity boosts, or meaningful connections, download our apps from Google Play and experience purposeful mobile innovation today!
-        </p>
 
-        <div id="home-apps-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10">
-            <!-- Apps will be dynamically loaded here -->
-        </div>
-    </div>
-</section>
+    <!-- Main Content -->
+    <div id="main-content">
+        <!-- Home -->
+        <section id="home" class="min-h-screen bg-gray-100 flex items-center justify-center pt-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h1 class="hero-title font-heading text-gray-800 mb-6">Welcome to JoshTechApps 👋</h1>
+                <p class="text-xl font-subheading text-gray-700 mb-8">Bringing Simplicity & Purpose to Mobile Apps</p>
+                <p class="text-lg leading-relaxed md:leading-loose text-gray-600 mb-12 max-w-4xl mx-auto px-4 sm:px-0">
+                    At JoshTechApps, based in Ishaka town - Bushenyi district in the western part of Uganda, we're dedicated to creating mobile apps that inspire, organize, and connect. 
+                    
+                    Our collection includes offline Bible study tools in multiple translations (like KJV, ASV, and Darby among others) with daily verses, quizzes, and note-taking for spiritual growth; 
+                    heartfelt Love Messages with customizable themes and animations for strengthening relationships; 
+                    Motivational Quotes from global icons like Mandela, Einstein among others to fuel your success mindset; 
+                    a powerful Notepad for secure, cloud-backed organization with reminders and checklists; 
+                    and engaging Bible Trivia games for fun, faith-based learning.
+                    
+                    All apps are designed for Android, work fully offline, and focus on user-friendly features like dark mode, notifications, and personalization. 
+                    
+                    Whether you're seeking daily inspiration, productivity boosts, or meaningful connections, download our apps from Google Play and experience purposeful mobile innovation today!
+                </p>
+                <div id="home-apps-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10"></div>
+            </div>
+        </section>
         <!-- Apps Section -->
         <section id="apps" class="py-16 bg-white" style="display: none;">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -441,86 +409,97 @@ p {
 
         <!-- Contact Section -->
      <!-- Contact Section -->
+<!-- Contact Section -->
 <section id="contact" class="py-16 bg-white" style="display: none;">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-3xl font-heading text-gray-800 text-center mb-12">Contact Us</h2>
-                <div class="text-center">
-                    <p class="text-gray-600 mb-4">Have questions or feedback? We'd love to hear from you! Reach out to us via email or follow us on social media for updates.</p>
-                    <p class="text-gray-600 mb-4">Email: <a href="mailto:support@joshtechapps.com" class="text-blue-600 hover:underline">support@joshtechapps.com</a></p>
-                    <div class="flex justify-center space-x-6">
-                <a href="https://x.com/Twinamatsi21777" target="_blank" class="text-gray-600 hover:text-black">
-                    <i class="fab fa-twitter text-2xl"></i>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-heading text-gray-800 text-center mb-12">Contact Us</h2>
+        <div class="text-center">
+            <p class="text-gray-600 mb-4 text-lg">Have questions, ready to work with us or feedback? We'd love to hear from you!</p>
+
+            <div class="space-y-4 mb-10">
+                <p class="text-gray-700">
+                    <strong>Email:</strong> 
+                    <a href="mailto:support@joshtechapps.com" class="text-blue-600 hover:underline hover:text-blue-800">
+                        support@joshtechapps.com
+                    </a>
+                </p>
+                
+                <p class="text-gray-700">
+                    <strong>Phone / WhatsApp:</strong> 
+                   <a href="https://wa.me/256757447122" target="_blank" class="inline-flex items-center text-green-600 hover:text-green-800">
+    <i class="fab fa-whatsapp text-xl mr-2"></i> Message on WhatsApp
+</a>
+                    <span class="text-sm text-gray-500 ml-2">(Available for calls & WhatsApp)</span>
+                </p>
+
+                <p class="text-gray-700">
+                    <strong>Address:</strong> Ishaka Town, Bushenyi District, Western Uganda
+                </p>
+            </div>
+
+            <div class="flex justify-center space-x-8 mt-6">
+                <a href="https://x.com/Twinamatsi21777" target="_blank" class="text-gray-600 hover:text-black transition-colors">
+                    <i class="fab fa-twitter text-3xl"></i>
                 </a>
-                <a href="https://www.instagram.com/joshtechapps" target="_blank" class="text-gray-600 hover:text-pink-600">
-                    <i class="fab fa-instagram text-2xl"></i>
+                <a href="https://www.instagram.com/joshtechapps" target="_blank" class="text-gray-600 hover:text-pink-600 transition-colors">
+                    <i class="fab fa-instagram text-3xl"></i>
                 </a>
-                <a href="https://www.facebook.com/share/1A9wasyjnK/" target="_blank" class="text-gray-600 hover:text-blue-600">
-                    <i class="fab fa-facebook text-2xl"></i>
+                <a href="https://www.facebook.com/share/1A9wasyjnK/" target="_blank" class="text-gray-600 hover:text-blue-600 transition-colors">
+                    <i class="fab fa-facebook text-3xl"></i>
                 </a>
-                <a href="https://www.tiktok.com/@joashtechapps" target="_blank" class="text-gray-600 hover:text-black">
-                    <i class="fab fa-tiktok text-2xl"></i>
+                <a href="https://www.tiktok.com/@joashtechapps" target="_blank" class="text-gray-600 hover:text-black transition-colors">
+                    <i class="fab fa-tiktok text-3xl"></i>
                 </a>
             </div>
         </div>
     </div>
 </section>
-    <!-- Individual App Detail Pages Container -->
-    <div id="app-detail-pages">
-        <!-- App detail pages will be dynamically loaded here -->
-    </div>
 
- <!-- Footer -->
-<footer class="bg-gray-800 text-white py-8">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div>
-                <h3 class="text-xl font-semibold mb-4">JoshTechApps</h3>
-                <p class="text-gray-400">Bringing simplicity and purpose to your mobile experience with apps designed for inspiration and productivity.</p>
-            </div>
-            <div>
-                <h3 class="text-xl font-semibold mb-4">Quick Links</h3>
-                <ul class="space-y-2">
-                    <li><a href="#home" class="text-gray-400 hover:text-white" onclick="showSection('home')">Home</a></li>
-                    <li><a href="#apps" class="text-gray-400 hover:text-white" onclick="showSection('apps')">Apps</a></li>
-                    <li><a href="#about" class="text-gray-400 hover:text-white" onclick="showSection('about')">About</a></li>
-                    <li><a href="#blog" class="text-gray-400 hover:text-white" onclick="showSection('blog')">Blog</a></li>
-                    <li><a href="#contact" class="text-gray-400 hover:text-white" onclick="showSection('contact')">Contact</a></li>
-                </ul>
-            </div>
-            <div>
-                <h3 class="text-xl font-semibold mb-4">Follow Us</h3>
-                <div class="flex space-x-4">
-                    <a href="https://x.com/Twinamatsi21777" target="_blank" class="text-gray-400 hover:text-white">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a href="https://www.instagram.com/joshtechapps" target="_blank" class="text-gray-400 hover:text-white">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="https://www.facebook.com/share/1A9wasyjnK/" target="_blank" class="text-gray-400 hover:text-white">
-                        <i class="fab fa-facebook"></i>
-                    </a>
-                    <a href="https://www.tiktok.com/@joashtechapps" target="_blank" class="text-gray-400 hover:text-white">
-                        <i class="fab fa-tiktok"></i>
-                    </a>
+    <!-- App Details Container -->
+    <div id="app-detail-pages"></div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-subheading mb-4">JoshTechApps</h3>
+                    <p class="text-gray-400">Bringing simplicity and purpose to your mobile experience with apps designed for inspiration and productivity.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-subheading mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-white" onclick="showSection('home')">Home</a></li>
+                        <li><a href="#apps" class="text-gray-400 hover:text-white" onclick="showSection('apps')">Apps</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white" onclick="showSection('about')">About</a></li>
+                        <li><a href="#blog" class="text-gray-400 hover:text-white" onclick="showSection('blog')">Blog</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white" onclick="showSection('contact')">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-subheading mb-4">Follow Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="https://x.com/Twinamatsi21777" target="_blank" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/joshtechapps" target="_blank" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/share/1A9wasyjnK/" target="_blank" class="text-gray-400 hover:text-white"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.tiktok.com/@joashtechapps" target="_blank" class="text-gray-400 hover:text-white"><i class="fab fa-tiktok"></i></a>
+                    </div>
                 </div>
             </div>
+            <div class="mt-8 text-center text-gray-400">
+                <p>© <span id="copyright-year"></span> JoshTechApps. All rights reserved.</p>
+            </div>
         </div>
-        <div class="mt-8 text-center text-gray-400">
-            <p>&copy; <span id="copyright-year"></span> JoshTechApps. All rights reserved.</p>
-        </div>
-    </div>
-</footer>
-   <!-- PUT THE YEAR SCRIPT HERE -->
-<script>
-    // Set copyright year dynamically (range like 2024–2026)
-    const startYear = 2023;           // ← Change this to your actual launch year
-    const currentYear = new Date().getFullYear();
-    const yearText = (startYear < currentYear) 
-        ? `${startYear}–${currentYear}` 
-        : `${currentYear}`;
-    
-    document.getElementById("copyright-year").innerText = yearText;
-</script>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Copyright Year
+        const startYear = 2023;
+        const currentYear = new Date().getFullYear();
+        document.getElementById("copyright-year").innerText = 
+            startYear < currentYear ? `${startYear}–${currentYear}` : currentYear;
+    </script>
 
 
     <script>
