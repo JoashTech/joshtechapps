@@ -480,10 +480,15 @@
             </div>
         </div>
         <div class="mt-8 text-center text-gray-400">
-            <p>&copy; 2025 JoshTechApps. All rights reserved.</p>
+            <p>&copy; <span id="current-year"></span> JoshTechApps. All rights reserved.</p>
         </div>
     </div>
 </footer>
+     <script>
+  document.getElementById("year").innerText = new Date().getFullYear();
+</script>
+
+
     <script>
         // ================= BACKEND DATA =================
         const appsData = {
@@ -879,7 +884,7 @@
           "love": {
     id: "love",
     name: "Love Messages - Love Book",
-    icon: "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/ic_love_messages_icon.png",
+    icon: "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/ic_lovemessagesicon.jpg",
     description: "Love Messages - Express Your Heart with Beautiful Words! Transform your relationships with the ultimate love expression app designed to help you share heartfelt emotions through beautifully crafted messages, romantic quotes, and personalized creations. Whether you're celebrating anniversaries, expressing gratitude, or simply reminding someone they're loved, our comprehensive collection offers endless ways to connect emotionally.",
     shortDescription: "Create & share beautiful love messages with custom backgrounds, daily inspiration, and romantic quotes!",
     playStoreUrl: "https://play.google.com/store/apps/details?id=com.joshtechapps.lovemessages",
