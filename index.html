@@ -63,6 +63,12 @@
         .hero-title { font-size: 3.5rem; line-height: 1.1; }
         h1, h2, h3 { font-family: 'Playfair Display', serif; }
         p, li { font-family: 'Inter', sans-serif; line-height: 1.6; }
+        /* In your <style> tag - add or update these */
+p {
+    margin-bottom: 1.5rem; /* or mb-6 in Tailwind */
+}
+.leading-relaxed { line-height: 1.625; }
+.leading-loose { line-height: 2; }
     </style>
 </head>
 <body class="font-inter antialiased text-gray-800 bg-gray-50">
@@ -127,18 +133,31 @@
     <!-- Main Content Area -->
     <div id="main-content">
         <!-- Home Section -->
-        <section id="home" class="min-h-screen bg-gray-100 flex items-center justify-center pt-16">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <h1 class="hero-title font-heading text-gray-800 mb-4">Welcome to JoshTechApps 👋</h1>
-                <p class="text-xl font-subheading text-gray-600 mb-6">Bringing Simplicity & Purpose to Mobile Apps</p>
-                <p class="text-lg text-gray-500 mb-8 max-w-3xl mx-auto">
-                    At JoshTechApps, based in Ishaka town- Bushenyi district in the western part of Uganda, we're dedicated to creating mobile apps that inspire, organize, and connect. Our collection includes offline Bible study tools in multiple translations (like KJV, ASV, and Darby among others) with daily verses, quizzes, and note-taking for spiritual growth; heartfelt Love Messages with customizable themes and animations for strengthening relationships; Motivational Quotes from global icons like Mandela, Einstein among others to fuel your success mindset; a powerful Notepad for secure, cloud-backed organization with reminders and checklists; and engaging Bible Trivia games for fun, faith-based learning. All apps are designed for Android, work fully offline, and focus on user-friendly features like dark mode, notifications, and personalization. Whether you're seeking daily inspiration, productivity boosts, or meaningful connections, download our apps from Google Play and experience purposeful mobile innovation today!
-                </p>
-                <div id="home-apps-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <!-- Apps will be dynamically loaded here -->
-                </div>
-            </div>
-        </section>
+      <section id="home" class="min-h-screen bg-gray-100 flex items-center justify-center pt-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h1 class="hero-title font-heading text-gray-800 mb-6">Welcome to JoshTechApps 👋</h1>
+        <p class="text-xl font-subheading text-gray-700 mb-8">Bringing Simplicity & Purpose to Mobile Apps</p>
+        
+        <!-- Improved paragraph: better line-height + more breathing room -->
+        <p class="text-lg leading-relaxed md:leading-loose text-gray-600 mb-12 max-w-4xl mx-auto px-4 sm:px-0">
+            At JoshTechApps, based in Ishaka town - Bushenyi district in the western part of Uganda, we're dedicated to creating mobile apps that inspire, organize, and connect. 
+            
+            Our collection includes offline Bible study tools in multiple translations (like KJV, ASV, and Darby among others) with daily verses, quizzes, and note-taking for spiritual growth; 
+            heartfelt Love Messages with customizable themes and animations for strengthening relationships; 
+            Motivational Quotes from global icons like Mandela, Einstein among others to fuel your success mindset; 
+            a powerful Notepad for secure, cloud-backed organization with reminders and checklists; 
+            and engaging Bible Trivia games for fun, faith-based learning.
+            
+            All apps are designed for Android, work fully offline, and focus on user-friendly features like dark mode, notifications, and personalization. 
+            
+            Whether you're seeking daily inspiration, productivity boosts, or meaningful connections, download our apps from Google Play and experience purposeful mobile innovation today!
+        </p>
+
+        <div id="home-apps-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10">
+            <!-- Apps will be dynamically loaded here -->
+        </div>
+    </div>
+</section>
         <!-- Apps Section -->
         <section id="apps" class="py-16 bg-white" style="display: none;">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
