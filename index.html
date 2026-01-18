@@ -120,16 +120,18 @@
     <!-- Main Content Area -->
     <div id="main-content">
         <!-- Home Section -->
-        <section id="home" class="min-h-screen bg-gray-100 flex items-center justify-center pt-16">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <h1 class="text-4xl md:text-6xl font-bold text-gray-800 mb-4">Welcome to JoshTechApps 👋</h1>
-                <p class="text-xl text-gray-600 mb-6">Bringing Simplicity & Purpose to Mobile Apps</p>
-                <p class="text-lg text-gray-500 mb-8">Discover our collection of intuitive apps designed to enrich your daily life, from spiritual growth to heartfelt connections and organized note-taking. Download now from Google Play!</p>
-                <div id="home-apps-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <!-- Apps will be dynamically loaded here -->
-                </div>
-            </div>
-        </section>
+      <section id="home" class="min-h-screen bg-gray-100 flex items-center justify-center pt-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h1 class="text-4xl md:text-6xl font-bold text-gray-800 mb-4">Welcome to JoshTechApps 👋</h1>
+        <p class="text-xl text-gray-600 mb-6">Bringing Simplicity & Purpose to Mobile Apps</p>
+        <p class="text-lg text-gray-500 mb-8 max-w-3xl mx-auto">
+            At JoshTechApps, based in lshaka town- Bushenyi district in the western part of Uganda, we're dedicated to creating mobile apps that inspire, organize, and connect. Our collection includes offline Bible study tools in multiple translations (like KJV, ASV, and Darby among others) with daily verses, quizzes, and note-taking for spiritual growth; heartfelt Love Messages with customizable themes and animations for strengthening relationships; Motivational Quotes from global icons like Mandela, Einstein among others to fuel your success mindset; a powerful Notepad for secure, cloud-backed organization with reminders and checklists; and engaging Bible Trivia games for fun, faith-based learning. All apps are designed for Android, work fully offline, and focus on user-friendly features like dark mode, notifications, and personalization. Whether you're seeking daily inspiration, productivity boosts, or meaningful connections, download our apps from Google Play and experience purposeful mobile innovation today!
+        </p>
+        <div id="home-apps-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Apps will be dynamically loaded here -->
+        </div>
+    </div>
+</section>
 
         <!-- Apps Section -->
         <section id="apps" class="py-16 bg-white" style="display: none;">
@@ -480,12 +482,20 @@
             </div>
         </div>
         <div class="mt-8 text-center text-gray-400">
-            <p>&copy; <span id="current-year"></span> JoshTechApps. All rights reserved.</p>
+            <p>&copy; <span id="copyright-year"></span> JoshTechApps. All rights reserved.</p>
         </div>
     </div>
 </footer>
-     <script>
-  document.getElementById("year").innerText = new Date().getFullYear();
+   <!-- PUT THE YEAR SCRIPT HERE -->
+<script>
+    // Set copyright year dynamically (range like 2024–2026)
+    const startYear = 2024;           // ← Change this to your actual launch year
+    const currentYear = new Date().getFullYear();
+    const yearText = (startYear < currentYear) 
+        ? `${startYear}–${currentYear}` 
+        : `${currentYear}`;
+    
+    document.getElementById("copyright-year").innerText = yearText;
 </script>
 
 
@@ -1320,32 +1330,34 @@
             window.scrollTo(0, 0);
         }
                 // Show blog post
-        function showBlogPost(postId) {
-            // Hide all main sections
-            document.querySelectorAll('#main-content > section').forEach(section => {
-                section.style.display = 'none';
-            });
-            
-            // Hide all app detail pages
-            document.querySelectorAll('.app-detail-page').forEach(page => {
-                page.classList.remove('active');
-            });
-            
-            // Hide all blog posts
-            document.querySelectorAll('.blog-post').forEach(post => {
-                post.classList.remove('active');
-            });
-            
-            // Show selected blog post
-            document.getElementById(postId).classList.add('active');
-            
-            // Close mobile menu if open
-            document.getElementById('mobile-menu').classList.add('hidden');
-            document.getElementById('dropdown-menu').classList.remove('active');
-            
-            // Scroll to top
-            window.scrollTo(0, 0);
-        }
+     function showBlogPost(postId) {
+    // Hide all main sections
+    document.querySelectorAll('#main-content > section').forEach(section => {
+        section.style.display = 'none';
+    });
+   
+    // Hide all app detail pages
+    document.querySelectorAll('.app-detail-page').forEach(page => {
+        page.classList.remove('active');
+    });
+   
+    // Hide all blog posts
+    document.querySelectorAll('.blog-post').forEach(post => {
+        post.classList.remove('active');
+    });
+   
+    // Show selected blog post
+    const postElement = document.getElementById(postId);
+    postElement.classList.add('active');
+    postElement.style.display = 'block'; // Ensure it's visible
+   
+    // Close mobile menu if open
+    document.getElementById('mobile-menu').classList.add('hidden');
+    document.getElementById('dropdown-menu').classList.remove('active');
+   
+    // Scroll smoothly to the top of the blog post (where details start)
+    postElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
 
         // Show app detail page
         function showAppDetail(appId) {
