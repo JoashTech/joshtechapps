@@ -12,3 +12,6 @@ facebook.com, 1148343337364852, DIRECT, c3e20eee3f780d68
 
 # World English Bible
 facebook.com, 1148343337364852, DIRECT, c3e20eee3f780d68
+
+# BEB for Vungle ads
+68babd5373b0b94e3242efb1, DIRECT, c107d686becd2d77
