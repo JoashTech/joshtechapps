@@ -106,20 +106,25 @@
 
     <!-- Main Content -->
     <div id="main-content">
-        <!-- Home Section – Enhanced -->
-        <section id="home" class="min-h-screen bg-gray-100 flex items-center justify-center pt-16">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <h1 class="hero-title font-heading text-gray-800 mb-6">We Build Digital Excellence</h1>
-                <p class="text-xl font-subheading text-gray-700 mb-8">From Mobile Apps to Complete Brand Identity</p>
-                <p class="text-lg leading-relaxed md:leading-loose text-gray-600 mb-12 max-w-4xl mx-auto px-4 sm:px-0">
-                    <strong class="text-gray-800">JoshTechApps</strong> is your one‑stop digital partner based in Ishaka, Uganda. We craft professional Android mobile applications, responsive websites, stunning graphics, flyers, posters, and complete branding solutions for individuals, institutions, and companies. Our in‑house apps – like Bible study tools, motivational quotes, love messages, note‑taking, and brain‑training games – are loved by thousands. Whether you need a custom app, a corporate website, or eye‑catching promotional materials, we deliver with passion, precision, and a personal touch.
-                </p>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10" id="home-apps-grid"></div>
-                <div class="mt-12">
-                    <p class="text-gray-600 italic">“Your vision, our code – let’s build something great together.”</p>
-                </div>
-            </div>
-        </section>
+       <!-- Home Section – Enhanced with proper formatting -->
+<section id="home" class="min-h-screen bg-gray-100 flex items-center justify-center pt-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h1 class="hero-title font-heading text-gray-800 mb-6">We Build Digital Excellence</h1>
+        <p class="text-xl font-subheading text-gray-700 mb-12">From Mobile Apps to Complete Brand Identity</p>
+        
+        <div class="max-w-3xl mx-auto text-left mb-16">
+            <p class="text-lg leading-relaxed text-gray-600">
+                <strong class="text-gray-800">JoshTechApps</strong> is your one‑stop digital partner based in Ishaka, Uganda. We craft professional Android mobile applications, responsive websites, stunning graphics, flyers, posters, and complete branding solutions for individuals, institutions, and companies. Our in‑house apps – like Bible study tools, motivational quotes, love messages, note‑taking, and brain‑training games – are loved by thousands. Whether you need a custom app, a corporate website, or eye‑catching promotional materials, we deliver with passion, precision, and a personal touch.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10" id="home-apps-grid"></div>
+        
+        <div class="mt-12">
+            <p class="text-gray-600 italic">“Your vision, our code – let’s build something great together.”</p>
+        </div>
+    </div>
+</section>
         
         <!-- Apps Section -->
         <section id="apps" class="py-16 bg-white" style="display: none;">
@@ -377,8 +382,8 @@
                     <div class="space-y-4 mb-10">
                         <p class="text-gray-700">
                             <strong>Email:</strong> 
-                            <a href="mailto:support@joshtechapps.com" class="text-blue-600 hover:underline hover:text-blue-800">
-                                support@joshtechapps.com
+                            <a href="mailto:contactjoshtechapps.com" class="text-blue-600 hover:underline hover:text-blue-800">
+                                contactjoshtechapps.com
                             </a>
                         </p>
                         <p class="text-gray-700">
@@ -1128,26 +1133,55 @@
                 </div>`;
             return page;
         }
+function showSection(sectionId) {
+    document.querySelectorAll('#main-content > section').forEach(s => s.style.display = 'none');
+    document.querySelectorAll('.app-detail-page').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.blog-post').forEach(p => p.classList.remove('active'));
+    
+    // If showing the blog section, ensure the blog listing is visible
+    if (sectionId === 'blog') {
+        const blogListing = document.getElementById('blog');
+        if (blogListing) blogListing.style.display = 'block';
+    } else {
+        const blogListing = document.getElementById('blog');
+        if (blogListing) blogListing.style.display = 'none';
+        document.getElementById(sectionId).style.display = 'block';
+    }
+    
+    document.getElementById('mobile-menu')?.classList.add('hidden');
+    document.getElementById('dropdown-menu')?.classList.remove('active');
+    window.scrollTo(0, 0);
+}
 
-        function showSection(sectionId) {
-            document.querySelectorAll('#main-content > section').forEach(s => s.style.display = 'none');
-            document.querySelectorAll('.app-detail-page').forEach(p => p.classList.remove('active'));
-            document.querySelectorAll('.blog-post').forEach(p => p.classList.remove('active'));
-            document.getElementById(sectionId).style.display = 'block';
-            document.getElementById('mobile-menu')?.classList.add('hidden');
-            document.getElementById('dropdown-menu')?.classList.remove('active');
-            window.scrollTo(0,0);
-        }
-
-        function showBlogPost(postId) {
-            document.querySelectorAll('#main-content > section').forEach(s => s.style.display = 'none');
-            document.querySelectorAll('.app-detail-page').forEach(p => p.classList.remove('active'));
-            document.querySelectorAll('.blog-post').forEach(p => p.classList.remove('active'));
-            document.getElementById(postId).classList.add('active');
-            document.getElementById('mobile-menu')?.classList.add('hidden');
-            document.getElementById('dropdown-menu')?.classList.remove('active');
-            window.scrollTo(0,0);
-        }
+     function showBlogPost(postId) {
+    // Hide all main sections (home, apps, about, contact, etc.)
+    document.querySelectorAll('#main-content > section').forEach(s => {
+        s.style.display = 'none';
+    });
+    // Hide the blog listing section (if it's a direct child of #blog-posts)
+    const blogListing = document.getElementById('blog');
+    if (blogListing) blogListing.style.display = 'none';
+    
+    // Hide all app detail pages
+    document.querySelectorAll('.app-detail-page').forEach(p => p.classList.remove('active'));
+    // Hide all blog posts
+    document.querySelectorAll('.blog-post').forEach(p => p.classList.remove('active'));
+    
+    // Show the selected blog post
+    const selectedPost = document.getElementById(postId);
+    if (selectedPost) selectedPost.classList.add('active');
+    
+    // Close mobile menus
+    document.getElementById('mobile-menu')?.classList.add('hidden');
+    document.getElementById('dropdown-menu')?.classList.remove('active');
+    
+    // Scroll to the top of the selected post
+    if (selectedPost) {
+        selectedPost.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } else {
+        window.scrollTo(0, 0);
+    }
+}
 
         function showAppDetail(appId) {
             document.querySelectorAll('#main-content > section').forEach(s => s.style.display = 'none');
