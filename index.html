@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="JoshTechApps - Bringing Simplicity & Purpose to Mobile Apps For Android Phones. Download our user-friendly apps from Google Play Directly From This Site.">
-    <title>JoshTechApps - Mobile Apps</title>
+    <meta name="description" content="JoshTechApps - Professional Android app development, website design, graphics, and digital solutions for individuals, institutions, and companies.">
+    <title>JoshTechApps - Mobile Apps & Digital Solutions</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,6 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap&family=Playfair+Display:wght@700;800&display=swap&family=Poppins:wght@500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
+        /* (keep all your existing styles) */
         body { transition: background-color 0.3s, color: 0.3s; }
         .dropdown-menu { display: none; }
         .dropdown-menu.active { display: block; }
@@ -105,27 +106,21 @@
 
     <!-- Main Content -->
     <div id="main-content">
-        <!-- Home -->
+        <!-- Home Section – Enhanced -->
         <section id="home" class="min-h-screen bg-gray-100 flex items-center justify-center pt-16">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <h1 class="hero-title font-heading text-gray-800 mb-6">Welcome to JoshTechApps 👋</h1>
-                <p class="text-xl font-subheading text-gray-700 mb-8">Bringing Simplicity & Purpose to Mobile Apps</p>
+                <h1 class="hero-title font-heading text-gray-800 mb-6">We Build Digital Excellence</h1>
+                <p class="text-xl font-subheading text-gray-700 mb-8">From Mobile Apps to Complete Brand Identity</p>
                 <p class="text-lg leading-relaxed md:leading-loose text-gray-600 mb-12 max-w-4xl mx-auto px-4 sm:px-0">
-                    At JoshTechApps, based in Ishaka town - Bushenyi district in the western part of Uganda, we're dedicated to creating mobile apps that inspire, organize, and connect. 
-                    
-                    Our collection includes offline Bible study tools in multiple translations (like KJV, ASV, and Darby among others) with daily verses, quizzes, and note-taking for spiritual growth; 
-                    heartfelt Love Messages with customizable themes and animations for strengthening relationships; 
-                    Motivational Quotes from global icons like Mandela, Einstein among others to fuel your success mindset; 
-                    a powerful Notepad for secure, cloud-backed organization with reminders and checklists; 
-                    and engaging Bible Trivia games for fun, faith-based learning.
-                    
-                    All apps are designed for Android, work fully offline, and focus on user-friendly features like dark mode, notifications, and personalization. 
-                    
-                    Whether you're seeking daily inspiration, productivity boosts, or meaningful connections, download our apps from Google Play and experience purposeful mobile innovation today!
+                    <strong class="text-gray-800">JoshTechApps</strong> is your one‑stop digital partner based in Ishaka, Uganda. We craft professional Android mobile applications, responsive websites, stunning graphics, flyers, posters, and complete branding solutions for individuals, institutions, and companies. Our in‑house apps – like Bible study tools, motivational quotes, love messages, note‑taking, and brain‑training games – are loved by thousands. Whether you need a custom app, a corporate website, or eye‑catching promotional materials, we deliver with passion, precision, and a personal touch.
                 </p>
-                <div id="home-apps-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10"></div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10" id="home-apps-grid"></div>
+                <div class="mt-12">
+                    <p class="text-gray-600 italic">“Your vision, our code – let’s build something great together.”</p>
+                </div>
             </div>
         </section>
+        
         <!-- Apps Section -->
         <section id="apps" class="py-16 bg-white" style="display: none;">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -135,329 +130,278 @@
                 </div>
             </div>
         </section>
-        <!-- About Section -->
+        
+        <!-- About Section – Enhanced -->
         <section id="about" class="py-16 bg-white" style="display: none;">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-3xl font-heading text-gray-800 text-center mb-12">About JoshTechApps</h2>
                 <div class="text-center">
-                    <p class="text-gray-600 mb-4">At JoshTechApps, we are passionate about creating mobile applications that bring simplicity, purpose, and joy to your daily life. Our apps are designed to inspire, organize, and connect users through intuitive and meaningful experiences.</p>
-                    <p class="text-gray-600 mb-4">From Bible study tools to note-taking apps and heartfelt love messages, our mission is to provide user-friendly solutions that enrich your spiritual, personal, and creative journey. All our apps are crafted with care, offering offline functionality and customizable features to suit your needs.</p>
-                    <p class="text-gray-600">Join our community of users and explore our collection on Google Play today!</p>
+                    <p class="text-gray-600 mb-4">At JoshTechApps, we are passionate about turning ideas into powerful digital solutions. Based in Ishaka, Uganda, we serve clients worldwide with a blend of creativity and technical expertise.</p>
+                    <p class="text-gray-600 mb-4">Our services include:</p>
+                    <ul class="list-disc list-inside text-gray-600 mb-6 text-left max-w-2xl mx-auto">
+                        <li><strong>Android App Development:</strong> Custom mobile apps tailored to your business or personal needs.</li>
+                        <li><strong>Website Design & Development:</strong> Responsive, modern websites that engage and convert.</li>
+                        <li><strong>Graphic Design:</strong> Logos, flyers, posters, brochures – anything you need to stand out.</li>
+                        <li><strong>Brand Identity:</strong> Complete branding packages to build a cohesive image.</li>
+                        <li><strong>Consulting & Support:</strong> Ongoing maintenance and advice for digital projects.</li>
+                    </ul>
+                    <p class="text-gray-600">We also create and publish our own apps – from Bible tools to brain‑teasing games – all designed with simplicity and purpose. Ready to start your next project? <a href="#contact" onclick="showSection('contact')" class="text-blue-600 hover:underline">Let’s talk</a>.</p>
                 </div>
             </div>
         </section>
 
         <!-- Blog Section -->
-         <!-- Blog Posts Container -->
-    <div id="blog-posts">
-        <!-- Bible Study Tips -->
-               <!-- Blog Section -->
-        <section id="blog" class="py-16 bg-gray-100" style="display: none;">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-3xl font-bold text-gray-800 text-center mb-12">Blog</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="bg-white p-6 rounded-lg shadow-md">
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Tips for Effective Bible Study</h3>
-                        <p class="text-gray-600 mb-4">Discover how to make the most of your Bible study with our offline apps, including tips for note-taking and daily verse reflections.</p>
-                        <a href="#" onclick="showBlogPost('bible-study-tips')" class="text-blue-600 hover:underline">Read More</a>
-                    </div>
-                    <div class="bg-white p-6 rounded-lg shadow-md">
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Creating Meaningful Love Messages</h3>
-                        <p class="text-gray-600 mb-4">Learn how to craft heartfelt messages using our Love Messages app with customizable backgrounds and themes.</p>
-                        <a href="#" onclick="showBlogPost('love-messages')" class="text-blue-600 hover:underline">Read More</a>
-                    </div>
-                    <div class="bg-white p-6 rounded-lg shadow-md">
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Organizing Your Life with Notepad</h3>
-                        <p class="text-gray-600 mb-4">Explore tips for staying productive with our Notepad app's reminder and organization features.</p>
-                        <a href="#" onclick="showBlogPost('notepad-organization')" class="text-blue-600 hover:underline">Read More</a>
-                    </div>
-                    <div class="bg-white p-6 rounded-lg shadow-md">
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Daily Motivation for Success</h3>
-                        <p class="text-gray-600 mb-4">How to use motivational quotes to build a success mindset and achieve your goals.</p>
-                        <a href="#" onclick="showBlogPost('daily-motivation')" class="text-blue-600 hover:underline">Read More</a>
-                    </div>
-                    <div class="bg-white p-6 rounded-lg shadow-md">
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Making Bible Learning Fun</h3>
-                        <p class="text-gray-600 mb-4">Discover how Bible Trivia can help you and your family learn scripture in an engaging way.</p>
-                        <a href="#" onclick="showBlogPost('bible-trivia')" class="text-blue-600 hover:underline">Read More</a>
-                    </div>
-                    <div class="bg-white p-6 rounded-lg shadow-md">
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Choosing the Right Bible Translation</h3>
-                        <p class="text-gray-600 mb-4">A guide to understanding different Bible translations and which one might be best for your study needs.</p>
-                        <a href="#" onclick="showBlogPost('bible-translations')" class="text-blue-600 hover:underline">Read More</a>
-                    </div>
+      <!-- Blog Section (Enhanced) -->
+<div id="blog-posts">
+    <section id="blog" class="py-16 bg-gray-100" style="display: none;">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-800 text-center mb-12">Blog</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Mastering Bible Study with Digital Tools</h3>
+                    <p class="text-gray-600 mb-4">Discover how to combine traditional study methods with our offline Bible apps (KJV, ASV, Darby, etc.) for deeper understanding. Tips on note-taking, verse highlighting, and daily reflection.</p>
+                    <a href="#" onclick="showBlogPost('bible-study-tips')" class="text-blue-600 hover:underline">Read More →</a>
                 </div>
-            </div>
-        </section>
-
-                <!-- Bible Study Tips -->
-        <section id="bible-study-tips" class="blog-post py-16 bg-white">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                <button onclick="showSection('blog')" class="mb-6 text-blue-600 hover:text-blue-800 flex items-center">
-                    <i class="fas fa-arrow-left mr-2"></i> Back to Blog
-                </button>
-                <h2 class="text-3xl font-bold text-gray-800 mb-6">Tips for Effective Bible Study</h2>
-                <div class="prose max-w-none">
-                    <p class="text-gray-600 mb-4">Studying the Bible can be a deeply rewarding experience, but it can also be challenging. Here are some tips to make the most of your Bible study using our apps:</p>
-                    
-                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">1. Establish a Consistent Routine</h3>
-                    <p class="text-gray-600 mb-4">Set aside a specific time each day for Bible study. Our apps offer daily verse notifications at 8 AM and 8 PM to help you maintain consistency in your spiritual practice.</p>
-                    
-                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">2. Use the Note-Taking Features</h3>
-                    <p class="text-gray-600 mb-4">All our Bible apps include powerful note-taking capabilities. Highlight verses in different colors, add personal reflections, and organize your thoughts. These notes are stored locally on your device, so you can access them anytime, even offline.</p>
-                    
-                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">3. Take Advantage of Offline Access</h3>
-                    <p class="text-gray-600 mb-4">With our Bible apps, you don't need an internet connection to access Scripture. This means you can study during your commute, while traveling, or in areas with poor connectivity.</p>
-                    
-                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">4. Test Your Knowledge with Quizzes</h3>
-                    <p class="text-gray-600 mb-4">Our Bible Trivia app offers engaging quizzes that help reinforce what you've learned. The ranking system motivates you to continue growing in your biblical knowledge.</p>
-                    
-                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">5. Explore Different Translations</h3>
-                    <p class="text-gray-600 mb-4">We offer multiple Bible translations including KJV, ASV, Darby, and more. Reading different translations can provide fresh perspectives and deeper understanding of difficult passages.</p>
-                    
-                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">6. Use the Verse for Guidance Feature</h3>
-                    <p class="text-gray-600 mb-4">When facing specific life situations, use the "Verses for Guidance" feature in our apps to find relevant Scripture for encouragement, wisdom, or comfort.</p>
-                    
-                    <p class="text-gray-600 mt-6">By incorporating these tips and utilizing the features in our Bible apps, you can develop a richer, more meaningful Bible study practice that fits seamlessly into your daily life.</p>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Crafting Love Messages That Touch Hearts</h3>
+                    <p class="text-gray-600 mb-4">Learn how to use our Love Messages app to create personalized, beautiful messages for any occasion. Tips on choosing backgrounds, fonts, and adding your own photos.</p>
+                    <a href="#" onclick="showBlogPost('love-messages')" class="text-blue-600 hover:underline">Read More →</a>
                 </div>
-            </div>
-        </section>
-
-        <!-- Love Messages -->
-        <section id="love-messages" class="blog-post py-16 bg-white">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                <button onclick="showSection('blog')" class="mb-6 text-blue-600 hover:text-blue-800 flex items-center">
-                    <i class="fas fa-arrow-left mr-2"></i> Back to Blog
-                </button>
-                <h2 class="text-3xl font-bold text-gray-800 mb-6">Creating Meaningful Love Messages</h2>
-                <div class="prose max-w-none">
-                    <p class="text-gray-600 mb-4">Expressing love and affection is essential for healthy relationships, but sometimes finding the right words can be challenging. Our Love Messages app is designed to help you create beautiful, personalized messages that truly convey your feelings.</p>
-                    
-                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">1. Start with Pre-Written Quotes</h3>
-                    <p class="text-gray-600 mb-4">Our app includes thousands of romantic quotes across 40+ categories. Whether you're celebrating an anniversary, apologizing, or simply saying "I love you," you'll find the perfect starting point for your message.</p>
-                    
-                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">2. Personalize with Custom Backgrounds</h3>
-                    <p class="text-gray-600 mb-4">Choose from over 500 beautiful background themes or use your own photos from your gallery. The right background can set the mood and make your message more personal and memorable.</p>
-                    
-                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">3. Customize Text and Layout</h3>
-                    <p class="text-gray-600 mb-4">Adjust text size, font styles, colors, and alignment to create the perfect visual presentation for your message. You can even add animated elements like hearts and roses for special occasions.</p>
-                    
-                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">4. Write Your Own Messages</h3>
-                    <p class="text-gray-600 mb-4">While pre-written quotes are helpful, nothing beats a message written from the heart. Use the app's customization features to create completely original messages that reflect your unique relationship.</p>
-                    
-                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">5. Use Categories for Different Occasions</h3>
-                    <p class="text-gray-600 mb-4">The app organizes quotes by categories like Romantic Love, Sweet Goodnight, Missing You, Thank You, and I'm Sorry. This makes it easy to find appropriate messages for any situation.</p>
-                    
-                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">6. Set Daily Reminders</h3>
-                    <p class="text-gray-600 mb-4">Enable daily notifications to receive curated love quotes that can inspire you to send spontaneous messages to your loved ones, keeping the romance alive every day.</p>
-                    
-                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">7. Share Easily</h3>
-                    <p class="text-gray-600 mb-4">Once you've created your perfect message, share it via WhatsApp, Instagram, Facebook, SMS, email, or any messaging app with just one tap.</p>
-                    
-                    <p class="text-gray-600 mt-6">Remember, the most meaningful messages often combine thoughtful words with personal touches. Our Love Messages app gives you all the tools you need to create expressions of love that will be cherished.</p>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Boost Your Productivity with Smart Note‑Taking</h3>
+                    <p class="text-gray-600 mb-4">From quick reminders to detailed project management, our Notepad app helps you stay organized. Explore features like checklists, Google Drive backup, and password protection.</p>
+                    <a href="#" onclick="showBlogPost('notepad-organization')" class="text-blue-600 hover:underline">Read More →</a>
                 </div>
-            </div>
-        </section>
-
-        <!-- Notepad Organization -->
-        <section id="notepad-organization" class="blog-post py-16 bg-white">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                <button onclick="showSection('blog')" class="mb-6 text-blue-600 hover:text-blue-800 flex items-center">
-                    <i class="fas fa-arrow-left mr-2"></i> Back to Blog
-                </button>
-                <h2 class="text-3xl font-bold text-gray-800 mb-6">Organizing Your Life with Notepad</h2>
-                <div class="prose max-w-none">
-                    <p class="text-gray-600 mb-4">In our busy lives, staying organized is crucial for productivity and peace of mind. Our Notepad app offers powerful features to help you capture ideas, manage tasks, and keep your life in order.</p>
-                    
-                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">1. Create Different Types of Notes</h3>
-                    <p class="text-gray-600 mb-4">Use the app to create simple text notes, detailed checklists, to-do lists with priorities, and organized notebooks. Different types of information require different formats, and our app supports them all.</p>
-                    
-                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">2. Set Smart Reminders</h3>
-                    <p class="text-gray-600 mb-4">Never miss an important deadline or appointment again. Set one-time or recurring reminders with custom alerts. The calendar integration lets you view all your upcoming tasks in one place.</p>
-                    
-                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">3. Organize with Folders and Categories</h3>
-                    <p class="text-gray-600 mb-4">Create folders for different projects, categories for different types of notes, and use tags for efficient organization. This makes it easy to find what you need when you need it.</p>
-                    
-                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">4. Use the Powerful Search Feature</h3>
-                    <p class="text-gray-600 mb-4">With instant search across all your notes and keyword highlighting, you can quickly locate specific information without scrolling through countless notes.</p>
-                    
-                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">5. Secure Your Private Notes</h3>
-                    <p class="text-gray-600 mb-4">Protect sensitive information with password protection and biometric authentication (fingerprint/face ID). Your private thoughts and information remain secure.</p>
-                    
-                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">6. Backup to Google Drive</h3>
-                    <p class="text-gray-600 mb-4">Automatically backup your notes to Google Drive to ensure you never lose important information. Your notes are synced across devices and can be restored anytime.</p>
-                    
-                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">7. Customize Your Experience</h3>
-                    <p class="text-gray-600 mb-4">Choose from multiple themes (light, dark, blue, green), adjust font sizes, and customize the layout to create a note-taking environment that works best for you.</p>
-                    
-                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">8. Use Home Screen Widgets</h3>
-                    <p class="text-gray-600 mb-4">Quickly create notes from your home screen without even opening the app. This is perfect for capturing ideas as they come to you.</p>
-                    
-                    <p class="text-gray-600 mt-6">By implementing these organization strategies with our Notepad app, you can reduce stress, increase productivity, and ensure that important information is always at your fingertips.</p>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Daily Motivation for Success: Lessons from Legends</h3>
+                    <p class="text-gray-600 mb-4">How to use our Motivational Quotes app to build a success mindset. Learn from the habits of Steve Jobs, Nelson Mandela, and other icons through our curated wisdom and actionable articles.</p>
+                    <a href="#" onclick="showBlogPost('daily-motivation')" class="text-blue-600 hover:underline">Read More →</a>
                 </div>
-            </div>
-        </section>
-
-        <!-- Daily Motivation -->
-        <section id="daily-motivation" class="blog-post py-16 bg-white">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                <button onclick="showSection('blog')" class="mb-6 text-blue-600 hover:text-blue-800 flex items-center">
-                    <i class="fas fa-arrow-left mr-2"></i> Back to Blog
-                </button>
-                <h2 class="text-3xl font-bold text-gray-800 mb-6">Daily Motivation for Success</h2>
-                <div class="prose max-w-none">
-                    <p class="text-gray-600 mb-4">Maintaining motivation is key to achieving your goals and living a fulfilling life. Our Motivational Quotes app provides daily inspiration from history's greatest minds to help you build a success mindset.</p>
-                    
-                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">1. Start Your Day with Purpose</h3>
-                    <p class="text-gray-600 mb-4">Set your daily notifications for 6 AM on Monday to receive a week-starter quote that sets a positive tone for the days ahead. Beginning your day with inspirational wisdom can dramatically impact your productivity and outlook.</p>
-                    
-                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">2. Learn from History's Greatest Minds</h3>
-                    <p class="text-gray-600 mb-4">Our app features wisdom from influential figures like Steve Jobs (innovation), Nelson Mandela (resilience), Oprah Winfrey (purpose), and Albert Einstein (curiosity). Reading about their journeys and philosophies can provide valuable perspectives for your own challenges.</p>
-                    
-                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">3. Use Themed Categories for Specific Needs</h3>
-                    <p class="text-gray-600 mb-4">The app organizes quotes into categories like Success & Achievement, Overcoming Challenges, Mindset & Growth, and Career & Business. When facing specific situations, browse the relevant category for targeted inspiration.</p>
-                    
-                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">4. Create a Visual Motivation Board</h3>
-                    <p class="text-gray-600 mb-4">With 100+ HD background themes, you can create beautiful quote images that resonate with you. Download these as wallpapers for your phone to keep motivation visible throughout your day.</p>
-                    
-                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">5. Read the Educational Articles</h3>
-                    <p class="text-gray-600 mb-4">Beyond quotes, the app includes actionable articles like "Build Resilience Like Mandela," "Steve Jobs' 5 AM Routine," and "Stoic Philosophy for Stress." These provide practical strategies for implementing wisdom in your daily life.</p>
-                    
-                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">6. Explore Detailed Personality Profiles</h3>
-                    <p class="text-gray-600 mb-4">Understanding the complete life stories, major achievements, and challenges overcome by great minds makes their quotes more meaningful and applicable to your own journey.</p>
-                    
-                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">7. Use Scientifically-Timed Notifications</h3>
-                    <p class="text-gray-600 mb-4">The app's smart notification system delivers inspiration at optimal times throughout your week: morning boosts, mid-week energy, afternoon inspiration, and weekend mindset preparation.</p>
-                    
-                    <p class="text-gray-600 mt-6">By consistently engaging with motivational content through our app, you can develop the mindset needed to overcome obstacles, pursue your ambitions, and create the life you envision.</p>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Gamify Your Bible Learning with Trivia</h3>
+                    <p class="text-gray-600 mb-4">Make scripture study fun for the whole family using our Bible Trivia app. Explore game modes, ranking systems, and how to use virtual coins to deepen engagement.</p>
+                    <a href="#" onclick="showBlogPost('bible-trivia')" class="text-blue-600 hover:underline">Read More →</a>
                 </div>
-            </div>
-        </section>
-
-        <!-- Bible Trivia -->
-        <section id="bible-trivia" class="blog-post py-16 bg-white">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                <button onclick="showSection('blog')" class="mb-6 text-blue-600 hover:text-blue-800 flex items-center">
-                    <i class="fas fa-arrow-left mr-2"></i> Back to Blog
-                </button>
-                <h2 class="text-3xl font-bold text-gray-800 mb-6">Making Bible Learning Fun with Trivia</h2>
-                <div class="prose max-w-none">
-                    <p class="text-gray-600 mb-4">Learning Scripture doesn't have to be a solemn, serious endeavor. Our Bible Trivia app makes biblical education engaging, interactive, and enjoyable for individuals, families, and study groups.</p>
-                    
-                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">1. Multiple Game Modes for Varied Learning</h3>
-                    <p class="text-gray-600 mb-4">The app offers different game modes including General Quiz, True or False, and Level Progression with 100+ levels. This variety keeps the learning experience fresh and appeals to different learning styles.</p>
-                    
-                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">2. Progress Through Ranking System</h3>
-                    <p class="text-gray-600 mb-4">The competitive ranking system (from Bronze to Legend) provides motivation to continue learning and improving your biblical knowledge. Tracking your progress visually can be highly encouraging.</p>
-                    
-                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">3. Earn Rewards Through Engagement</h3>
-                    <p class="text-gray-600 mb-4">The virtual coin system rewards daily logins, perfect scores, and engagement. These coins can be used for hints, Bible references, or level retries, creating a gamified learning experience.</p>
-                    
-                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">4. Perfect for Family Game Nights</h3>
-                    <p class="text-gray-600 mb-4">The app transforms Bible study into a fun family activity. Children and adults can learn together in a relaxed, game-based environment that makes Scripture memorable and accessible to all ages.</p>
-                    
-                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">5. Use as a Teaching Tool</h3>
-                    <p class="text-gray-600 mb-4">Sunday school teachers and Bible study leaders can use the app to create interactive lessons. The quiz format helps reinforce learning and provides immediate feedback on comprehension.</p>
-                    
-                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">6. Full Offline Access</h3>
-                    <p class="text-gray-600 mb-4">Like all our apps, Bible Trivia works completely offline. This means you can play during commutes, travels, or in areas without internet connectivity, making biblical learning possible anywhere.</p>
-                    
-                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">7. Track Spiritual Growth</h3>
-                    <p class="text-gray-600 mb-4">The detailed progress analytics allow you to monitor your improvement in biblical knowledge over time, providing tangible evidence of your spiritual growth through learning.</p>
-                    
-                    <p class="text-gray-600 mt-6">By incorporating game elements into Bible learning, our Trivia app makes Scripture study an enjoyable habit rather than a chore, helping users of all ages develop deeper biblical knowledge in a fun, engaging way.</p>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Choosing the Right Bible Translation for You</h3>
+                    <p class="text-gray-600 mb-4">A guide to understanding the differences between KJV, ASV, Darby, WEB, and more. Tips for selecting the version that best fits your study needs.</p>
+                    <a href="#" onclick="showBlogPost('bible-translations')" class="text-blue-600 hover:underline">Read More →</a>
                 </div>
-            </div>
-        </section>
-
-        <!-- Bible Translations -->
-        <section id="bible-translations" class="blog-post py-16 bg-white">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                <button onclick="showSection('blog')" class="mb-6 text-blue-600 hover:text-blue-800 flex items-center">
-                    <i class="fas fa-arrow-left mr-2"></i> Back to Blog
-                </button>
-                <h2 class="text-3xl font-bold text-gray-800 mb-6">Choosing the Right Bible Translation</h2>
-                <div class="prose max-w-none">
-                    <p class="text-gray-600 mb-4">With so many Bible translations available, it can be challenging to know which one is right for your study needs. At JoshTechApps, we offer multiple translations, each with its own strengths and characteristics.</p>
-                    
-                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">King James Version (KJV)</h3>
-                    <p class="text-gray-600 mb-4">The KJV is a classic, formal-equivalence translation known for its beautiful, poetic language. It's ideal for those who appreciate traditional English and want to connect with centuries of Christian tradition.</p>
-                    
-                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">American Standard Version (ASV)</h3>
-                    <p class="text-gray-600 mb-4">The ASV is a literal translation that prioritizes word-for-word accuracy from the original languages. It's excellent for serious Bible study and for those who want to understand the precise meaning of the original texts.</p>
-                    
-                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">Darby Bible</h3>
-                    <p class="text-gray-600 mb-4">The Darby Bible is known for its scholarly approach and attention to detail. It's particularly valued for its consistency in translating key terms and its usefulness for comparative study.</p>
-                    
-                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">World English Bible (WEB)</h3>
-                    <p class="text-gray-600 mb-4">The WEB is a modern English translation that balances accuracy with readability. It's a great choice for those who want a contemporary translation that remains faithful to the original texts.</p>
-                    
-                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">Basic English Bible (BEB)</h3>
-                    <p class="text-gray-600 mb-4">The BEB uses a limited vocabulary of about 1,000 words, making it accessible to English learners and those who prefer simple, straightforward language.</p>
-                    
-                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">King James Version with Apocrypha (KJVA)</h3>
-                    <p class="text-gray-600 mb-4">This version includes the Apocrypha, which are books included in some Christian traditions but not in others. It's valuable for those interested in historical Christian literature beyond the standard Protestant canon.</p>
-                    
-                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">How to Choose</h3>
-                    <p class="text-gray-600 mb-4">Consider your purpose: For devotional reading, you might prefer a more readable translation like WEB. For in-depth study, a literal translation like ASV might be better. Many people benefit from comparing multiple translations to gain different perspectives on difficult passages.</p>
-                    
-                    <p class="text-gray-600 mt-6">The great advantage of our Bible apps is that you can easily access multiple translations, allowing you to find the one that best suits your needs and preferences for different types of reading and study.</p>
+                <!-- NEW: App Development Insights -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">From Idea to Play Store: Our App Development Process</h3>
+                    <p class="text-gray-600 mb-4">A behind‑the‑scenes look at how we build custom Android apps. Learn about planning, design, development, testing, and launch – and how we can bring your vision to life.</p>
+                    <a href="#" onclick="showBlogPost('app-development')" class="text-blue-600 hover:underline">Read More →</a>
                 </div>
-            </div>
-        </section>
-    </div>
-
-        <!-- Contact Section -->
-     <!-- Contact Section -->
-<!-- Contact Section -->
-<!-- Contact Section -->
-<section id="contact" class="py-16 bg-white" style="display: none;">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-3xl font-heading text-gray-800 text-center mb-12">Contact Us</h2>
-        <div class="text-center">
-            <p class="text-gray-600 mb-4 text-lg">Have questions or feedback? We'd love to hear from you!</p>
-
-            <div class="space-y-4 mb-10">
-                <p class="text-gray-700">
-                    <strong>Email:</strong> 
-                    <a href="mailto:support@joshtechapps.com" class="text-blue-600 hover:underline hover:text-blue-800">
-                        support@joshtechapps.com
-                    </a>
-                </p>
-                
-                <p class="text-gray-700">
-                    <strong>Phone / WhatsApp:</strong> 
-                    <a href="tel:+256757447122" class="text-blue-600 hover:underline hover:text-blue-800">
-                        +256 757447122
-                    </a>
-                    <span class="text-sm text-gray-500 ml-2">(Available for calls & WhatsApp)</span>
-                </p>
-
-                <p class="text-gray-700">
-                    <strong>Address:</strong> Ishaka Town, Bushenyi District, Western Uganda
-                </p>
-            </div>
-
-            <div class="flex justify-center space-x-8 mt-6">
-                <a href="https://x.com/Twinamatsi21777" target="_blank" class="text-gray-600 hover:text-black transition-colors">
-                    <i class="fab fa-twitter text-3xl"></i>
-                </a>
-                <a href="https://www.instagram.com/joshtechapps" target="_blank" class="text-gray-600 hover:text-pink-600 transition-colors">
-                    <i class="fab fa-instagram text-3xl"></i>
-                </a>
-                <a href="https://www.facebook.com/share/1A9wasyjnK/" target="_blank" class="text-gray-600 hover:text-blue-600 transition-colors">
-                    <i class="fab fa-facebook text-3xl"></i>
-                </a>
-                <a href="https://www.tiktok.com/@joashtechapps" target="_blank" class="text-gray-600 hover:text-black transition-colors">
-                    <i class="fab fa-tiktok text-3xl"></i>
-                </a>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Designing Brand Identities That Stand Out</h3>
+                    <p class="text-gray-600 mb-4">Our approach to creating logos, flyers, and complete branding packages. Discover how we blend creativity with strategy to help your business make a lasting impression.</p>
+                    <a href="#" onclick="showBlogPost('brand-identity')" class="text-blue-600 hover:underline">Read More →</a>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-    <!-- App Details Container -->
-    <div id="app-detail-pages"></div>
+    <!-- Individual Blog Posts – Enhanced Content -->
+    <section id="bible-study-tips" class="blog-post py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <button onclick="showSection('blog')" class="mb-6 text-blue-600 hover:text-blue-800 flex items-center"><i class="fas fa-arrow-left mr-2"></i> Back to Blog</button>
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">Mastering Bible Study with Digital Tools</h2>
+            <div class="prose max-w-none">
+                <p class="text-gray-600 mb-4">In today’s fast‑paced world, finding time for deep Bible study can be challenging. Digital tools can help you stay consistent and engaged. Our Bible apps (KJV, ASV, Darby, World English Bible, etc.) are designed to enhance your study experience—fully offline and packed with features.</p>
+                <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">1. Establish a Consistent Routine</h3>
+                <p class="text-gray-600 mb-4">Use daily verse notifications at 8 AM and 8 PM to anchor your study time. Consistency builds habit, and our apps deliver inspiration right when you need it.</p>
+                <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">2. Take Notes and Highlight</h3>
+                <p class="text-gray-600 mb-4">Our apps allow you to highlight verses in multiple colors and add personal notes. This transforms passive reading into active study, helping you retain and reflect on key insights.</p>
+                <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">3. Use the “Verse for Guidance” Feature</h3>
+                <p class="text-gray-600 mb-4">When facing specific life situations (anxiety, decision‑making, gratitude), quickly find relevant Scripture. This feature turns your study into practical application.</p>
+                <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">4. Test Your Knowledge with Quizzes</h3>
+                <p class="text-gray-600 mb-4">Our Bible Trivia app (separate) offers engaging quizzes that reinforce what you’ve learned. Perfect for personal review or family game nights.</p>
+                <p class="text-gray-600 mt-6">By combining traditional study methods with these digital tools, you can develop a deeper understanding of Scripture that fits seamlessly into your daily life.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="love-messages" class="blog-post py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <button onclick="showSection('blog')" class="mb-6 text-blue-600 hover:text-blue-800 flex items-center"><i class="fas fa-arrow-left mr-2"></i> Back to Blog</button>
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">Crafting Love Messages That Touch Hearts</h2>
+            <div class="prose max-w-none">
+                <p class="text-gray-600 mb-4">Whether it’s a romantic partner, family member, or close friend, expressing love in a meaningful way can strengthen any relationship. Our Love Messages app gives you the tools to create beautiful, personalized messages that go beyond words.</p>
+                <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">Start with a Quote, Then Personalize</h3>
+                <p class="text-gray-600 mb-4">Browse thousands of quotes across 40+ categories (Romantic, Apology, Missing You, etc.). Find the perfect starting point, then add your own touch by editing the text, changing fonts, and choosing a background that matches the mood.</p>
+                <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">Use Your Own Photos</h3>
+                <p class="text-gray-600 mb-4">A picture is worth a thousand words. Add a photo from your gallery or take a new one directly in the app to create a truly unique message. You can even add animated hearts or roses for extra flair.</p>
+                <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">Share with One Tap</h3>
+                <p class="text-gray-600 mb-4">Once your message is ready, share it via WhatsApp, Instagram, Facebook, SMS, or any other app. Your loved ones will appreciate the effort and thoughtfulness.</p>
+                <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">Set Daily Reminders</h3>
+                <p class="text-gray-600 mb-4">Enable notifications to receive daily love quotes that can inspire you to send spontaneous messages. Small gestures keep relationships vibrant.</p>
+                <p class="text-gray-600 mt-6">With the Love Messages app, you’ll never struggle to find the right words again.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="notepad-organization" class="blog-post py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <button onclick="showSection('blog')" class="mb-6 text-blue-600 hover:text-blue-800 flex items-center"><i class="fas fa-arrow-left mr-2"></i> Back to Blog</button>
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">Boost Your Productivity with Smart Note‑Taking</h2>
+            <div class="prose max-w-none">
+                <p class="text-gray-600 mb-4">Our Notepad app is more than a simple text editor. It’s a complete organization system that helps you capture ideas, manage tasks, and never forget important details. Here’s how to make the most of it.</p>
+                <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">1. Create Rich Notes and Checklists</h3>
+                <p class="text-gray-600 mb-4">Use formatting options to create clear, structured notes. Checklists are perfect for grocery lists, project tasks, or daily routines. You can also create separate notebooks for different areas of your life.</p>
+                <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">2. Set Smart Reminders</h3>
+                <p class="text-gray-600 mb-4">Never miss a deadline or appointment. Set one‑time or recurring reminders with custom alerts. The calendar view gives you an overview of all upcoming tasks.</p>
+                <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">3. Secure Your Private Notes</h3>
+                <p class="text-gray-600 mb-4">Enable password protection or biometric authentication (fingerprint/face ID) to keep sensitive information safe. Your notes are stored locally by default, giving you full control.</p>
+                <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">4. Backup to Google Drive</h3>
+                <p class="text-gray-600 mb-4">Automatically sync your notes to your Google Drive. This ensures you never lose important data and can restore your notes even if you switch devices.</p>
+                <p class="text-gray-600 mt-6">With these features, our Notepad app becomes an essential tool for students, professionals, and anyone looking to stay organized.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="daily-motivation" class="blog-post py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <button onclick="showSection('blog')" class="mb-6 text-blue-600 hover:text-blue-800 flex items-center"><i class="fas fa-arrow-left mr-2"></i> Back to Blog</button>
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">Daily Motivation for Success: Lessons from Legends</h2>
+            <div class="prose max-w-none">
+                <p class="text-gray-600 mb-4">Success isn’t accidental—it’s built through mindset, habits, and resilience. Our Motivational Quotes app brings you wisdom from history’s greatest minds, along with actionable advice to apply to your own life.</p>
+                <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">Start Your Day with Purpose</h3>
+                <p class="text-gray-600 mb-4">Use the app’s smart notification system (timed for Monday mornings, mid‑week boosts, etc.) to get inspired at the right moments. Reading a powerful quote first thing sets a positive tone for the day.</p>
+                <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">Learn from Detailed Personality Profiles</h3>
+                <p class="text-gray-600 mb-4">The app includes full life stories, major achievements, and challenges overcome by icons like Steve Jobs, Nelson Mandela, and Oprah Winfrey. Understanding their journeys makes their quotes more meaningful.</p>
+                <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">Apply Actionable Articles</h3>
+                <p class="text-gray-600 mb-4">Read articles like “Build Resilience Like Mandela” or “Steve Jobs’ 5 AM Routine” to get practical strategies you can implement immediately. These go beyond inspiration to real‑world application.</p>
+                <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">Create a Visual Motivation Board</h3>
+                <p class="text-gray-600 mb-4">Download stunning HD themes as wallpapers for your phone. Keep a favorite quote visible throughout the day to reinforce your goals.</p>
+                <p class="text-gray-600 mt-6">By regularly engaging with this content, you can develop the mindset needed to overcome obstacles and achieve your ambitions.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="bible-trivia" class="blog-post py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <button onclick="showSection('blog')" class="mb-6 text-blue-600 hover:text-blue-800 flex items-center"><i class="fas fa-arrow-left mr-2"></i> Back to Blog</button>
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">Gamify Your Bible Learning with Trivia</h2>
+            <div class="prose max-w-none">
+                <p class="text-gray-600 mb-4">Learning Scripture doesn’t have to be a chore. Our Bible Trivia app turns Bible knowledge into an exciting game for all ages. Here’s how to use it to deepen your understanding.</p>
+                <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">Multiple Game Modes for Varied Learning</h3>
+                <p class="text-gray-600 mb-4">Choose from General Quiz, True or False, or Level Progression (100+ levels). The variety keeps the experience fresh and appeals to different learning styles.</p>
+                <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">Progress Through Ranks</h3>
+                <p class="text-gray-600 mb-4">Compete for titles from Bronze to Legend as well as global leaderboard, play climb top of leaderboard and compete with the rest of the world players. The ranking system motivates you to keep learning and improving, turning study into a fun challenge.</p>
+                <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">Earn and Use Virtual Coins</h3>
+                <p class="text-gray-600 mb-4">Daily logins, perfect scores, and watching inspirational ads earn you coins. Spend them on hints, Bible references, or level retries. The coin system adds a rewarding loop without real‑world transactions.</p>
+                <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">Track Your Growth</h3>
+                <p class="text-gray-600 mb-4">Detailed progress analytics show you how your biblical knowledge improves over time. This tangible evidence encourages continued engagement.</p>
+                <p class="text-gray-600 mt-6">Perfect for family game nights, Sunday school, or personal enrichment, Bible Trivia makes Scripture study fun and memorable.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="bible-translations" class="blog-post py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <button onclick="showSection('blog')" class="mb-6 text-blue-600 hover:text-blue-800 flex items-center"><i class="fas fa-arrow-left mr-2"></i> Back to Blog</button>
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">Choosing the Right Bible Translation for You</h2>
+            <div class="prose max-w-none">
+                <p class="text-gray-600 mb-4">With so many Bible translations available, it can be overwhelming to pick one. Our apps offer several options—each with unique strengths. Here’s a quick guide.</p>
+                <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">King James Version (KJV)</h3>
+                <p class="text-gray-600 mb-4">Classic, poetic language. Ideal for those who appreciate traditional English and want to connect with centuries of Christian tradition.</p>
+                <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">American Standard Version (ASV)</h3>
+                <p class="text-gray-600 mb-4">A literal, word‑for‑word translation. Excellent for serious study and understanding the original language nuances.</p>
+                <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">Darby Bible</h3>
+                <p class="text-gray-600 mb-4">Known for scholarly accuracy and consistency. Great for comparative study.</p>
+                <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">World English Bible (WEB)</h3>
+                <p class="text-gray-600 mb-4">Modern, readable English that remains faithful to the original texts. A balanced choice for daily reading.</p>
+                <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">Basic English Bible (BEB)</h3>
+                <p class="text-gray-600 mb-4">Uses a limited vocabulary (≈1,000 words), making it accessible for English learners or those who prefer simple language.</p>
+                <p class="text-gray-600 mt-6">Many people benefit from comparing multiple translations. Our apps let you switch easily, so you can find the version that best suits your needs for different types of reading and study.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW: App Development Process -->
+    <section id="app-development" class="blog-post py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <button onclick="showSection('blog')" class="mb-6 text-blue-600 hover:text-blue-800 flex items-center"><i class="fas fa-arrow-left mr-2"></i> Back to Blog</button>
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">From Idea to Play Store: Our App Development Process</h2>
+            <div class="prose max-w-none">
+                <p class="text-gray-600 mb-4">At JoshTechApps, we don’t just build apps—we bring ideas to life. Whether you need a custom business app, a game, or a personal tool, our proven process ensures quality results.</p>
+                <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">1. Discovery & Planning</h3>
+                <p class="text-gray-600 mb-4">We start by understanding your vision, target audience, and goals. Together, we define features, user flows, and technical requirements. This phase ensures we’re aligned before a single line of code is written.</p>
+                <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">2. UI/UX Design</h3>
+                <p class="text-gray-600 mb-4">Our designers craft intuitive, beautiful interfaces that reflect your brand. We create wireframes and prototypes to ensure the user experience feels natural and engaging.</p>
+                <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">3. Development & Iteration</h3>
+                <p class="text-gray-600 mb-4">Using modern Android technologies (,python, Kotlin/Java, Jetpack Compose, Firebase, etc.), we build a robust app with clean code. Regular updates keep you in the loop, and we iterate based on your feedback.</p>
+                <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">4. Testing & Quality Assurance</h3>
+                <p class="text-gray-600 mb-4">We test on multiple devices, screen sizes, and Android versions to ensure performance and stability. Beta testing with real users helps us iron out any issues.</p>
+                <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">5. Launch & Support</h3>
+                <p class="text-gray-600 mb-4">We prepare your app for release on the Google Play Store, including metadata, screenshots, and descriptions. Post‑launch, we offer ongoing support and updates to keep your app relevant.</p>
+                <p class="text-gray-600 mt-6">Ready to turn your idea into reality? <a href="#contact" onclick="showSection('contact')" class="text-blue-600 hover:underline">Contact us today</a> to start your project.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="brand-identity" class="blog-post py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <button onclick="showSection('blog')" class="mb-6 text-blue-600 hover:text-blue-800 flex items-center"><i class="fas fa-arrow-left mr-2"></i> Back to Blog</button>
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">Designing Brand Identities That Stand Out</h2>
+            <div class="prose max-w-none">
+                <p class="text-gray-600 mb-4">A strong brand identity is more than a logo—it’s the personality of your business. Our design services help you create a cohesive visual presence that resonates with your audience.</p>
+                <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">What We Offer</h3>
+                <ul class="list-disc list-inside text-gray-600 mb-4">
+                    <li><strong>Logos & Icons</strong> – Memorable, scalable marks that capture your essence.</li>
+                    <li><strong>Flyers & Posters</strong> – Eye‑catching promotional materials for events, sales, or awareness.</li>
+                    <li><strong>Brochures & Business Cards</strong> – Professional print materials that leave a lasting impression.</li>
+                    <li><strong>Complete Brand Guidelines</strong> – Color palettes, typography, and usage rules to ensure consistency across all platforms.</li>
+                </ul>
+                <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">Our Process</h3>
+                <p class="text-gray-600 mb-4">We start with a deep dive into your values, audience, and competitors. Then we explore multiple concepts, refine based on your feedback, and deliver final assets in all formats you need. The result is a brand identity that feels authentic and professional.</p>
+                <p class="text-gray-600 mt-6">Ready to elevate your brand? <a href="#contact" onclick="showSection('contact')" class="text-blue-600 hover:underline">Let’s create something amazing</a>.</p>
+            </div>
+        </div>
+    </section>
+</div>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-16 bg-white" style="display: none;">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-heading text-gray-800 text-center mb-12">Contact Us</h2>
+                <div class="text-center">
+                    <p class="text-gray-600 mb-4 text-lg">Have questions or feedback? Let’s create something amazing together!</p>
+                    <div class="space-y-4 mb-10">
+                        <p class="text-gray-700">
+                            <strong>Email:</strong> 
+                            <a href="mailto:support@joshtechapps.com" class="text-blue-600 hover:underline hover:text-blue-800">
+                                support@joshtechapps.com
+                            </a>
+                        </p>
+                        <p class="text-gray-700">
+                            <strong>Phone / WhatsApp:</strong> 
+                            <a href="tel:+256757447122" class="text-blue-600 hover:underline hover:text-blue-800">
+                                +256 757447122
+                            </a>
+                            <span class="text-sm text-gray-500 ml-2">(Available for calls & WhatsApp)</span>
+                        </p>
+                        <p class="text-gray-700">
+                            <strong>Address:</strong> Ishaka Town, Bushenyi District, Western Uganda
+                        </p>
+                        <p class="text-gray-700 mt-4">
+                            <strong>Custom Development Inquiries:</strong> We'd love to hear your idea – email us with the subject "Project Inquiry".
+                        </p>
+                    </div>
+                    <div class="flex justify-center space-x-8 mt-6">
+                        <a href="https://x.com/Twinamatsi21777" target="_blank" class="text-gray-600 hover:text-black transition-colors"><i class="fab fa-twitter text-3xl"></i></a>
+                        <a href="https://www.instagram.com/joshtechapps" target="_blank" class="text-gray-600 hover:text-pink-600 transition-colors"><i class="fab fa-instagram text-3xl"></i></a>
+                        <a href="https://www.facebook.com/share/1A9wasyjnK/" target="_blank" class="text-gray-600 hover:text-blue-600 transition-colors"><i class="fab fa-facebook text-3xl"></i></a>
+                        <a href="https://www.tiktok.com/@joashtechapps" target="_blank" class="text-gray-600 hover:text-black transition-colors"><i class="fab fa-tiktok text-3xl"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- App Details Container -->
+        <div id="app-detail-pages"></div>
+    </div>
 
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-8">
@@ -465,7 +409,7 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div>
                     <h3 class="text-xl font-subheading mb-4">JoshTechApps</h3>
-                    <p class="text-gray-400">Bringing simplicity and purpose to your mobile experience with apps designed for inspiration and productivity.</p>
+                    <p class="text-gray-400">Bringing simplicity, purpose, and professional digital solutions to your world.</p>
                 </div>
                 <div>
                     <h3 class="text-xl font-subheading mb-4">Quick Links</h3>
@@ -493,665 +437,594 @@
         </div>
     </footer>
 
-    <!-- Scripts -->
     <script>
         // Copyright Year
         const startYear = 2023;
         const currentYear = new Date().getFullYear();
         document.getElementById("copyright-year").innerText = 
             startYear < currentYear ? `${startYear}–${currentYear}` : currentYear;
-    </script>
 
-
-    <script>
-        // ================= BACKEND DATA =================
-        const appsData = {
-            "asb": {
-                id: "asb",
-                name: "American Standard Bible (ASB)",
-                icon: "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/ic_asv_icon.png",
-                description: "Explore the American Standard Bible offline with daily verses and personalized study tools.",
-                shortDescription: "Explore the American Standard Bible offline with daily verses and personalized study tools.",
-                playStoreUrl: "https://play.google.com/store/apps/details?id=com.joshtechapps.bible.asv",
-                status: "available",
-                screenshots: [
-                    "https://via.placeholder.com/300x600",
-                    "https://via.placeholder.com/300x600",
-                    "https://via.placeholder.com/300x600",
-                    "https://via.placeholder.com/300x600",
-                    "https://via.placeholder.com/300x600",
-                    "https://via.placeholder.com/300x600",
-                    "https://via.placeholder.com/300x600",
-                    "https://via.placeholder.com/300x600"
-                ],
-                features: [
-                    "Full offline access to the American Standard Bible",
-                    "Daily verses delivered at 8 AM and 8 PM",
-                    "Save and manage favorite verses and notes",
-                    "Verses for guidance in various life situations",
-                    "Add notes or highlight verses with multiple colors",
-                    "Customizable themes, including light and dark modes",
-                    "Engaging quizzes to test your Bible knowledge"
-                ],
-                faq: [
-                    {
-                        question: "Is the app fully offline?",
-                        answer: "Yes, all Bible content is stored locally."
-                    },
-                    {
-                        question: "Can I save notes?",
-                        answer: "Yes, create and organize personal notes with highlights in various colors, all stored locally."
-                    },
-                    {
-                        question: "Are notifications customizable?",
-                        answer: "Yes, enable or disable daily verse reminders based on your preference."
-                    }
-                ],
-                reviews: [
-                    "Perfect for studying the ASB offline! - Emily R.",
-                    "The quizzes and daily verses are fantastic! - Michael T."
-                ]
-            },
-            "darby": {
-                id: "darby",
-                name: "Darby Bible",
-                icon: "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/ic_darby_icon.png",
-                description: "Dive into the Darby Bible with offline access, daily verses, and study tools.",
-                shortDescription: "Dive into the Darby Bible with offline access, daily verses, and study tools.",
-                playStoreUrl: "https://play.google.com/store/apps/details?id=com.joshtechapps.darbybible",
-                status: "available",
-                screenshots: [
-                    "https://via.placeholder.com/300x600",
-                    "https://via.placeholder.com/300x600",
-                    "https://via.placeholder.com/300x600",
-                    "https://via.placeholder.com/300x600",
-                    "https://via.placeholder.com/300x600",
-                    "https://via.placeholder.com/300x600",
-                    "https://via.placeholder.com/300x600",
-                    "https://via.placeholder.com/300x600"
-                ],
-                features: [
-                    "Full offline access to the Darby Bible",
-                    "Daily verses delivered at 8 AM and 8 PM",
-                    "Save and manage favorite verses and notes",
-                    "Verses for guidance in various life situations",
-                    "Add notes or highlight verses with multiple colors",
-                    "Customizable themes, including light and dark modes",
-                    "Engaging quizzes to test your Bible knowledge"
-                ],
-                faq: [
-                    {
-                        question: "Is the app fully offline?",
-                        answer: "Yes, all Bible content is stored locally."
-                    },
-                    {
-                        question: "Can I save notes?",
-                        answer: "Yes, create and organize personal notes with highlights in various colors, all stored locally."
-                    },
-                    {
-                        question: "Are notifications customizable?",
-                        answer: "Yes, enable or disable daily verse reminders based on your preference."
-                    }
-                ],
-                reviews: [
-                    "Great for studying the Darby translation! - Sarah L.",
-                    "Love the daily verses and quiz feature. - James P."
-                ]
-            },
-         "motivation": {
-    id: "motivation",
-    name: "Motivational Quotes - Daily Inspiration & Success Mindset",
-    icon: "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/ic_motivation_icon.png",
-    description: "Transform Your Life with Wisdom from World's Greatest Minds! Get life-changing daily motivation from influential legends and visionaries. Our comprehensive motivation app delivers powerful quotes, stunning themes, and actionable wisdom to fuel your success journey. Whether you're starting your day, facing challenges, or pursuing ambitious goals, find the perfect inspiration from history's most remarkable achievers.",
-    shortDescription: "Daily motivation from world's greatest minds! Quotes, themes, articles & wisdom to transform your life!",
-    playStoreUrl: "https://play.google.com/store/apps/details?id=com.joshtechapps.motivational.quotes",
-    status: "available",
-    screenshots: [
-        "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/motivation/screenshot1.jpg",
-        "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/motivation/screenshot2.jpg",
-        "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/motivation/screenshot3.jpg",
-        "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/motivation/screenshot4.jpg",
-        "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/motivation/screenshot5.jpg",
-        "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/motivation/screenshot6.jpg",
-        "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/motivation/screenshot7.jpg",
-        "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/motivation/screenshot8.jpg"
-    ],
-    features: [
-        "🚀 LEGENDS & VISIONARIES: Wisdom from Steve Jobs (innovation), Nelson Mandela (resilience), Oprah Winfrey (purpose), Albert Einstein (curiosity), Michelle Obama (strength), Elon Musk (ambition)",
-        "🌅 SMART DAILY NOTIFICATIONS: Perfectly timed inspiration - 6 AM Monday (week starter), 8 AM Tuesday (morning boost), 12 PM Wednesday (mid-week energy), 4 PM Thursday (afternoon inspiration), 6 PM Friday (weekend mindset), 10 PM Sunday (planning & gratitude)",
-        "🎨 100+ HD BACKGROUND THEMES: Mountain peaks, ocean waves, abstract art, galaxy patterns, minimal designs with wallpaper download capability",
-        "📚 COMPLETE MOTIVATION SECTIONS: Featured Quotes, Success & Achievement, Overcoming Challenges, Mindset & Growth, Career & Business, Health & Wellness, Relationships, Creativity & Life, Life Philosophy",
-        "👑 DETAILED PERSONALITY PROFILES: Complete life stories, major achievements, challenges overcome, world-changing quotes, and lasting legacies of history's greatest minds",
-        "📖 POWERFUL EDUCATIONAL ARTICLES: Actionable life lessons including 'Build Resilience Like Mandela', 'Steve Jobs' 5 AM Routine', 'Stoic Philosophy for Stress', 'Oprah's Pain to Power', 'Einstein's Creativity Methods'",
-        "✨ STUNNING VISUAL EXPERIENCE: Elegant custom fonts, adjustable colors & sizes, perfect visual balance, and beautiful typography for every quote",
-        "🎯 PERFECT FOR ALL USERS: Students (exam motivation), Entrepreneurs (business wisdom), Professionals (career growth), Leaders (team inspiration), Creatives (innovation boost)",
-        "💫 PREMIUM FEATURES: Unlock 100+ HD themes by watching videos, download wallpapers, share quote images, set as wallpaper with permanent access",
-        "🔔 SMART NOTIFICATION SYSTEM: Scientifically-timed reminders for maximum impact throughout your week",
-        "📊 COMPREHENSIVE CATEGORIES: Innovation, Leadership, Resilience, Creativity, Success, Mindfulness, Relationships, Health, Business, Personal Growth",
-        "🌟 FEATURED GREAT MINDS: Entrepreneurs (Jobs, Musk, Branson), Leaders (Mandela, Obama, Churchill), Thinkers (Einstein, Buddha, Aristotle), Artists (Picasso, Shakespeare, Angelou), Athletes (Jordan, Williams, Ali), Scientists (Curie, Hawking, Tesla)",
-        "💾 FULL OFFLINE ACCESS: All quotes, themes, and content available without internet connection",
-        "🔄 REGULAR CONTENT UPDATES: Fresh quotes and new personalities added frequently to keep inspiration flowing",
-        "📤 EASY SOCIAL SHARING: Share beautiful quote images via WhatsApp, Instagram, Facebook, and all messaging apps",
-        "⚡ FAST PERFORMANCE: Optimized for smooth, lightning-fast experience across all devices"
-    ],
-    faq: [
-        {
-            question: "Are the daily notifications customizable?",
-            answer: "Yes! Receive motivation at scientifically-proven optimal times (6AM Mon, 8AM Tue, etc.) or fully customize your own schedule based on your daily routine and preferences."
-        },
-        {
-            question: "Can I use the app completely offline?",
-            answer: "Absolutely! All 1,000+ quotes, 100+ HD themes, personality profiles, and articles work completely offline. Download once and access inspiration anywhere, anytime."
-        },
-        {
-            question: "How many quotes and themes are available?",
-            answer: "The app includes over 1,000 powerful quotes from history's greatest minds and 100+ stunning HD background themes across categories like nature, abstract, cosmic, and minimal designs."
-        },
-        {
-            question: "What makes this different from other motivation apps?",
-            answer: "We provide comprehensive educational content including detailed personality profiles, actionable articles, and smart-timed notifications - not just random quotes. It's a complete personal growth system."
-        },
-        {
-            question: "Can I download themes as wallpapers?",
-            answer: "Yes! All 100+ HD themes can be downloaded and set as your phone wallpaper. Premium themes can be unlocked by watching short inspirational videos."
-        },
-        {
-            question: "Are there different categories for different needs?",
-            answer: "Absolutely! We have specialized sections for Success, Resilience, Creativity, Relationships, Health, Business, Leadership, and more - perfect for whatever challenge or goal you're facing."
-        },
-        {
-            question: "How often is new content added?",
-            answer: "We regularly update with new quotes, themes, and personality profiles to keep your motivation fresh and relevant to your evolving goals and challenges."
-        }
-    ],
-    reviews: [
-        "⭐️⭐️⭐️⭐️⭐️ This app transformed my morning routine! The Steve Jobs quotes inspired me to launch my startup! The smart notifications are perfectly timed. - Sarah M., Entrepreneur",
-        "⭐️⭐️⭐️⭐️⭐️ Finally, an app that understands timing. The evening reflections are absolutely perfect! Learning about the personalities makes quotes so meaningful. - Michael T., College Student",
-        "⭐️⭐️⭐️⭐️⭐️ The personality bios are incredible! I'm not just reading quotes - I'm learning life lessons from history's greatest minds. Truly educational. - David R., Teacher",
-        "⭐️⭐️⭐️⭐️⭐️ As a busy professional, this keeps me motivated through tough projects. The business section helped me secure a promotion! - James K., Marketing Director",
-        "⭐️⭐️⭐️⭐️⭐️ The HD themes are stunning! I've downloaded several as wallpapers. This is the most beautiful motivation app I've ever used. - Emma W., Designer",
-        "⭐️⭐️⭐️⭐️⭐️ Perfect for my daily commute. Works completely offline and the categories help me find exactly what I need for each situation. - Lucas H., Sales Manager",
-        "⭐️⭐️⭐️⭐️⭐️ The articles are life-changing! 'Build Resilience Like Mandela' helped me through a difficult period. More than quotes - it's wisdom. - Anna L., Nurse",
-        "⭐️⭐️⭐️⭐️⭐️ Editor's Choice indeed! Comprehensive, beautiful, and genuinely helpful. The perfect blend of inspiration and education. - Rachel B., Life Coach"
-    ]
-},
-            "beb": {
-                id: "beb",
-                name: "Basic English Bible (BEB)",
-                icon: "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/ic_beb_icon.png",
-                description: "Engage with the Basic English Bible offline with daily verses and intuitive tools.",
-                shortDescription: "Engage with the Basic English Bible offline with daily verses and intuitive tools.",
-                playStoreUrl: "https://play.google.com/store/apps/details?id=com.joshtechapps.basicengbible",
-                status: "available",
-                screenshots: [
-                    "https://via.placeholder.com/300x600",
-                    "https://via.placeholder.com/300x600",
-                    "https://via.placeholder.com/300x600",
-                    "https://via.placeholder.com/300x600",
-                    "https://via.placeholder.com/300x600",
-                    "https://via.placeholder.com/300x600",
-                    "https://via.placeholder.com/300x600",
-                    "https://via.placeholder.com/300x600"
-                ],
-                features: [
-                    "Full offline access to the Basic English Bible",
-                    "Daily verses delivered at 8 AM and 8 PM",
-                    "Save and manage favorite verses and notes",
-                    "Verses for guidance in various life situations",
-                    "Add notes or highlight verses with multiple colors",
-                    "Customizable themes, including light and dark modes",
-                    "Engaging quizzes to test your Bible knowledge"
-                ],
-                faq: [
-                    {
-                        question: "Is the app fully offline?",
-                        answer: "Yes, all Bible content is stored locally."
-                    },
-                    {
-                        question: "Can I save notes?",
-                        answer: "Yes, create and organize personal notes with highlights in various colors, all stored locally."
-                    },
-                    {
-                        question: "Are notifications customizable?",
-                        answer: "Yes, enable or disable daily verse reminders based on your preference."
-                    }
-                ],
-                reviews: [
-                    "Simple and effective for Bible study! - Anna M.",
-                    "The daily verses keep me inspired. - David R."
-                ]
-            },
-            "kjva": {
-                id: "kjva",
-                name: "King James Bible with Apocrypha",
-                icon: "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/ic_kjva_icon.png",
-                description: "Study the King James Bible with Apocrypha offline, with daily verses and notes.",
-                shortDescription: "Study the King James Bible with Apocrypha offline, with daily verses and notes.",
-                playStoreUrl: "https://play.google.com/store/apps/details?id=com.joshtechapps.kjv.with.apocrypha",
-                status: "available",
-                screenshots: [
-                    "https://via.placeholder.com/300x600",
-                    "https://via.placeholder.com/300x600",
-                    "https://via.placeholder.com/300x600",
-                    "https://via.placeholder.com/300x600",
-                    "https://via.placeholder.com/300x600",
-                    "https://via.placeholder.com/300x600",
-                    "https://via.placeholder.com/300x600",
-                    "https://via.placeholder.com/300x600"
-                ],
-                features: [
-                    "Full offline access to the King James Bible and Apocrypha",
-                    "Daily verses delivered at 8 AM and 8 PM",
-                    "Save and manage favorite verses and notes",
-                    "Access Apocrypha books like 1 Esdras, Tobit, and 1 Maccabees",
-                    "Verses for guidance in various life situations",
-                    "Add notes or highlight verses with multiple colors",
-                    "Customizable themes, including light and dark modes",
-                    "Engaging quizzes to test your Bible knowledge"
-                ],
-                faq: [
-                    {
-                        question: "Is the app fully offline?",
-                        answer: "Yes, all Bible and Apocrypha content is stored locally."
-                    },
-                    {
-                        question: "Can I save notes?",
-                        answer: "Yes, create and organize personal notes with highlights in various colors, all stored locally."
-                    },
-                    {
-                        question: "Are notifications customizable?",
-                        answer: "Yes, enable or disable daily verse reminders based on your preference."
-                    }
-                ],
-                reviews: [
-                    "Love the Apocrypha inclusion and offline access! - Thomas K.",
-                    "The daily verses and quizzes are amazing! - Rachel S."
-                ]
-            },
-            "akjv": {
-                id: "akjv",
-                name: "American King James Bible",
-                icon: "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/ic_akjv_icon.png",
-                description: "Explore the American King James Bible offline with daily verses and study tools.",
-                shortDescription: "Explore the American King James Bible offline with daily verses and study tools.",
-                playStoreUrl: "https://play.google.com/store/apps/details?id=com.joshtechapps.american.kjv",
-                status: "available",
-                screenshots: [
-                    "https://via.placeholder.com/300x600",
-                    "https://via.placeholder.com/300x600",
-                    "https://via.placeholder.com/300x600",
-                    "https://via.placeholder.com/300x600",
-                    "https://via.placeholder.com/300x600",
-                    "https://via.placeholder.com/300x600",
-                    "https://via.placeholder.com/300x600",
-                    "https://via.placeholder.com/300x600"
-                ],
-                features: [
-                    "Full offline access to the American King James Bible",
-                    "Daily verses delivered at 8 AM and 8 PM",
-                    "Save and manage favorite verses and notes",
-                    "Verses for guidance in various life situations",
-                    "Add notes or highlight verses with multiple colors",
-                    "Customizable themes, including light and dark modes",
-                    "Engaging quizzes to test your Bible knowledge"
-                ],
-                faq: [
-                    {
-                        question: "Is the app fully offline?",
-                        answer: "Yes, all Bible content is stored locally."
-                    },
-                    {
-                        question: "Can I save notes?",
-                        answer: "Yes, create and organize personal notes with highlights in various colors, all stored locally."
-                    },
-                    {
-                        question: "Are notifications customizable?",
-                        answer: "Yes, enable or disable daily verse reminders based on your preference."
-                    }
-                ],
-                reviews: [
-                    "The AKJV is clear and easy to read offline! - Grace M.",
-                    "Great study tools and daily inspiration! - Paul T."
-                ]
-            },
-            "kjv": {
-                id: "kjv",
-                name: "King James Bible (KJV) - Offline",
-                icon: "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/ic_new_kjv_icon.png",
-                description: "Dive into the King James Bible with offline access, daily verses, and personalized notes.",
-                shortDescription: "Dive into the King James Bible with offline access, daily verses, and personalized notes.",
-                playStoreUrl: "https://play.google.com/store/apps/details?id=com.joshtechapps.kjvoffline",
-                status: "available",
-                screenshots: [
-                    "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/kjv/screenshot1.jpg",
-                    "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/kjv/screenshot2.jpg",
-                    "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/kjv/screenshot3.jpg",
-                    "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/kjv/screenshot4.jpg",
-                    "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/kjv/screenshot5.jpg",
-                    "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/kjv/screenshot6.jpg",
-                    "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/kjv/screenshot7.jpg",
-                    "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/kjv/screenshot8.jpg"
-                ],
-                features: [
-                    "Complete offline access to the King James Bible",
-                    "Daily verses for inspiration at 8 AM and 9 PM",
-                    "Save and organize favorite verses and personal notes",
-                    "Customizable themes, including light and dark modes",
-                    "Track quiz progress to test your Bible knowledge"
-                ],
-                faq: [
-                    {
-                        question: "Is the app fully offline?",
-                        answer: "Yes, all Bible content is stored locally for offline use."
-                    },
-                    {
-                        question: "Can I save my favorite verses?",
-                        answer: "Yes, mark and organize verses for quick access."
-                    },
-                    {
-                        question: "Are notifications customizable?",
-                        answer: "Yes, enable or disable daily verse reminders in settings."
-                    }
-                ],
-                reviews: [
-                    "Perfect for daily Bible study, even offline! - John D.",
-                    "Love the daily verses and note-taking feature. - Sarah M."
-                ]
-            },
-            "music": {
-                id: "music",
-                name: "Smart Music Player",
-                icon: "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/ic_music_player.png",
-                description: "Enjoy your favorite audio & video offline in one place.",
-                shortDescription: "Enjoy your favorite audio & video offline in one place.",
-                playStoreUrl: "#",
-                status: "coming-soon",
-                screenshots: [
-                    "https://via.placeholder.com/300x600"
-                ],
-                features: [
-                    "Play audio and video files offline in multiple formats",
-                    "Create and manage personalized playlists",
-                    "Advanced playback controls like shuffle, repeat, and equalizer",
-                    "Support for background playback and lock screen controls",
-                    "Customizable themes, including dark mode"
-                ],
-                faq: [
-                    {
-                        question: "What file formats are supported?",
-                        answer: "Supports MP3, WAV, MP4, AVI, and more."
-                    },
-                    {
-                        question: "Can I play videos in the background?",
-                        answer: "Yes, background playback is supported for audio and video."
-                    },
-                    {
-                        question: "Are there ads in the app?",
-                        answer: "No, the app is ad-free for a premium experience."
-                    }
-                ],
-                reviews: [
-                    "Best music player I've used! Love the playlist feature. - Mike R.",
-                    "The video playback is smooth and intuitive. - Emily K."
-                ]
-            },
-          "love": {
-    id: "love",
-    name: "Love Messages - Love Book",
-    icon: "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/ic_lovemessagesicon.jpg",
-    description: "Love Messages - Express Your Heart with Beautiful Words! Transform your relationships with the ultimate love expression app designed to help you share heartfelt emotions through beautifully crafted messages, romantic quotes, and personalized creations. Whether you're celebrating anniversaries, expressing gratitude, or simply reminding someone they're loved, our comprehensive collection offers endless ways to connect emotionally.",
-    shortDescription: "Create & share beautiful love messages with custom backgrounds, daily inspiration, and romantic quotes!",
-    playStoreUrl: "https://play.google.com/store/apps/details?id=com.joshtechapps.lovemessages",
-    status: "available",
-    screenshots: [
-        "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/lovemessages/screenshot1.png",
-        "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/lovemessages/screenshot2.png",
-        "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/lovemessages/screenshot3.png",
-        "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/lovemessages/screenshot4.png",
-        "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/lovemessages/screenshot5.png",
-        "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/lovemessages/screenshot6.png",
-        "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/lovemessages/screenshot7.png",
-        "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/lovemessages/screenshot8.png"
-    ],
-    features: [
-        "💝 Extensive Quote Library: Thousands of romantic quotes across 40+ categories including Love, Anniversary, Apology, Long Distance, and Morning Greetings",
-        "🎨 Complete Customization: Create personalized messages with 500+ beautiful background themes, custom fonts, text colors, and alignment options",
-        "📸 Photo Integration: Use your own photos from gallery or take new pictures directly in-app for fully personalized message backgrounds",
-        "✨ Enhanced Visual Experience: Animated roses, heart icons, and romantic animations to make every message special",
-        "🔔 Daily Inspiration: Receive carefully curated love quotes via notifications to keep romance alive every day",
-        "📤 Easy Sharing: Share your creations via WhatsApp, Instagram, Facebook, SMS, email, or any messaging app with one tap",
-        "🎭 Multiple Message Types: Pre-written quotes, custom messages, photo messages, and themed collections for every occasion",
-        "💾 Offline Access: All quotes and features available without internet connection - perfect for surprise messages anytime",
-        "⚙️ Personalization Settings: Adjust text size, font styles, background opacity, and layout for perfect message composition",
-        "📚 Category Organization: Quickly find the perfect words with organized categories like: Romantic Love, Sweet Goodnight, Missing You, Thank You, I'm Sorry, and Special Occasions",
-        "🌙 Mood-Based Collections: Quotes for different moods and times - Morning Love, Evening Romance, Midnight Thoughts, and Special Moments",
-        "🔄 Regular Updates: New quotes and themes added regularly to keep your expressions fresh and exciting",
-        "👫 Relationship Building: Perfect for couples, crushes, anniversaries, Valentine's Day, or just because moments"
-    ],
-    faq: [
-        {
-            question: "Can I create completely custom messages?",
-            answer: "Yes! You can write your own personal messages from scratch, customize them with different fonts and colors, and add your own background images from your gallery or camera."
-        },
-        {
-            question: "Are the daily notifications customizable?",
-            answer: "Absolutely! You can enable/disable daily love quotes, choose specific categories you prefer, and set your preferred notification times in the app settings."
-        },
-        {
-            question: "Do I need internet to use the app?",
-            answer: "No, all quotes, themes, and creation features work completely offline. Internet is only needed for sharing messages or viewing ads (if you choose to)."
-        },
-        {
-            question: "How many quotes and themes are available?",
-            answer: "The app includes thousands of romantic quotes across 40+ categories and over 500 beautiful background themes, with regular updates adding new content."
-        },
-        {
-            question: "Can I save my created messages?",
-            answer: "Yes, all your custom creations are saved locally on your device. You can revisit, edit, or reshare them anytime without recreating from scratch."
-        },
-        {
-            question: "Is there a cost for using the app?",
-            answer: "The app is completely free to use with access to all quotes, themes, and creation features. Optional ads support the development and maintenance."
-        }
-    ],
-    reviews: [
-        "This app saved my relationship! The apology quotes helped me express my feelings perfectly when I couldn't find the words. - Michael T.",
-        "My wife loves the daily romantic messages I send her using this app. The custom backgrounds make it so personal! - David R.",
-        "Perfect for long-distance relationships. The 'missing you' category has the most heartfelt quotes that exactly express how I feel. - Sarah L.",
-        "I use this every morning to send my partner sweet good morning messages. The notifications remind me to keep the romance alive! - Emma W.",
-        "As someone who struggles with expressing emotions, this app gives me the perfect words to show my love and appreciation. - James K.",
-        "The variety of categories is amazing! From anniversary wishes to simple thank you notes, it has everything for every occasion. - Anna M.",
-        "Beautiful app with stunning visuals. The animated hearts and rose effects make every message feel extra special. - Lucas H."
-    ]
-},
-            "web": {
-                id: "web",
-                name: "World English Bible",
-                icon: "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/holy_bible_icon.png",
-                description: "Explore the World English Bible offline with daily verses and personalized study tools.",
-                shortDescription: "Explore the World English Bible offline with daily verses and personalized study tools.",
-                playStoreUrl: "https://play.google.com/store/apps/details?id=com.joshtechapps.holybible",
-                status: "available",
-                screenshots: [
-                    "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/web/screenshot1.jpg",
-                    "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/web/screenshot2.jpg",
-                    "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/web/screenshot3.jpg",
-                    "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/web/screenshot4.jpg",
-                    "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/web/screenshot5.jpg",
-                    "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/web/screenshot6.jpg",
-                    "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/web/screenshot7.jpg",
-                    "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/web/screenshot8.jpg"
-                ],
-                features: [
-                    "Full offline access to the World English Bible",
-                    "Daily verses delivered at 8 AM and 8 PM",
-                    "Save and manage favorite verses and notes",
-                    "Verses for guidance in various life situations",
-                    "Add notes or highlight verses with multiple colors",
-                    "Customizable themes, including light and dark modes",
-                    "Engaging quizzes to test your Bible knowledge"
-                ],
-                faq: [
-                    {
-                        question: "Is the app fully offline?",
-                        answer: "Yes, all Bible content is stored locally."
-                    }
-                ],
-                reviews: [
-                    "Wonderful app for daily Bible reading! - Lisa K.",
-                    "The quizzes are fun and help me learn more. - Mark T."
-                ]
-            },
-          "notepad": {
-    id: "notepad",
-    name: "Notepad - Notes, Notebook & Reminders",
-    icon: "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/notepad_icon.png",
-    description: "Notepad - Your Ultimate Digital Notebook for Organized Productivity! Transform how you capture ideas, manage tasks, and stay organized with our powerful yet intuitive note-taking app. Whether you're a student taking lecture notes, a professional managing projects, or someone organizing daily thoughts, our comprehensive note-taking system offers everything you need for seamless productivity and information management.",
-    shortDescription: "Capture ideas effortlessly with secure, customizable notes, reminders, and cloud backup!",
-    playStoreUrl: "https://play.google.com/store/apps/details?id=com.joshtechapps.notepad",
-    status: "available",
-    screenshots: [
-        "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/notepad/screenshot1.jpg",
-        "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/notepad/screenshot2.jpg",
-        "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/notepad/screenshot3.jpg",
-        "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/notepad/screenshot4.jpg",
-        "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/notepad/screenshot5.jpg",
-        "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/notepad/screenshot6.jpg",
-        "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/notepad/screenshot7.jpg",
-        "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/notepad/screenshot8.jpg"
-    ],
-    features: [
-        "📝 Advanced Note-Taking: Create rich text notes, checklists, to-do lists, and organized notebooks with unlimited categories",
-        "🔔 Smart Reminders: Set one-time or recurring reminders with custom alerts for important tasks and deadlines",
-        "☁️ Secure Cloud Backup: Automatic Google Drive integration to safely backup and sync your notes across all devices",
-        "🎨 Complete Customization: Multiple themes (light, dark, blue, green), font sizes, and layout options for personalized experience",
-        "🔒 Enhanced Security: Password protection and biometric authentication (fingerprint/face ID) to keep your private notes secure",
-        "📂 Organized Management: Create folders, categories, and tags for efficient note organization and quick retrieval",
-        "🔍 Powerful Search: Instant search across all notes with keyword highlighting and filter options",
-        "🔄 Easy Import/Export: Share notes via email, messaging apps, or export as text files for external use",
-        "📅 Calendar Integration: View reminder schedules and upcoming tasks in calendar format",
-        "⚡ Quick Actions: Create notes from home screen widgets and use quick templates for common note types",
-        "🌙 Dark Mode: Eye-friendly dark theme for comfortable note-taking in low-light conditions",
-        "📎 Attachment Support: Add context to your notes with timestamps, locations, and metadata",
-        "🔄 Auto-Save: Never lose your work with real-time auto-save functionality",
-        "📊 Progress Tracking: Monitor completed tasks and checklist progress with visual indicators",
-        "🔔 Notification Management: Customize reminder sounds, vibration patterns, and notification priorities"
-    ],
-    faq: [
-        {
-            question: "Is my data secure and private?",
-            answer: "Absolutely! All your notes are stored locally on your device with optional encryption. Cloud backups to Google Drive are encrypted and only accessible through your Google account. We never access or read your personal notes."
-        },
-        {
-            question: "Can I access my notes offline?",
-            answer: "Yes! The app works completely offline. All note-taking features are available without internet connection. Cloud sync happens automatically when you're back online."
-        },
-        {
-            question: "How does the Google Drive backup work?",
-            answer: "The app creates a secure, encrypted backup folder in your Google Drive. Your notes are automatically synced whenever you make changes. You can restore them anytime, even when switching devices."
-        },
-        {
-            question: "Can I password-protect specific notes?",
-            answer: "Yes! You can enable app-level security requiring password or biometric authentication to access the entire app, ensuring all your notes remain private and secure."
-        },
-        {
-            question: "What types of notes can I create?",
-            answer: "You can create simple text notes, detailed checklists, to-do lists with priorities, and organize them into folders and categories for different projects or purposes."
-        },
-        {
-            question: "Are there limits on how many notes I can create?",
-            answer: "No limits! Create as many notes as you need. The app efficiently manages storage and performance regardless of how many notes you have."
-        },
-        {
-            question: "Can I set recurring reminders?",
-            answer: "Absolutely! Set daily, weekly, monthly, or custom recurring reminders for repetitive tasks, habits, or regular commitments."
-        }
-    ],
-    reviews: [
-        "This notepad app completely replaced my physical notebooks! The reminder feature is a lifesaver for my busy schedule. - Sarah M.",
-        "As a student, I use this for all my class notes. The organization features and search make studying so much easier! - Michael T.",
-        "The Google Drive backup gives me peace of mind. I never worry about losing my important notes and ideas. - David R.",
-        "Perfect for work meetings and project planning. The checklist feature helps me stay on top of all my tasks. - Emma W.",
-        "I love the security features! Knowing my personal journals are protected with fingerprint lock is amazing. - James K.",
-        "The dark mode is easy on the eyes during late-night brainstorming sessions. Beautiful and functional! - Anna L.",
-        "Switched from multiple note apps to this one. It has everything I need in one clean, intuitive package. - Lucas H.",
-        "The widget feature lets me quickly jot down ideas without even opening the app. Super convenient! - Rachel B."
-    ]
-},
+        // ================= APP DATA =================
+     const appsData = {
+    "asb": {
+        id: "asb",
+        name: "American Standard Bible (ASB)",
+        icon: "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/ic_asv_icon.png",
+        description: "Explore the American Standard Bible offline with daily verses and personalized study tools.",
+        shortDescription: "Explore the American Standard Bible offline with daily verses and personalized study tools.",
+        playStoreUrl: "https://play.google.com/store/apps/details?id=com.joshtechapps.bible.asv",
+        status: "available",
+        screenshots: [
+            "https://via.placeholder.com/300x600",
+            "https://via.placeholder.com/300x600",
+            "https://via.placeholder.com/300x600",
+            "https://via.placeholder.com/300x600",
+            "https://via.placeholder.com/300x600",
+            "https://via.placeholder.com/300x600",
+            "https://via.placeholder.com/300x600",
+            "https://via.placeholder.com/300x600"
+        ],
+        features: [
+            "Full offline access to the American Standard Bible",
+            "Daily verses delivered at 8 AM and 8 PM",
+            "Save and manage favorite verses and notes",
+            "Verses for guidance in various life situations",
+            "Add notes or highlight verses with multiple colors",
+            "Customizable themes, including light and dark modes",
+            "Engaging quizzes to test your Bible knowledge"
+        ],
+        faq: [
+            { question: "Is the app fully offline?", answer: "Yes, all Bible content is stored locally." },
+            { question: "Can I save notes?", answer: "Yes, create and organize personal notes with highlights in various colors, all stored locally." },
+            { question: "Are notifications customizable?", answer: "Yes, enable or disable daily verse reminders based on your preference." }
+        ],
+        reviews: [
+            "Perfect for studying the ASB offline! - Emily R.",
+            "The quizzes and daily verses are fantastic! - Michael T."
+        ]
+    },
+    "darby": {
+        id: "darby",
+        name: "Darby Bible",
+        icon: "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/ic_darby_icon.png",
+        description: "Dive into the Darby Bible with offline access, daily verses, and study tools.",
+        shortDescription: "Dive into the Darby Bible with offline access, daily verses, and study tools.",
+        playStoreUrl: "https://play.google.com/store/apps/details?id=com.joshtechapps.darbybible",
+        status: "available",
+        screenshots: [
+            "https://via.placeholder.com/300x600",
+            "https://via.placeholder.com/300x600",
+            "https://via.placeholder.com/300x600",
+            "https://via.placeholder.com/300x600",
+            "https://via.placeholder.com/300x600",
+            "https://via.placeholder.com/300x600",
+            "https://via.placeholder.com/300x600",
+            "https://via.placeholder.com/300x600"
+        ],
+        features: [
+            "Full offline access to the Darby Bible",
+            "Daily verses delivered at 8 AM and 8 PM",
+            "Save and manage favorite verses and notes",
+            "Verses for guidance in various life situations",
+            "Add notes or highlight verses with multiple colors",
+            "Customizable themes, including light and dark modes",
+            "Engaging quizzes to test your Bible knowledge"
+        ],
+        faq: [
+            { question: "Is the app fully offline?", answer: "Yes, all Bible content is stored locally." },
+            { question: "Can I save notes?", answer: "Yes, create and organize personal notes with highlights in various colors, all stored locally." },
+            { question: "Are notifications customizable?", answer: "Yes, enable or disable daily verse reminders based on your preference." }
+        ],
+        reviews: [
+            "Great for studying the Darby translation! - Sarah L.",
+            "Love the daily verses and quiz feature. - James P."
+        ]
+    },
+    "motivation": {
+        id: "motivation",
+        name: "Motivational Quotes - Daily Inspiration & Success Mindset",
+        icon: "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/ic_motivation_icon.png",
+        description: "Transform Your Life with Wisdom from World's Greatest Minds! Get life-changing daily motivation from influential legends and visionaries. Our comprehensive motivation app delivers powerful quotes, stunning themes, and actionable wisdom to fuel your success journey. Whether you're starting your day, facing challenges, or pursuing ambitious goals, find the perfect inspiration from history's most remarkable achievers.",
+        shortDescription: "Daily motivation from world's greatest minds! Quotes, themes, articles & wisdom to transform your life!",
+        playStoreUrl: "https://play.google.com/store/apps/details?id=com.joshtechapps.motivational.quotes",
+        status: "available",
+        screenshots: [
+            "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/motivation/screenshot1.jpg",
+            "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/motivation/screenshot2.jpg",
+            "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/motivation/screenshot3.jpg",
+            "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/motivation/screenshot4.jpg",
+            "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/motivation/screenshot5.jpg",
+            "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/motivation/screenshot6.jpg",
+            "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/motivation/screenshot7.jpg",
+            "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/motivation/screenshot8.jpg"
+        ],
+        features: [
+            "🚀 LEGENDS & VISIONARIES: Wisdom from Steve Jobs (innovation), Nelson Mandela (resilience), Oprah Winfrey (purpose), Albert Einstein (curiosity), Michelle Obama (strength), Elon Musk (ambition)",
+            "🌅 SMART DAILY NOTIFICATIONS: Perfectly timed inspiration - 6 AM Monday (week starter), 8 AM Tuesday (morning boost), 12 PM Wednesday (mid-week energy), 4 PM Thursday (afternoon inspiration), 6 PM Friday (weekend mindset), 10 PM Sunday (planning & gratitude)",
+            "🎨 100+ HD BACKGROUND THEMES: Mountain peaks, ocean waves, abstract art, galaxy patterns, minimal designs with wallpaper download capability",
+            "📚 COMPLETE MOTIVATION SECTIONS: Featured Quotes, Success & Achievement, Overcoming Challenges, Mindset & Growth, Career & Business, Health & Wellness, Relationships, Creativity & Life, Life Philosophy",
+            "👑 DETAILED PERSONALITY PROFILES: Complete life stories, major achievements, challenges overcome, world-changing quotes, and lasting legacies of history's greatest minds",
+            "📖 POWERFUL EDUCATIONAL ARTICLES: Actionable life lessons including 'Build Resilience Like Mandela', 'Steve Jobs' 5 AM Routine', 'Stoic Philosophy for Stress', 'Oprah's Pain to Power', 'Einstein's Creativity Methods'",
+            "✨ STUNNING VISUAL EXPERIENCE: Elegant custom fonts, adjustable colors & sizes, perfect visual balance, and beautiful typography for every quote",
+            "🎯 PERFECT FOR ALL USERS: Students (exam motivation), Entrepreneurs (business wisdom), Professionals (career growth), Leaders (team inspiration), Creatives (innovation boost)",
+            "💫 PREMIUM FEATURES: Unlock 100+ HD themes by watching videos, download wallpapers, share quote images, set as wallpaper with permanent access",
+            "🔔 SMART NOTIFICATION SYSTEM: Scientifically-timed reminders for maximum impact throughout your week",
+            "📊 COMPREHENSIVE CATEGORIES: Innovation, Leadership, Resilience, Creativity, Success, Mindfulness, Relationships, Health, Business, Personal Growth",
+            "🌟 FEATURED GREAT MINDS: Entrepreneurs (Jobs, Musk, Branson), Leaders (Mandela, Obama, Churchill), Thinkers (Einstein, Buddha, Aristotle), Artists (Picasso, Shakespeare, Angelou), Athletes (Jordan, Williams, Ali), Scientists (Curie, Hawking, Tesla)",
+            "💾 FULL OFFLINE ACCESS: All quotes, themes, and content available without internet connection",
+            "🔄 REGULAR CONTENT UPDATES: Fresh quotes and new personalities added frequently to keep inspiration flowing",
+            "📤 EASY SOCIAL SHARING: Share beautiful quote images via WhatsApp, Instagram, Facebook, and all messaging apps",
+            "⚡ FAST PERFORMANCE: Optimized for smooth, lightning-fast experience across all devices"
+        ],
+        faq: [
+            { question: "Are the daily notifications customizable?", answer: "Yes! Receive motivation at scientifically-proven optimal times (6AM Mon, 8AM Tue, etc.) or fully customize your own schedule based on your daily routine and preferences." },
+            { question: "Can I use the app completely offline?", answer: "Absolutely! All 1,000+ quotes, 100+ HD themes, personality profiles, and articles work completely offline. Download once and access inspiration anywhere, anytime." },
+            { question: "How many quotes and themes are available?", answer: "The app includes over 1,000 powerful quotes from history's greatest minds and 100+ stunning HD background themes across categories like nature, abstract, cosmic, and minimal designs." },
+            { question: "What makes this different from other motivation apps?", answer: "We provide comprehensive educational content including detailed personality profiles, actionable articles, and smart-timed notifications - not just random quotes. It's a complete personal growth system." },
+            { question: "Can I download themes as wallpapers?", answer: "Yes! All 100+ HD themes can be downloaded and set as your phone wallpaper. Premium themes can be unlocked by watching short inspirational videos." },
+            { question: "Are there different categories for different needs?", answer: "Absolutely! We have specialized sections for Success, Resilience, Creativity, Relationships, Health, Business, Leadership, and more - perfect for whatever challenge or goal you're facing." },
+            { question: "How often is new content added?", answer: "We regularly update with new quotes, themes, and personality profiles to keep your motivation fresh and relevant to your evolving goals and challenges." }
+        ],
+        reviews: [
+            "⭐️⭐️⭐️⭐️⭐️ This app transformed my morning routine! The Steve Jobs quotes inspired me to launch my startup! The smart notifications are perfectly timed. - Sarah M., Entrepreneur",
+            "⭐️⭐️⭐️⭐️⭐️ Finally, an app that understands timing. The evening reflections are absolutely perfect! Learning about the personalities makes quotes so meaningful. - Michael T., College Student",
+            "⭐️⭐️⭐️⭐️⭐️ The personality bios are incredible! I'm not just reading quotes - I'm learning life lessons from history's greatest minds. Truly educational. - David R., Teacher",
+            "⭐️⭐️⭐️⭐️⭐️ As a busy professional, this keeps me motivated through tough projects. The business section helped me secure a promotion! - James K., Marketing Director",
+            "⭐️⭐️⭐️⭐️⭐️ The HD themes are stunning! I've downloaded several as wallpapers. This is the most beautiful motivation app I've ever used. - Emma W., Designer",
+            "⭐️⭐️⭐️⭐️⭐️ Perfect for my daily commute. Works completely offline and the categories help me find exactly what I need for each situation. - Lucas H., Sales Manager",
+            "⭐️⭐️⭐️⭐️⭐️ The articles are life-changing! 'Build Resilience Like Mandela' helped me through a difficult period. More than quotes - it's wisdom. - Anna L., Nurse",
+            "⭐️⭐️⭐️⭐️⭐️ Editor's Choice indeed! Comprehensive, beautiful, and genuinely helpful. The perfect blend of inspiration and education. - Rachel B., Life Coach"
+        ]
+    },
+    "beb": {
+        id: "beb",
+        name: "Basic English Bible (BEB)",
+        icon: "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/ic_beb_icon.png",
+        description: "Engage with the Basic English Bible offline with daily verses and intuitive tools.",
+        shortDescription: "Engage with the Basic English Bible offline with daily verses and intuitive tools.",
+        playStoreUrl: "https://play.google.com/store/apps/details?id=com.joshtechapps.basicengbible",
+        status: "available",
+        screenshots: [
+            "https://via.placeholder.com/300x600",
+            "https://via.placeholder.com/300x600",
+            "https://via.placeholder.com/300x600",
+            "https://via.placeholder.com/300x600",
+            "https://via.placeholder.com/300x600",
+            "https://via.placeholder.com/300x600",
+            "https://via.placeholder.com/300x600",
+            "https://via.placeholder.com/300x600"
+        ],
+        features: [
+            "Full offline access to the Basic English Bible",
+            "Daily verses delivered at 8 AM and 8 PM",
+            "Save and manage favorite verses and notes",
+            "Verses for guidance in various life situations",
+            "Add notes or highlight verses with multiple colors",
+            "SIMPLE english Bible version, try it out"
+            "Customizable themes, including light and dark modes",
+            "Engaging quizzes to test your Bible knowledge"
+        ],
+        faq: [
+            { question: "Is the app fully offline?", answer: "Yes, all Bible content is stored locally." },
+            { question: "Can I save notes?", answer: "Yes, create and organize personal notes with highlights in various colors, all stored locally." },
+            { question: "Are notifications customizable?", answer: "Yes, enable or disable daily verse reminders based on your preference." }
+        ],
+        reviews: [
+            "Simple and effective for Bible study! - Anna M.",
+            "The daily verses keep me inspired. - David R."
+        ]
+    },
+    "kjva": {
+        id: "kjva",
+        name: "King James Bible with Apocrypha",
+        icon: "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/ic_kjva_icon.png",
+        description: "Study the King James Bible with Apocrypha offline, with daily verses and notes.",
+        shortDescription: "Study the King James Bible with Apocrypha offline, with daily verses and notes.",
+        playStoreUrl: "https://play.google.com/store/apps/details?id=com.joshtechapps.kjv.with.apocrypha",
+        status: "available",
+        screenshots: [
+            "https://via.placeholder.com/300x600",
+            "https://via.placeholder.com/300x600",
+            "https://via.placeholder.com/300x600",
+            "https://via.placeholder.com/300x600",
+            "https://via.placeholder.com/300x600",
+            "https://via.placeholder.com/300x600",
+            "https://via.placeholder.com/300x600",
+            "https://via.placeholder.com/300x600"
+        ],
+        features: [
+            "Full offline access to the King James Bible and Apocrypha",
+            "Daily verses delivered at 8 AM and 8 PM",
+            "Save and manage favorite verses and notes",
+            "Access Apocrypha books like 1 Esdras, Tobit, and 1 Maccabees",
+            "Verses for guidance in various life situations",
+            "Add notes or highlight verses with multiple colors",
+            "Customizable themes, including light and dark modes",
+            "Engaging quizzes to test your Bible knowledge"
+        ],
+        faq: [
+            { question: "Is the app fully offline?", answer: "Yes, all Bible and Apocrypha content is stored locally." },
+            { question: "Can I save notes?", answer: "Yes, create and organize personal notes with highlights in various colors, all stored locally." },
+            { question: "Are notifications customizable?", answer: "Yes, enable or disable daily verse reminders based on your preference." }
+        ],
+        reviews: [
+            "Love the Apocrypha inclusion and offline access! - Thomas K.",
+            "The daily verses and quizzes are amazing! - Rachel S."
+        ]
+    },
+    "akjv": {
+        id: "akjv",
+        name: "American King James Bible",
+        icon: "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/ic_akjv_icon.png",
+        description: "Explore the American King James Bible offline with daily verses and study tools.",
+        shortDescription: "Explore the American King James Bible offline with daily verses and study tools.",
+        playStoreUrl: "https://play.google.com/store/apps/details?id=com.joshtechapps.american.kjv",
+        status: "available",
+        screenshots: [
+            "https://via.placeholder.com/300x600",
+            "https://via.placeholder.com/300x600",
+            "https://via.placeholder.com/300x600",
+            "https://via.placeholder.com/300x600",
+            "https://via.placeholder.com/300x600",
+            "https://via.placeholder.com/300x600",
+            "https://via.placeholder.com/300x600",
+            "https://via.placeholder.com/300x600"
+        ],
+        features: [
+            "Full offline access to the American King James Bible",
+            "Daily verses delivered at 8 AM and 8 PM",
+            "Save and manage favorite verses and notes",
+            "Verses for guidance in various life situations",
+            "Add notes or highlight verses with multiple colors",
+            "Customizable themes, including light and dark modes",
+            "Engaging quizzes to test your Bible knowledge"
+        ],
+        faq: [
+            { question: "Is the app fully offline?", answer: "Yes, all Bible content is stored locally." },
+            { question: "Can I save notes?", answer: "Yes, create and organize personal notes with highlights in various colors, all stored locally." },
+            { question: "Are notifications customizable?", answer: "Yes, enable or disable daily verse reminders based on your preference." }
+        ],
+        reviews: [
+            "The AKJV is clear and easy to read offline! - Grace M.",
+            "Great study tools and daily inspiration! - Paul T."
+        ]
+    },
+    "kjv": {
+        id: "kjv",
+        name: "King James Bible (KJV) - Offline",
+        icon: "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/ic_new_kjv_icon.png",
+        description: "Dive into the King James Bible with offline access, daily verses, and personalized notes.",
+        shortDescription: "Dive into the King James Bible with offline access, daily verses, and personalized notes.",
+        playStoreUrl: "https://play.google.com/store/apps/details?id=com.joshtechapps.kjvoffline",
+        status: "available",
+        screenshots: [
+            "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/kjv/screenshot1.jpg",
+            "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/kjv/screenshot2.jpg",
+            "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/kjv/screenshot3.jpg",
+            "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/kjv/screenshot4.jpg",
+            "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/kjv/screenshot5.jpg",
+            "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/kjv/screenshot6.jpg",
+            "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/kjv/screenshot7.jpg",
+            "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/kjv/screenshot8.jpg"
+        ],
+        features: [
+            "Complete offline access to the King James Bible",
+            "Daily verses for inspiration at 8 AM and 9 PM",
+            "Save and organize favorite verses and personal notes",
+            "Customizable themes, including light and dark modes",
+            "Track quiz progress to test your Bible knowledge"
+        ],
+        faq: [
+            { question: "Is the app fully offline?", answer: "Yes, all Bible content is stored locally for offline use." },
+            { question: "Can I save my favorite verses?", answer: "Yes, mark and organize verses for quick access." },
+            { question: "Are notifications customizable?", answer: "Yes, enable or disable daily verse reminders in settings." }
+        ],
+        reviews: [
+            "Perfect for daily Bible study, even offline! - John D.",
+            "Love the daily verses and note-taking feature. - Sarah M."
+        ]
+    },
+    "music": {
+        id: "music",
+        name: "Smart Music Player",
+        icon: "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/ic_music_player.png",
+        description: "Enjoy your favorite audio & video offline in one place.",
+        shortDescription: "Enjoy your favorite audio & video offline in one place.",
+        playStoreUrl: "#",
+        status: "coming-soon",
+        screenshots: ["https://via.placeholder.com/300x600"],
+        features: [
+            "Play audio and video files offline in multiple formats",
+            "Create and manage personalized playlists",
+            "Advanced playback controls like shuffle, repeat, and equalizer",
+            "Support for background playback and lock screen controls",
+            "Customizable themes, including dark mode"
+        ],
+        faq: [
+            { question: "What file formats are supported?", answer: "Supports MP3, WAV, MP4, AVI, and more." },
+            { question: "Can I play videos in the background?", answer: "Yes, background playback is supported for audio and video." },
+            { question: "Are there ads in the app?", answer: "No, the app is ad-free for a premium experience." }
+        ],
+        reviews: [
+            "Best music player I've used! Love the playlist feature. - Mike R.",
+            "The video playback is smooth and intuitive. - Emily K."
+        ]
+    },
+    "love": {
+        id: "love",
+        name: "Love Messages - Love Book",
+        icon: "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/ic_lovemessagesicon.jpg",
+        description: "Love Messages - Express Your Heart with Beautiful Words! Transform your relationships with the ultimate love expression app designed to help you share heartfelt emotions through beautifully crafted messages, romantic quotes, and personalized creations. Whether you're celebrating anniversaries, expressing gratitude, or simply reminding someone they're loved, our comprehensive collection offers endless ways to connect emotionally.",
+        shortDescription: "Create & share beautiful love messages with custom backgrounds, daily inspiration, and romantic quotes!",
+        playStoreUrl: "https://play.google.com/store/apps/details?id=com.joshtechapps.lovemessages",
+        status: "available",
+        screenshots: [
+            "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/lovemessages/screenshot1.png",
+            "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/lovemessages/screenshot2.png",
+            "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/lovemessages/screenshot3.png",
+            "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/lovemessages/screenshot4.png",
+            "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/lovemessages/screenshot5.png",
+            "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/lovemessages/screenshot6.png",
+            "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/lovemessages/screenshot7.png",
+            "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/lovemessages/screenshot8.png"
+        ],
+        features: [
+            "💝 Extensive Quote Library: Thousands of romantic quotes across 40+ categories including Love, Anniversary, Apology, Long Distance, and Morning Greetings",
+            "🎨 Complete Customization: Create personalized messages with 500+ beautiful background themes, custom fonts, text colors, and alignment options",
+            "📸 Photo Integration: Use your own photos from gallery or take new pictures directly in-app for fully personalized message backgrounds",
+            "✨ Enhanced Visual Experience: Animated roses, heart icons, and romantic animations to make every message special",
+            "🔔 Daily Inspiration: Receive carefully curated love quotes via notifications to keep romance alive every day",
+            "📤 Easy Sharing: Share your creations via WhatsApp, Instagram, Facebook, SMS, email, or any messaging app with one tap",
+            "🎭 Multiple Message Types: Pre-written quotes, custom messages, photo messages, and themed collections for every occasion",
+            "💾 Offline Access: All quotes and features available without internet connection - perfect for surprise messages anytime",
+            "⚙️ Personalization Settings: Adjust text size, font styles, background opacity, and layout for perfect message composition",
+            "📚 Category Organization: Quickly find the perfect words with organized categories like: Romantic Love, Sweet Goodnight, Missing You, Thank You, I'm Sorry, and Special Occasions",
+            "🌙 Mood-Based Collections: Quotes for different moods and times - Morning Love, Evening Romance, Midnight Thoughts, and Special Moments",
+            "🔄 Regular Updates: New quotes and themes added regularly to keep your expressions fresh and exciting",
+            "👫 Relationship Building: Perfect for couples, crushes, anniversaries, Valentine's Day, or just because moments",
+             "💝 NEW: Love counter now available in the new release , enjoy it and more so its so sharable to your bestie or loved one, keep your favorite love days counted and marked in your memory in this single app , try it and you will thank us later."
+        ],
+        faq: [
+            { question: "Can I create completely custom messages?", answer: "Yes! You can write your own personal messages from scratch, customize them with different fonts and colors, and add your own background images from your gallery or camera." },
+            { question: "Are the daily notifications customizable?", answer: "Absolutely! You can enable/disable daily love quotes, choose specific categories you prefer, and set your preferred notification times in the app settings." },
+            { question: "Do I need internet to use the app?", answer: "No, all quotes, themes, and creation features work completely offline. Internet is only needed for sharing messages or viewing ads (if you choose to)." },
+            { question: "How many quotes and themes are available?", answer: "The app includes thousands of romantic quotes across 40+ categories and over 500 beautiful background themes, with regular updates adding new content." },
+            { question: "Can I save my created messages?", answer: "Yes, all your custom creations are saved locally on your device. You can revisit, edit, or reshare them anytime without recreating from scratch." },
+            { question: "Is there a cost for using the app?", answer: "The app is completely free to use with access to all quotes, themes, and creation features. Optional ads support the development and maintenance." }
+        ],
+        reviews: [
+            "This app saved my relationship! The apology quotes helped me express my feelings perfectly when I couldn't find the words. - Michael T.",
+            "My wife loves the daily romantic messages I send her using this app. The custom backgrounds make it so personal! - David R.",
+            "Perfect for long-distance relationships. The 'missing you' category has the most heartfelt quotes that exactly express how I feel. - Sarah L.",
+            "I use this every morning to send my partner sweet good morning messages. The notifications remind me to keep the romance alive! - Emma W.",
+            "As someone who struggles with expressing emotions, this app gives me the perfect words to show my love and appreciation. - James K.",
+            "The variety of categories is amazing! From anniversary wishes to simple thank you notes, it has everything for every occasion. - Anna M.",
+            "Beautiful app with stunning visuals. The animated hearts and rose effects make every message feel extra special. - Lucas H."
+        ]
+    },
+    "web": {
+        id: "web",
+        name: "World English Bible",
+        icon: "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/holy_bible_icon.png",
+        description: "Explore the World English Bible offline with daily verses and personalized study tools.",
+        shortDescription: "Explore the World English Bible offline with daily verses and personalized study tools.",
+        playStoreUrl: "https://play.google.com/store/apps/details?id=com.joshtechapps.holybible",
+        status: "available",
+        screenshots: [
+            "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/web/screenshot1.jpg",
+            "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/web/screenshot2.jpg",
+            "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/web/screenshot3.jpg",
+            "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/web/screenshot4.jpg",
+            "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/web/screenshot5.jpg",
+            "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/web/screenshot6.jpg",
+            "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/web/screenshot7.jpg",
+            "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/web/screenshot8.jpg"
+        ],
+        features: [
+            "Full offline access to the World English Bible",
+            "Daily verses delivered at 8 AM and 8 PM",
+            "Save and manage favorite verses and notes",
+            "Verses for guidance in various life situations",
+            "Add notes or highlight verses with multiple colors",
+            "Customizable themes, including light and dark modes",
+            "Engaging quizzes to test your Bible knowledge"
+        ],
+        faq: [
+            { question: "Is the app fully offline?", answer: "Yes, all Bible content is stored locally." }
+        ],
+        reviews: [
+            "Wonderful app for daily Bible reading! - Lisa K.",
+            "The quizzes are fun and help me learn more. - Mark T."
+        ]
+    },
+    "notepad": {
+        id: "notepad",
+        name: "Notepad - Notes, Notebook & Reminders",
+        icon: "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/notepad_icon.png",
+        description: "Notepad - Your Ultimate Digital Notebook for Organized Productivity! Transform how you capture ideas, manage tasks, and stay organized with our powerful yet intuitive note-taking app. Whether you're a student taking lecture notes, a professional managing projects, or someone organizing daily thoughts, our comprehensive note-taking system offers everything you need for seamless productivity and information management.",
+        shortDescription: "Capture ideas effortlessly with secure, customizable notes, reminders, and cloud backup!",
+        playStoreUrl: "https://play.google.com/store/apps/details?id=com.joshtechapps.notepad",
+        status: "available",
+        screenshots: [
+            "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/notepad/screenshot1.jpg",
+            "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/notepad/screenshot2.jpg",
+            "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/notepad/screenshot3.jpg",
+            "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/notepad/screenshot4.jpg",
+            "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/notepad/screenshot5.jpg",
+            "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/notepad/screenshot6.jpg",
+            "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/notepad/screenshot7.jpg",
+            "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/screenshots/notepad/screenshot8.jpg"
+        ],
+        features: [
+            "📝 Advanced Note-Taking: Create rich text notes, checklists, to-do lists, and organized notebooks with unlimited categories",
+            "🔔 Smart Reminders: Set one-time or recurring reminders with custom alerts for important tasks and deadlines",
+            "☁️ Secure Cloud Backup: Automatic Google Drive integration to safely backup and sync your notes across all devices",
+            "🎨 Complete Customization: Multiple themes (light, dark, blue, green), font sizes, and layout options for personalized experience",
+            "🔒 Enhanced Security: Password protection and biometric authentication (fingerprint/face ID) to keep your private notes secure",
+            "📂 Organized Management: Create folders, categories, and tags for efficient note organization and quick retrieval",
+            "🔍 Powerful Search: Instant search across all notes with keyword highlighting and filter options",
+            "🔄 Easy Import/Export: Share notes via email, messaging apps, or export as text files for external use",
+            "📅 Calendar Integration: View reminder schedules and upcoming tasks in calendar format",
+            "⚡ Quick Actions: Create notes from home screen widgets and use quick templates for common note types",
+            "🌙 Dark Mode: Eye-friendly dark theme for comfortable note-taking in low-light conditions",
+            "📎 Attachment Support: Add context to your notes with timestamps, locations, and metadata",
+            "🔄 Auto-Save: Never lose your work with real-time auto-save functionality",
+            "📊 Progress Tracking: Monitor completed tasks and checklist progress with visual indicators",
+            "🔔 Notification Management: Customize reminder sounds, vibration patterns, and notification priorities"
+        ],
+        faq: [
+            { question: "Is my data secure and private?", answer: "Absolutely! All your notes are stored locally on your device with optional encryption. Cloud backups to Google Drive are encrypted and only accessible through your Google account. We never access or read your personal notes." },
+            { question: "Can I access my notes offline?", answer: "Yes! The app works completely offline. All note-taking features are available without internet connection. Cloud sync happens automatically when you're back online." },
+            { question: "How does the Google Drive backup work?", answer: "The app creates a secure, encrypted backup folder in your Google Drive. Your notes are automatically synced whenever you make changes. You can restore them anytime, even when switching devices." },
+            { question: "Can I password-protect specific notes?", answer: "Yes! You can enable app-level security requiring password or biometric authentication to access the entire app, ensuring all your notes remain private and secure." },
+            { question: "What types of notes can I create?", answer: "You can create simple text notes, detailed checklists, to-do lists with priorities, and organize them into folders and categories for different projects or purposes." },
+            { question: "Are there limits on how many notes I can create?", answer: "No limits! Create as many notes as you need. The app efficiently manages storage and performance regardless of how many notes you have." },
+            { question: "Can I set recurring reminders?", answer: "Absolutely! Set daily, weekly, monthly, or custom recurring reminders for repetitive tasks, habits, or regular commitments." }
+        ],
+        reviews: [
+            "This notepad app completely replaced my physical notebooks! The reminder feature is a lifesaver for my busy schedule. - Sarah M.",
+            "As a student, I use this for all my class notes. The organization features and search make studying so much easier! - Michael T.",
+            "The Google Drive backup gives me peace of mind. I never worry about losing my important notes and ideas. - David R.",
+            "Perfect for work meetings and project planning. The checklist feature helps me stay on top of all my tasks. - Emma W.",
+            "I love the security features! Knowing my personal journals are protected with fingerprint lock is amazing. - James K.",
+            "The dark mode is easy on the eyes during late-night brainstorming sessions. Beautiful and functional! - Anna L.",
+            "Switched from multiple note apps to this one. It has everything I need in one clean, intuitive package. - Lucas H.",
+            "The widget feature lets me quickly jot down ideas without even opening the app. Super convenient! - Rachel B."
+        ]
+    },
     "trivia": {
-    id: "trivia",
-    name: "Bible Trivia Quiz Game",
-    icon: "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/ic_trivia_icon.png",
-    description: "Bible Trivia - Grow Your Faith Through Knowledge! Embark on an exciting spiritual journey with Bible Trivia, the ultimate quiz game designed to challenge your biblical knowledge while deepening your understanding of Scripture. Whether you're a new believer or a seasoned theologian, our comprehensive quiz system offers endless opportunities for spiritual growth and friendly competition.",
-    shortDescription: "Test your Bible knowledge with fun quizzes, ranking, and daily rewards! - Offline",
-    playStoreUrl: "https://play.google.com/store/apps/details?id=com.joshtechapps.bibletrivia",
-    status: "available",
-    screenshots: [
-        "https://via.placeholder.com/300x600",
-        "https://via.placeholder.com/300x600",
-        "https://via.placeholder.com/300x600",
-        "https://via.placeholder.com/300x600",
-        "https://via.placeholder.com/300x600",
-        "https://via.placeholder.com/300x600",
-        "https://via.placeholder.com/300x600",
-        "https://via.placeholder.com/300x600"
-    ],
-    features: [
-        "🎯 Multiple Game Modes: General Quiz, True or False, Level Progression with 100+ levels",
-        "🌟 Ranking System: Compete for titles from Bronze to Legend based on knowledge mastery",
-        "🪙 Virtual Coins: Earn rewards through daily logins, perfect scores, and watching inspirational ads",
-        "📊 Progress Tracking: Monitor improvement with detailed statistics and achievement milestones",
-        "👤 Customizable Profile: Personalize with usernames, nicknames, and profile pictures",
-        "📖 Full Bible Reader: Easy navigation through all books and chapters with reference lookups",
-        "⏰ Daily Challenges: Fresh content every day to keep you engaged",
-        "🔔 Daily Verse Notifications: Start your day with Scripture inspiration",
-        "⚙️ Adjustable Settings: Holy background music, sound effects, and optional notifications",
-        "🏆 Competitive Spirit: Climb ranks from Bronze → Silver → Gold → Platinum → Diamond → Master → Legend",
-        "📚 Educational Value: Perfect for personal devotion, Bible study groups, and family game nights",
-        "🔒 Privacy Focused: All progress stored locally on your device",
-        "💝 Community Driven: Join thousands of believers worldwide making Bible study fun"
-    ],
-    faq: [
-        {
-            question: "Is the app fully offline?",
-            answer: "Yes, all Bible content and quizzes work completely offline. Your progress is stored locally on your device."
-        },
-        {
-            question: "How do I earn virtual coins?",
-            answer: "Earn 10 coins for daily logins, 20 coins for watching short uplifting ads, and 15 coins for perfect level completion (2 per correct answer + 5 bonus)."
-        },
-        {
-            question: "What can I use virtual coins for?",
-            answer: "Use coins for hints (15 coins), Bible references (5 coins), or level retries (20 coins offline). Coins have no real-world value and exist solely within the game."
-        },
-        {
-            question: "How many questions and levels are available?",
-            answer: "The app features 100+ levels with 500+ questions covering Old and New Testament knowledge, biblical characters, key events, and spiritual principles."
-        },
-        {
-            question: "Are there different difficulty levels?",
-            answer: "Yes! The game is designed for all knowledge levels - from new believers to seasoned theologians, with progressive difficulty as you advance through ranks."
-        },
-        {
-            question: "Can I track my spiritual growth?",
-            answer: "Absolutely! The app provides detailed progress analytics showing your improvement in biblical knowledge and understanding over time."
-        }
-    ],
-    reviews: [
-        "This app transformed my Bible study routine! The daily challenges keep me engaged and learning. - Sarah M.",
-        "Finally a Bible quiz app that's both fun and educational. The ranking system is so motivating! - Michael T.",
-        "Love earning coins and competing for higher ranks. Makes learning Scripture exciting! - David R.",
-        "Perfect for family game nights. My kids are learning Bible stories without even realizing it! - Emma W.",
-        "The offline feature is amazing. I can play during my commute without internet. - James K.",
-        "As a Sunday school teacher, this app has been invaluable for making lessons interactive. - Pastor John D.",
-        "The daily verse notifications start my day with the right focus. Beautiful app! - Grace L."
-    ]
-}
-        };
+        id: "trivia",
+        name: "Bible Trivia Quiz Game",
+        icon: "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/ic_trivia_icon.png",
+        description: "Bible Trivia - Grow Your Faith Through Knowledge! Embark on an exciting spiritual journey with Bible Trivia, the ultimate quiz game designed to challenge your biblical knowledge while deepening your understanding of Scripture. Whether you're a new believer or a seasoned theologian, our comprehensive quiz system offers endless opportunities for spiritual growth and friendly competition.",
+        shortDescription: "Test your Bible knowledge with fun quizzes, ranking, and daily rewards! - Offline",
+        playStoreUrl: "https://play.google.com/store/apps/details?id=com.joshtechapps.bibletrivia",
+        status: "available",
+        screenshots: [
+            "https://via.placeholder.com/300x600",
+            "https://via.placeholder.com/300x600",
+            "https://via.placeholder.com/300x600",
+            "https://via.placeholder.com/300x600",
+            "https://via.placeholder.com/300x600",
+            "https://via.placeholder.com/300x600",
+            "https://via.placeholder.com/300x600",
+            "https://via.placeholder.com/300x600"
+        ],
+        features: [
+            "🎯 Multiple Game Modes: General Quiz, True or False, Level Progression with 100+ levels",
+            "🌟 Ranking System: Compete for titles from Bronze to Legend based on knowledge mastery",
+            "🪙 Virtual Coins: Earn rewards through daily logins, perfect scores, and watching inspirational ads",
+            "📊 Progress Tracking: Monitor improvement with detailed statistics and achievement milestones",
+            "👤 Customizable Profile: Personalize with usernames, nicknames, and profile pictures",
+            "📖 Full Bible Reader: Easy navigation through all books and chapters with reference lookups",
+            "⏰ Daily Challenges: Fresh content every day to keep you engaged",
+            "🔔 Daily Verse Notifications: Start your day with Scripture inspiration",
+            "⚙️ Adjustable Settings: Holy background music, sound effects, and optional notifications",
+            "🏆 Competitive Spirit: Climb ranks from Bronze → Silver → Gold → Platinum → Diamond → Master → Legend",
+            "📚 Educational Value: Perfect for personal devotion, Bible study groups, and family game nights",
+            "🔒 Privacy Focused: All progress stored locally on your device",
+            "💝 Community Driven: Join thousands of believers worldwide making Bible study fun",
+            "NEW!! The game now comes with the LEADERBOARD. Play , win coins , Compete with players around the world. If l was you, l wouldn`t miss this challenge!😂"
+        ],
+        faq: [
+            { question: "Is the app fully offline?", answer: "Yes, all Bible content and quizzes work completely offline. Your progress is stored locally on your device." },
+            { question: "How do I earn virtual coins?", answer: "Earn 10 coins for daily logins, 20 coins for watching short uplifting ads, and 15 coins for perfect level completion (2 per correct answer + 5 bonus)." },
+            { question: "What can I use virtual coins for?", answer: "Use coins for hints (15 coins), Bible references (5 coins), or level retries (20 coins offline). Coins have no real-world value and exist solely within the game." },
+            { question: "How many questions and levels are available?", answer: "The app features 100+ levels with 500+ questions covering Old and New Testament knowledge, biblical characters, key events, and spiritual principles." },
+            { question: "Are there different difficulty levels?", answer: "Yes! The game is designed for all knowledge levels - from new believers to seasoned theologians, with progressive difficulty as you advance through ranks." },
+            { question: "Can I track my spiritual growth?", answer: "Absolutely! The app provides detailed progress analytics showing your improvement in biblical knowledge and understanding over time." }
+        ],
+        reviews: [
+            "This app transformed my Bible study routine! The daily challenges keep me engaged and learning. - Sarah M.",
+            "Finally a Bible quiz app that's both fun and educational. The ranking system is so motivating! - Michael T.",
+            "Love earning coins and competing for higher ranks. Makes learning Scripture exciting! - David R.",
+            "Perfect for family game nights. My kids are learning Bible stories without even realizing it! - Emma W.",
+            "The offline feature is amazing. I can play during my commute without internet. - James K.",
+            "As a Sunday school teacher, this app has been invaluable for making lessons interactive. - Pastor John D.",
+            "The daily verse notifications start my day with the right focus. Beautiful app! - Grace L."
+        ]
+    },
+    "braingame": {
+        id: "braingame",
+        name: "Brain Teaser Game - Quiz & Trivia Challenge",
+        icon: "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/ic_braingame.png",
+        description: "Brain Teaser Game – Challenge Your Mind, Win Coins, and Compete Globally! Embark on an exciting quiz adventure with categories like World Quiz, Football, Science, History, Technology, Culture, Health, Politics, and Agriculture. Each category features up to 200 levels of brain‑teasing questions. Test your knowledge, earn coins, unlock achievements, and climb the leaderboards. With a dynamic lives system, daily challenges, and a virtual shop to boost your progress, this game turns learning into a thrilling competition. Play offline, anywhere!",
+        shortDescription: "Challenge your brain with exciting quizzes, win coins, compete on leaderboards, and unlock achievements!",
+        playStoreUrl: "https://play.google.com/store/apps/details?id=com.joshtechapps.iq.brainteasergame",
+        status: "available",
+        screenshots: [
+            "https://via.placeholder.com/300x600",
+            "https://via.placeholder.com/300x600",
+            "https://via.placeholder.com/300x600",
+            "https://via.placeholder.com/300x600",
+            "https://via.placeholder.com/300x600",
+            "https://via.placeholder.com/300x600",
+            "https://via.placeholder.com/300x600",
+            "https://via.placeholder.com/300x600"
+        ],
+        features: [
+            "🌍 9 Exciting Categories: World Quiz, Football, Science, History, Technology, Culture, Health, Politics, Agriculture – each with up to 200 levels!",
+            "🪙 Earn & Spend Coins: +2 per correct answer, +5 for perfect levels, daily login bonus, share rewards, and achievement bonuses. Use coins for hints, skips, time extensions, and extra lives.",
+            "❤️ Lives System: Each wrong answer costs a life. Lives regenerate every 30 minutes, or you can buy them in the shop.",
+            "🏆 Global & Country Leaderboards: Ranked by lifetime coins earned – spending coins never lowers your rank!",
+            "📅 Daily Challenge: New question every day! Get 10 coins (or 20 if you watch an ad) and keep your streak going.",
+            "🎖️ 50+ Achievements: Unlock titles like “Trivia Legend”, “Master Scholar”, “Speed Demon”, “Time Lord”, and many more, each with coin rewards.",
+            "🛍️ In‑App Shop: Purchase coin packs, lives packs, and ad‑free subscriptions (3/6/12 months) to support the game and remove all ads.",
+            "📸 Custom Profile: Set a player name, country, and profile picture (visible to others on leaderboards).",
+            "🔔 Smart Notifications: Daily challenge reminders, lives full alerts, streak reminders, and special offers.",
+            "💯 Offline Mode: Play all levels, quizzes, and shop offline – internet only needed for leaderboards and purchases.",
+            "🎨 Beautiful Animations: Lottie animations, particle effects, and vibrant UI keep the experience engaging.",
+            "📊 Detailed Statistics: Track your total games, accuracy, perfect levels, streaks, and categories mastered.",
+            "👑 VIP Benefits: Ad‑free users get daily VIP coins & lives, exit bonuses, faster life regeneration, and more!"
+        ],
+        faq: [
+            { question: "Is the game fully offline?", answer: "Yes! All levels, questions, and core gameplay work offline. Leaderboards and purchases require an internet connection." },
+            { question: "How does the ranking system work?", answer: "You are ranked by Lifetime Coins Earned – the total coins you have ever collected. Spending coins does NOT lower your rank, so you can freely use coins without worrying about your leaderboard position." },
+            { question: "What can I buy with coins?", answer: "Coins can be used for hints (5 coins), skipping a question (5 coins), time extension (5 coins), extra lives (various prices), and level retries (10 coins). You can also purchase coin packs and ad‑free subscriptions in the shop." },
+            { question: "How do I unlock more categories?", answer: "Earn stars by completing levels. Each category requires 10 stars from the previous category to unlock. Get 3 stars per level (based on correct answers)." },
+            { question: "Are there ads?", answer: "Yes, the game is free and supported by ads. You can watch rewarded ads to double your daily challenge reward or get free lives. You may also purchase an ad‑free subscription to remove all ads permanently." },
+            { question: "What are the VIP benefits?", answer: "VIP (ad‑free) users get daily coins (15) and lives (2) every day, exit bonuses (15 coins + 1 life, twice daily), 50% faster life regeneration (15 minutes), priority support, and more perks depending on the subscription length." },
+            { question: "Can I change my player name and profile picture?", answer: "Absolutely! You can change your name, country, and profile picture anytime from the Account screen. Your profile picture will be visible to other players on leaderboards." }
+        ],
+        reviews: [
+            "⭐️⭐️⭐️⭐️⭐️ This game is addictive! The variety of categories keeps it fresh, and the leaderboard makes it competitive. Love the coin system! – Alex K.",
+            "⭐️⭐️⭐️⭐️⭐️ Finally a quiz game that rewards skill. The daily challenge is my favorite part. – Jessica M.",
+            "⭐️⭐️⭐️⭐️⭐️ I’ve learned so much about world history and science while having fun. Highly recommend! – David P.",
+            "⭐️⭐️⭐️⭐️⭐️ The offline mode is perfect for my commute. No internet needed to play levels. – Sarah L.",
+            "⭐️⭐️⭐️⭐️⭐️ VIP is worth it – no ads and daily bonuses keep me coming back. – Michael T.",
+            "⭐️⭐️⭐️⭐️⭐️ Great for family game nights. My kids love the football and technology categories. – Emma W.",
+            "⭐️⭐️⭐️⭐️⭐️ The achievements system gives me goals to work toward. Just got 'Trivia Genius'! – James R."
+        ]
+    },
+    // NEW: Albanian English Bible (no detail page)
+    "albanian": {
+        id: "albanian",
+        name: "Albanian English Bible",
+        icon: "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/ic_albanian_bible.png",
+        shortDescription: "Read the Albanian Bible side by side with English translation, completely offline. Play quiz and learn more, customize your app word of God with bookmarks, play audio, read with  maximum range of font sizes and different font type, app loads so fast and easy to use.",
+        playStoreUrl: "https://play.google.com/store/apps/details?id=com.joshtechapps.albanianbible",
+        status: "available",
+        hasDetailPage: false
+    },
+    // NEW: Young's Literal Translation (no detail page)
+    "ylt": {
+        id: "ylt",
+        name: "Young's Literal Translation (YLT)",
+        icon: "https://raw.githubusercontent.com/JoashTech/joshtechapps/main/ic_ylt_bible.png",
+        shortDescription: "Read Young's Literal Translation of the Bible offline – This comes with bible quiz, audio, highlights and all kinds of bookmarks so its a precise, word-for-word translation.",
+        playStoreUrl: "https://play.google.com/store/apps/details?id=com.joshtechapps.yltbible",
+        status: "available",
+        hasDetailPage: false
+    }
+};
 
-        // ================= FRONTEND FUNCTIONS =================
-        
-        // Initialize the website
+        // Helper to get full app details (for those that have them)
+        function getFullAppDetails(id) {
+            const app = appsData[id];
+            return app;
+        }
+
+        // Build the website
         document.addEventListener('DOMContentLoaded', function() {
             loadHomeApps();
             loadAppsGrid();
@@ -1159,35 +1032,30 @@
             showSection('home');
         });
 
-        // Load apps on home page
         function loadHomeApps() {
             const homeGrid = document.getElementById('home-apps-grid');
             homeGrid.innerHTML = '';
-            
             Object.values(appsData).forEach(app => {
-                const appCard = createAppCard(app, true);
-                homeGrid.appendChild(appCard);
+                const card = createAppCard(app, true);
+                homeGrid.appendChild(card);
             });
         }
 
-        // Load apps in apps section
         function loadAppsGrid() {
             const appsGrid = document.getElementById('apps-grid');
             appsGrid.innerHTML = '';
-            
             Object.values(appsData).forEach(app => {
-                const appCard = createAppCard(app, false);
-                appsGrid.appendChild(appCard);
+                const card = createAppCard(app, false);
+                appsGrid.appendChild(card);
             });
         }
 
-        // Create app card component
         function createAppCard(app, isHome) {
             const card = document.createElement('div');
             card.className = 'bg-white p-6 rounded-lg shadow-md';
             
             const playStoreButton = app.status === 'available' 
-                ? `<a href="${app.playStoreUrl}" class="block mt-4">
+                ? `<a href="${app.playStoreUrl}" target="_blank" class="block mt-4">
                      <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-12 mx-auto">
                    </a>`
                 : `<a href="#" onclick="showToast()" class="block mt-4">
@@ -1199,211 +1067,102 @@
                     <img src="${app.icon}" alt="${app.name} Icon" class="mx-auto mb-4 max-w-[100px]">
                     <h3 class="text-xl font-semibold text-gray-800">${app.name}</h3>
                     <p class="text-gray-600 mb-4">${app.shortDescription}</p>
-                    <button onclick="showAppDetail('${app.id}')" class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Learn More</button>
+                    ${app.hasDetailPage !== false ? `<button onclick="showAppDetail('${app.id}')" class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Learn More</button>` : ''}
                     ${playStoreButton}
                 `;
             } else {
+                const firstScreenshot = (app.screenshots && app.screenshots[0]) ? app.screenshots[0] : 'https://via.placeholder.com/300x600';
                 card.innerHTML = `
                     <img src="${app.icon}" alt="${app.name} Icon" class="mx-auto mb-4 max-w-[100px]">
                     <h3 class="text-xl font-semibold text-gray-800 text-center">${app.name}</h3>
                     <p class="text-gray-600 text-center mb-4">${app.shortDescription}</p>
                     <div class="flex justify-center mb-4">
-                        <img src="${app.screenshots[0]}" alt="${app.name} Screenshot" class="h-48 rounded">
+                        <img src="${firstScreenshot}" alt="${app.name} Screenshot" class="h-48 rounded">
                     </div>
                     <div class="flex justify-center space-x-4">
-                        <button onclick="showAppDetail('${app.id}')" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">View Details</button>
+                        ${app.hasDetailPage !== false ? `<button onclick="showAppDetail('${app.id}')" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">View Details</button>` : ''}
                         ${app.status === 'available' 
-                            ? `<a href="${app.playStoreUrl}"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-12"></a>`
+                            ? `<a href="${app.playStoreUrl}" target="_blank"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-12"></a>`
                             : `<a href="#" onclick="showToast()"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-12"></a>`
                         }
                     </div>
                 `;
             }
-            
             return card;
         }
 
-        // Generate all app detail pages
         function generateAppDetailPages() {
             const container = document.getElementById('app-detail-pages');
             container.innerHTML = '';
-            
             Object.values(appsData).forEach(app => {
-                const detailPage = createAppDetailPage(app);
-                container.appendChild(detailPage);
+                if (app.hasDetailPage !== false) {
+                    const detail = createAppDetailPage(app);
+                    container.appendChild(detail);
+                }
             });
         }
 
-        // Create individual app detail page
         function createAppDetailPage(app) {
             const page = document.createElement('section');
             page.id = `app-${app.id}-detail`;
             page.className = 'app-detail-page py-16 bg-gray-100';
-            
-            const screenshotsHtml = app.screenshots.map(screenshot => 
-                `<img src="${screenshot}" alt="${app.name} Screenshot" class="rounded-lg">`
-            ).join('');
-            
-            const featuresHtml = app.features.map(feature => 
-                `<li>${feature}</li>`
-            ).join('');
-            
-            const faqHtml = app.faq.map(item => 
-                `<div>
-                    <p class="font-semibold text-gray-800">${item.question}</p>
-                    <p class="text-gray-600">${item.answer}</p>
-                </div>`
-            ).join('');
-            
-            const reviewsHtml = app.reviews.map(review => 
-                `<div class="bg-white p-4 rounded-lg shadow">
-                    <p class="text-gray-600">"${review}"</p>
-                </div>`
-            ).join('');
-            
-            const playStoreButton = app.status === 'available'
-                ? `<a href="${app.playStoreUrl}" class="block mt-6">
-                     <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-16 mx-auto">
-                   </a>`
-                : `<a href="#" onclick="showToast()" class="block mt-6">
-                     <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-16 mx-auto">
-                   </a>`;
-            
+            const screenshotsHtml = (app.screenshots && app.screenshots.length) ? app.screenshots.map(s => `<img src="${s}" class="rounded-lg">`).join('') : '<div class="text-gray-500">No screenshots yet.</div>';
+            const featuresHtml = (app.features && app.features.length) ? app.features.map(f => `<li>${f}</li>`).join('') : '<li>Details coming soon.</li>';
+            const faqHtml = (app.faq && app.faq.length) ? app.faq.map(q => `<div><p class="font-semibold">${q.question}</p><p class="text-gray-600">${q.answer}</p></div>`).join('') : '<p>FAQ coming soon.</p>';
+            const reviewsHtml = (app.reviews && app.reviews.length) ? app.reviews.map(r => `<div class="bg-white p-4 rounded shadow"><p>"${r}"</p></div>`).join('') : '<p>Reviews coming soon.</p>';
+            const playStoreButton = `<a href="${app.playStoreUrl}" target="_blank" class="block mt-6"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" class="h-16 mx-auto"></a>`;
             page.innerHTML = `
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <button onclick="showSection('apps')" class="mb-4 text-blue-600 hover:text-blue-800 flex items-center">
-                        <i class="fas fa-arrow-left mr-2"></i> Back to Apps
-                    </button>
+                    <button onclick="showSection('apps')" class="mb-4 text-blue-600 hover:text-blue-800 flex items-center"><i class="fas fa-arrow-left mr-2"></i> Back to Apps</button>
                     <h2 class="text-3xl font-bold text-gray-800 mb-8">${app.name}</h2>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <div>
-                            <h3 class="text-xl font-semibold text-gray-800 mb-4">Screenshots</h3>
-                            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                                ${screenshotsHtml}
-                            </div>
-                            ${playStoreButton}
-                        </div>
-                        <div>
-                            <p class="text-gray-600 mb-4">${app.description}</p>
-                            <h3 class="text-xl font-semibold text-gray-800 mb-2">Features</h3>
-                            <ul class="list-disc list-inside text-gray-600 mb-4">
-                                ${featuresHtml}
-                            </ul>
-                            <h3 class="text-xl font-semibold text-gray-800 mb-2">FAQ</h3>
-                            <div class="space-y-4">
-                                ${faqHtml}
-                            </div>
-                            <h3 class="text-xl font-semibold text-gray-800 mb-2 mt-6">User Reviews</h3>
-                            <div class="space-y-4">
-                                ${reviewsHtml}
-                            </div>
-                        </div>
+                        <div><h3 class="text-xl font-semibold mb-4">Screenshots</h3><div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">${screenshotsHtml}</div>${playStoreButton}</div>
+                        <div><p class="text-gray-600 mb-4">${app.description}</p><h3 class="text-xl font-semibold mb-2">Features</h3><ul class="list-disc list-inside text-gray-600 mb-4">${featuresHtml}</ul><h3 class="text-xl font-semibold mb-2">FAQ</h3><div class="space-y-4">${faqHtml}</div><h3 class="text-xl font-semibold mb-2 mt-6">User Reviews</h3><div class="space-y-4">${reviewsHtml}</div></div>
                     </div>
-                </div>
-            `;
-            
+                </div>`;
             return page;
         }
 
-        // Show specific section
-              // Show specific section
         function showSection(sectionId) {
-            // Hide all main sections
-            document.querySelectorAll('#main-content > section').forEach(section => {
-                section.style.display = 'none';
-            });
-            
-            // Hide all app detail pages
-            document.querySelectorAll('.app-detail-page').forEach(page => {
-                page.classList.remove('active');
-            });
-            
-            // Hide all blog posts
-            document.querySelectorAll('.blog-post').forEach(post => {
-                post.classList.remove('active');
-            });
-            
-            // Show selected section
+            document.querySelectorAll('#main-content > section').forEach(s => s.style.display = 'none');
+            document.querySelectorAll('.app-detail-page').forEach(p => p.classList.remove('active'));
+            document.querySelectorAll('.blog-post').forEach(p => p.classList.remove('active'));
             document.getElementById(sectionId).style.display = 'block';
-            
-            // Close mobile menu if open
-            document.getElementById('mobile-menu').classList.add('hidden');
-            document.getElementById('dropdown-menu').classList.remove('active');
-            
-            // Scroll to top
-            window.scrollTo(0, 0);
+            document.getElementById('mobile-menu')?.classList.add('hidden');
+            document.getElementById('dropdown-menu')?.classList.remove('active');
+            window.scrollTo(0,0);
         }
-                // Show blog post
-            // Show blog post
+
         function showBlogPost(postId) {
-            // Hide all main sections
-            document.querySelectorAll('#main-content > section').forEach(section => {
-                section.style.display = 'none';
-            });
-            
-            // Hide all app detail pages
-            document.querySelectorAll('.app-detail-page').forEach(page => {
-                page.classList.remove('active');
-            });
-            
-            // Hide all blog posts
-            document.querySelectorAll('.blog-post').forEach(post => {
-                post.classList.remove('active');
-            });
-            
-            // Show selected blog post
+            document.querySelectorAll('#main-content > section').forEach(s => s.style.display = 'none');
+            document.querySelectorAll('.app-detail-page').forEach(p => p.classList.remove('active'));
+            document.querySelectorAll('.blog-post').forEach(p => p.classList.remove('active'));
             document.getElementById(postId).classList.add('active');
-            
-            // Close mobile menu if open
-            document.getElementById('mobile-menu').classList.add('hidden');
-            document.getElementById('dropdown-menu').classList.remove('active');
-            
-            // Scroll to top
-            window.scrollTo(0, 0);
+            document.getElementById('mobile-menu')?.classList.add('hidden');
+            document.getElementById('dropdown-menu')?.classList.remove('active');
+            window.scrollTo(0,0);
         }
 
-        // Show app detail page
         function showAppDetail(appId) {
-            // Hide all main sections
-            document.querySelectorAll('#main-content > section').forEach(section => {
-                section.style.display = 'none';
-            });
-            
-            // Hide all app detail pages
-            document.querySelectorAll('.app-detail-page').forEach(page => {
-                page.classList.remove('active');
-            });
-            
-            // Show selected app detail page
+            document.querySelectorAll('#main-content > section').forEach(s => s.style.display = 'none');
+            document.querySelectorAll('.app-detail-page').forEach(p => p.classList.remove('active'));
             document.getElementById(`app-${appId}-detail`).classList.add('active');
-            
-            // Close mobile menu if open
-            document.getElementById('mobile-menu').classList.add('hidden');
-            document.getElementById('dropdown-menu').classList.remove('active');
-            
-            // Scroll to top
-            window.scrollTo(0, 0);
+            document.getElementById('mobile-menu')?.classList.add('hidden');
+            document.getElementById('dropdown-menu')?.classList.remove('active');
+            window.scrollTo(0,0);
         }
 
-        // Toggle mobile menu
-        document.getElementById('menu-toggle').addEventListener('click', function () {
-            const mobileMenu = document.getElementById('mobile-menu');
-            mobileMenu.classList.toggle('hidden');
+        document.getElementById('menu-toggle')?.addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+        document.getElementById('dropdown-toggle')?.addEventListener('click', () => {
+            document.getElementById('dropdown-menu').classList.toggle('active');
         });
 
-        // Toggle dropdown menu
-        document.getElementById('dropdown-toggle').addEventListener('click', function () {
-            const dropdownMenu = document.getElementById('dropdown-menu');
-            dropdownMenu.classList.toggle('active');
-        });
-
-        // Show toast notification
         function showToast() {
             const toast = document.getElementById('toast');
             toast.classList.add('show');
-            setTimeout(() => {
-                toast.classList.remove('show');
-            }, 3000);
+            setTimeout(() => toast.classList.remove('show'), 3000);
         }
     </script>
 </body>
